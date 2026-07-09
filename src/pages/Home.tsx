@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <Seo title="Home" />
+      <Seo title="Home" description="Product Designer & Full-Stack Developer with 7+ years of experience crafting digital experiences. Available for freelance work." />
 
       <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
 
@@ -40,12 +40,14 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 shrink-0 order-1 sm:order-2 mx-auto sm:mx-0">
-                <div className="w-full h-full rounded-full overflow-hidden bg-muted border-[3px] sm:border-4 border-background group-hover:scale-105 transition-transform duration-500 relative z-10 flex items-center justify-center">
+              <div className="relative shrink-0 order-1 sm:order-2 mx-auto sm:mx-0">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden bg-muted border-[3px] sm:border-4 border-background group-hover:scale-105 transition-transform duration-500 relative z-10">
                   <img
                     src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
-                    alt="Muhammad Aslaan"
+                    alt="Muhammad Aslaan - Product Designer"
                     className="w-full h-full object-cover object-center"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
               </div>
@@ -74,7 +76,7 @@ export default function Home() {
             <Link href="/credentials" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="Credentials" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="Credentials" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
@@ -93,7 +95,7 @@ export default function Home() {
             <Link href="/works" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/DarH9E4Ou5gzGBivriCWY2Oc8.png" alt="Works" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src="https://framerusercontent.com/images/DarH9E4Ou5gzGBivriCWY2Oc8.png" alt="Works Portfolio" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
@@ -112,7 +114,7 @@ export default function Home() {
             <Link href="/service" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/F6zvHN84xgsMwNeNdcRXZmhxOU.png" alt="Services" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src="https://framerusercontent.com/images/F6zvHN84xgsMwNeNdcRXZmhxOU.png" alt="Services Offered" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
@@ -141,7 +143,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-8 md:gap-12 mb-10 md:mb-16 justify-center md:justify-start">
                   {serviceIcons.map((service) => (
                     <div key={service.name} className="flex flex-col items-center gap-4">
-                      <img src={service.icon} alt={service.name} className="w-10 h-10 md:w-12 md:h-12" />
+                      <img src={service.icon} alt={service.name + ' service icon'} className="w-10 h-10 md:w-12 md:h-12" loading="lazy" />
                     </div>
                   ))}
                 </div>
@@ -151,7 +153,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-display font-bold">Services Offering</h3>
                   </div>
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 md:w-5 md:h-5 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
                   </div>
                 </div>
               </div>
@@ -170,7 +172,7 @@ export default function Home() {
                     <h3 className="text-xl md:text-2xl font-display font-bold">Profiles</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
                   </div>
                 </div>
               </div>
