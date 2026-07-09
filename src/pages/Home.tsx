@@ -1,0 +1,192 @@
+import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { Seo } from "@/components/ui/Seo";
+import { Marquee } from "@/components/ui/Marquee";
+import { CtaBanner } from "@/components/ui/CtaBanner";
+import { StatCounter } from "@/components/ui/StatCounter";
+
+export default function Home() {
+  const serviceIcons = [
+    { name: "UX/UI Design", icon: "https://framerusercontent.com/images/K13RDSP01nuPzaFw396WcnQGqAQ.svg" },
+    { name: "Web Development", icon: "https://framerusercontent.com/images/ztUMbbffxmRPIHucB8JDDw1MIs.svg" },
+    { name: "Branding", icon: "https://framerusercontent.com/images/anlWrCCP00uS2seSO4dXnN9G9c.svg" },
+    { name: "Odoo ERP", icon: "https://framerusercontent.com/images/Rstu8XY2NsBMaWhqZq67KuwJ0.svg" }
+  ];
+
+  return (
+    <>
+      <Seo title="Home" />
+
+      <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
+
+        {/* HERO SECTION */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-5xl mx-auto mb-20"
+        >
+          <Link href="/about" className="block group">
+            <div className="bg-card rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 border border-border shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-16 hover:shadow-xl hover:border-primary transition-all duration-500 relative overflow-hidden">
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shrink-0 bg-muted border-4 border-background relative z-10 group-hover:scale-105 transition-transform duration-500">
+                <img
+                  src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
+                  alt="Muhammad Aslaan"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 text-center md:text-left relative z-10">
+                <span className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4 block">
+                  Available for freelance work
+                </span>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-6 tracking-tight leading-[0.9]">
+                  Muhammad <br /> Aslaan.
+                </h1>
+                <p className="text-muted-foreground text-lg max-w-md mx-auto md:mx-0">
+                  Product Designer & Full-Stack Developer with 7+ years of experience crafting digital experiences.
+                </p>
+              </div>
+
+              <div className="absolute bottom-8 right-8 w-16 h-16 rounded-full border border-border flex items-center justify-center bg-background group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300">
+                <img
+                  src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
+                  alt="Arrow"
+                  className="w-6 h-6 transition-transform group-hover:rotate-45"
+                  style={{ filter: "brightness(0) saturate(100%)" }}
+                />
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+
+        {/* MARQUEE */}
+        <div className="w-full -mx-4 md:-mx-8 mb-20">
+          <Marquee />
+        </div>
+
+        {/* 3 FEATURE CARDS */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <Link href="/credentials" className="block group h-full">
+              <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
+                  <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="Credentials" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="mt-auto flex items-end justify-between">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">More About Me</span>
+                    <h3 className="text-2xl font-display font-bold">Credentials</h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <Link href="/works" className="block group h-full">
+              <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
+                  <img src="https://framerusercontent.com/images/DarH9E4Ou5gzGBivriCWY2Oc8.png" alt="Works" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="mt-auto flex items-end justify-between">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">Showcase</span>
+                    <h3 className="text-2xl font-display font-bold">Projects</h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
+            <Link href="/service" className="block group h-full">
+              <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
+                  <img src="https://framerusercontent.com/images/F6zvHN84xgsMwNeNdcRXZmhxOU.png" alt="Services" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="mt-auto flex items-end justify-between">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">What I Do</span>
+                    <h3 className="text-2xl font-display font-bold">Services</h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+        </div>
+
+        {/* SERVICES AND PROFILES */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 mb-20">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="lg:col-span-3"
+          >
+            <Link href="/service" className="block group h-full">
+              <div className="bg-card p-8 md:p-12 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between relative overflow-hidden">
+                <div className="flex flex-wrap gap-12 mb-16 justify-center md:justify-start">
+                  {serviceIcons.map((service) => (
+                    <div key={service.name} className="flex flex-col items-center gap-4">
+                      <img src={service.icon} alt={service.name} className="w-12 h-12" />
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-end justify-between">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">Specialization</span>
+                    <h3 className="text-3xl font-display font-bold">Services Offering</h3>
+                  </div>
+                  <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-5 h-5 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <Link href="/contact" className="block group h-full">
+              <div className="bg-card p-8 md:p-12 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between">
+                <div className="bg-muted w-full aspect-square rounded-full flex items-center justify-center mb-8 border border-border relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg')] bg-center bg-no-repeat bg-[length:40%] opacity-20 group-hover:rotate-45 group-hover:scale-110 transition-all duration-500"></div>
+                </div>
+                <div className="flex items-end justify-between mt-auto">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">Stay with me</span>
+                    <h3 className="text-2xl font-display font-bold">Profiles</h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+        </div>
+
+        {/* STATS */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+          <StatCounter value={7} prefix="0+" label="Years Experience" />
+          <StatCounter value={25} prefix="+" label="Projects Completed" />
+          <StatCounter value={15} prefix="+" label="Happy Clients" />
+          <StatCounter value={100} prefix="+" label="Client Satisfaction" />
+        </div>
+
+        <CtaBanner />
+
+      </div>
+    </>
+  );
+}
