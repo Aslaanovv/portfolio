@@ -5,10 +5,10 @@ interface SeoProps {
   description?: string;
 }
 
-export function Seo({ title, description = "A Web Designer based in San Francisco." }: SeoProps) {
+export function Seo({ title, description = "Product Designer & Full-Stack Developer with 7+ years of experience crafting digital experiences." }: SeoProps) {
   useEffect(() => {
-    document.title = `${title} | David Henderson`;
-    
+    document.title = `${title} | Muhammad Aslaan`;
+
     // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -17,7 +17,7 @@ export function Seo({ title, description = "A Web Designer based in San Francisc
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', description);
-    
+
     // Update og:title
     let ogTitle = document.querySelector('meta[property="og:title"]');
     if (!ogTitle) {
@@ -25,7 +25,7 @@ export function Seo({ title, description = "A Web Designer based in San Francisc
       ogTitle.setAttribute('property', 'og:title');
       document.head.appendChild(ogTitle);
     }
-    ogTitle.setAttribute('content', title);
+    ogTitle.setAttribute('content', `${title} | Muhammad Aslaan`);
   }, [title, description]);
 
   return null;
