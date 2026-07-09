@@ -40,12 +40,14 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden shrink-0 bg-muted border-4 border-background relative z-10 group-hover:scale-105 transition-transform duration-500 mx-auto sm:mx-0 order-1 sm:order-2">
-                <img
-                  src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
-                  alt="Muhammad Aslaan"
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 shrink-0 order-1 sm:order-2 mx-auto sm:mx-0">
+                <div className="w-full h-full rounded-full overflow-hidden bg-muted border-[3px] sm:border-4 border-background group-hover:scale-105 transition-transform duration-500 relative z-10 flex items-center justify-center">
+                  <img
+                    src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
+                    alt="Muhammad Aslaan"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
 
               <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-border flex items-center justify-center bg-background group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300">
