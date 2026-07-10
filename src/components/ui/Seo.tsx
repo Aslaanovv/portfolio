@@ -5,7 +5,7 @@ interface SeoProps {
   description?: string;
 }
 
-export function Seo({ title, description = "Product Designer & Full-Stack Developer with 7+ years of experience crafting digital experiences." }: SeoProps) {
+export function Seo({ title, description = "Product Designer & Web Developer with 7+ years of experience crafting digital experiences." }: SeoProps) {
   useEffect(() => {
     document.title = `${title} | Muhammad Aslaan`;
 

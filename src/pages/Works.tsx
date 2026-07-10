@@ -11,7 +11,8 @@ export default function Works() {
       <Seo title="Works" />
       <div className="container mx-auto px-4 md:px-8">
 
-        {/* Featured row */}
+        {/* Featured Projects */}
+        <SectionHeading title="FEATURED PROJECTS" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-16 md:mb-24 max-w-7xl mx-auto">
           {featured.map((work, idx) => (
             <ProjectCard key={`featured-${work.slug}`} {...work} index={idx} />
