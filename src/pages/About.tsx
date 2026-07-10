@@ -42,7 +42,7 @@ export default function About() {
                 Muhammad Aslaan
               </h3>
               <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
-                I'm a Product Designer & Full-Stack Developer with 7+ years of experience. I bridge the gap between design and technology, creating solutions that not only look amazing but also drive real business results. From Technical Sales to Creative Freelancing — I bring a unique perspective to every project.
+                I'm a Product Designer & Web Developer with 7+ years of experience. I bridge the gap between design and technology, creating solutions that not only look amazing but also drive real business results. From Technical Sales to Creative Freelancing — I bring a unique perspective to every project.
               </p>
             </div>
           </motion.div>

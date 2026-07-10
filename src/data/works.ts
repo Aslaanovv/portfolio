@@ -1,5 +1,19 @@
 export const works = [
   {
+    slug: "la-camille",
+    category: "WEB DESIGN & DEVELOPMENT",
+    title: "La Camille",
+    image: "/projects/la-camille/thumbnail.png",
+    client: "La Camille",
+    year: "2024",
+    services: "E-COMMERCE • SHOPIFY • DESIGN",
+    description1: "A premium e-commerce experience for La Camille, combining Shopify's power with bespoke design. Every touchpoint crafted to showcase products beautifully and convert visitors into customers.",
+    description2: "From theme customization to responsive implementation, this project demonstrates the intersection of design thinking and technical execution on Shopify's platform.",
+    about: "La Camille needed an online presence that reflected their premium brand while leveraging Shopify's robust e-commerce capabilities. The challenge was balancing custom design with platform constraints.",
+    paragraph1: "I approached this project with mobile-first thinking, ensuring every screen felt premium while maintaining Shopify's functionality. The result is a shopping experience that guides users naturally from discovery to purchase.",
+    paragraph2: "Working within Shopify's ecosystem, I customized themes, wrote Liquid templates, and crafted responsive CSS/JavaScript to deliver a cohesive brand experience across all devices."
+  },
+  {
     slug: "malmoum-app",
     category: "UX/UI DESIGN",
     title: "Malmoum App",
@@ -91,4 +105,12 @@ export const sharedGallery = [
   "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop",
   "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
   "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
+];
+
+export const laCamilleGallery = [
+  "/projects/la-camille/homepage.png", // [Homepage Showcase Image]
+  "/projects/la-camille/collection.png", // [Collection Showcase Image]
+  "/projects/la-camille/product.png", // [Product Showcase Image]
+  "/projects/la-camille/responsive.png", // [Responsive Devices Image]
+  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop", // [Shopify Development Screenshot]
 ];

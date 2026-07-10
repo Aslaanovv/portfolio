@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <Seo title="Home" description="Product Designer & Full-Stack Developer with 7+ years of experience crafting digital experiences. Available for freelance work." />
+      <Seo title="Home" description="Product Designer & Web Developer with 7+ years of experience crafting digital experiences. Available for freelance work." />
 
       <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
 
@@ -27,8 +27,8 @@ export default function Home() {
           className="w-full max-w-5xl mx-auto mb-20"
         >
           <Link href="/about" className="block group">
-            <div className="bg-card rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 border border-border shadow-sm flex flex-col-reverse sm:flex-row items-center gap-6 md:gap-12 lg:gap-16 hover:shadow-xl hover:border-primary transition-all duration-500 relative overflow-hidden">
-              <div className="flex-1 text-center sm:text-left relative z-10 order-2 sm:order-1">
+            <div className="bg-card rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 border border-border shadow-sm flex flex-col-reverse sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 hover:shadow-xl hover:border-primary transition-all duration-500 relative overflow-hidden">
+              <div className="flex-1 text-center sm:text-left relative z-10 order-2 sm:order-1 min-w-0">
                 <span className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-3 sm:mb-4 block">
                   Available for freelance work
                 </span>
@@ -36,16 +36,16 @@ export default function Home() {
                   Muhammad <br /> Aslaan.
                 </h1>
                 <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-md mx-auto sm:mx-0">
-                  Product Designer & Full-Stack Developer with 7+ years of experience crafting digital experiences.
+                  Product Designer & Web Developer with 7+ years of experience crafting digital experiences.
                 </p>
               </div>
 
-              <div className="relative shrink-0 order-1 sm:order-2 mx-auto sm:mx-0">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden bg-muted border-[3px] sm:border-4 border-background group-hover:scale-105 transition-transform duration-500 relative z-10">
+              <div className="relative shrink-0 order-1 sm:order-2 flex items-center justify-center sm:justify-end ml-0 sm:ml-4">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden bg-muted border-[3px] sm:border-4 border-background group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg ml-0 sm:ml-8">
                   <img
                     src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
                     alt="Muhammad Aslaan - Product Designer"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-bottom"
                     loading="eager"
                     fetchPriority="high"
                   />
