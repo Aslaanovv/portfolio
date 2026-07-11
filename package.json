@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "optimize:images": "node scripts/optimize-images.js",
+    "optimize:image": "node scripts/optimize-images.js --single"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -69,6 +71,8 @@
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.1.200",
     "postcss": "^8.4.49",
     "sharp": "^0.35.3",
     "tailwindcss": "^3.4.17",

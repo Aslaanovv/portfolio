@@ -20,11 +20,11 @@ export function ProjectCard({ slug, category, title, image, index = 0 }: Project
     >
       <Link href={`/works/${slug}`} className="block group">
         <div className="bg-card p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary flex flex-col h-full">
-          <div className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] mb-4 sm:mb-6 relative bg-muted">
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-6 relative bg-muted">
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
           </div>
