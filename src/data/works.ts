@@ -1,5 +1,19 @@
 export const works = [
   {
+    slug: "malmoum-v1",
+    category: "PRODUCT DESIGN • UX/UI • FRONTEND DEVELOPMENT",
+    title: "Malmoum V1",
+    image: "/projects/malmoum/thumbnail.png",
+    client: "Independent Product",
+    year: "2024",
+    services: "PRODUCT STRATEGY • UX RESEARCH • UX/UI DESIGN • FRONTEND",
+    description1: "An independent product concept connecting homeowners with trusted technicians, nearby stores, and real-time communication inside one seamless platform.",
+    description2: "Conceived, researched, designed, and built as an MVP — Malmoum V1 explores how technology can solve the fragmentation problem in home services.",
+    about: "Malmoum started as a question: why is finding a plumber still so difficult in 2024? The product brings together technicians, homeowners, stores, and delivery into one connected ecosystem.",
+    paragraph1: "I designed the entire product experience — from research through high-fidelity prototypes to frontend implementation. The result is a cohesive vision of how home services should work.",
+    paragraph2: ""
+  },
+  {
     slug: "la-camille",
     category: "WEB DESIGN & DEVELOPMENT",
     title: "La Camille",
@@ -12,20 +26,6 @@ export const works = [
     about: "La Camille needed an online presence that reflected their premium brand while leveraging Shopify's robust e-commerce capabilities. The challenge was balancing custom design with platform constraints.",
     paragraph1: "I approached this project with mobile-first thinking, ensuring every screen felt premium while maintaining Shopify's functionality. The result is a shopping experience that guides users naturally from discovery to purchase.",
     paragraph2: "Working within Shopify's ecosystem, I customized themes, wrote Liquid templates, and crafted responsive CSS/JavaScript to deliver a cohesive brand experience across all devices."
-  },
-  {
-    slug: "malmoum-app",
-    category: "UX/UI DESIGN",
-    title: "Malmoum App",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-    client: "Home Services Startup",
-    year: "2024",
-    services: "UX/UI DESIGN • MOBILE APP",
-    description1: "Malmoum App is a revolutionary home services application designed to connect users with trusted service providers. I crafted the complete UX/UI design, focusing on creating an intuitive, beautiful interface that simplifies booking home services.",
-    description2: "The design emphasizes ease of use with clear navigation, engaging visuals, and a seamless booking flow. User testing showed improved task completion rates and positive feedback on the aesthetic appeal.",
-    about: "The Malmoum App project required a deep understanding of user needs in the home services space. I conducted user research to identify pain points in the booking process and designed solutions that make finding and booking services effortless.",
-    paragraph1: "Working closely with the product manager and development team, I created a design system that ensures consistency across all screens. The app features a modern, clean aesthetic with strategic use of color to guide user attention.",
-    paragraph2: "The result is a polished, user-friendly application that has received excellent feedback from beta users and is positioned for successful market launch."
   },
   {
     slug: "tech-planet",
@@ -113,4 +113,19 @@ export const laCamilleGallery = [
   "/projects/la-camille/product.png", // [Product Showcase Image]
   "/projects/la-camille/responsive.png", // [Responsive Devices Image]
   "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop", // [Shopify Development Screenshot]
+];
+
+export const malmoumGallery = [
+  "/projects/malmoum/hero-mockup.webp", // [Hero Product Mockup]
+  "/projects/malmoum/problem.webp", // [Problem Illustration]
+  "/projects/malmoum/brand.webp", // [Brand Presentation]
+  "/projects/malmoum/ecosystem.webp", // [Ecosystem Diagram]
+  "/projects/malmoum/user-journey.webp", // [User Journey]
+  "/projects/malmoum/map.webp", // [Map Screen]
+  "/projects/malmoum/chat-video.webp", // [Chat + Video Screen]
+  "/projects/malmoum/marketplace.webp", // [Marketplace Screens]
+  "/projects/malmoum/core-experience.webp", // [Home + Categories]
+  "/projects/malmoum/design-system.webp", // [Design System Board]
+  "/projects/malmoum/development.webp", // [Development Screenshot]
+  "/projects/malmoum/ai-concept.webp", // [AI Concept Illustration]
 ];

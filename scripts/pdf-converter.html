@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to WebP Converter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body style="font-family: system-ui; padding: 20px; max-width: 800px; margin: 0 auto;">
+    <h1>PDF to WebP Converter</h1>
+    <p>Select the Malmoum logo PDF to convert it to WebP format.</p>
+
+    <input type="file" id="fileInput" accept=".pdf" />
+    <div id="status" style="margin: 20px 0; color: #666;"></div>
+    <canvas id="canvas" style="max-width: 100%; border: 1px solid #ccc; display: none;"></canvas>
+    <button id="downloadBtn" style="display: none; margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Download WebP
+    </button>
+
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        const fileInput = document.getElementById('fileInput');
+        const status = document.getElementById('status');
+        const canvas = document.getElementById('canvas');
+        const downloadBtn = document.getElementById('downloadBtn');
+        let webpDataUrl = null;
+
+        fileInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            try {
+                status.textContent = 'Loading PDF...';
+                const arrayBuffer = await file.arrayBuffer();
+                const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+                const page = await pdf.getPage(1);
+
+                const viewport = page.getViewport({ scale: 2 });
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                canvas.style.display = 'block';
+
+                await page.render({
+                    canvasContext: canvas.getContext('2d'),
+                    viewport: viewport
+                }).promise;
+
+                // Convert to WebP
+                webpDataUrl = canvas.toDataURL('image/webp', 0.85);
+                downloadBtn.style.display = 'inline-block';
+                status.textContent = 'Conversion complete! Ready to download.';
+                status.style.color = 'green';
+
+            } catch (error) {
+                status.textContent = 'Error: ' + error.message;
+                status.style.color = 'red';
+            }
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            if (webpDataUrl) {
+                const link = document.createElement('a');
+                link.download = 'hero-mockup.webp';
+                link.href = webpDataUrl;
+                link.click();
+            }
+        });
+    </script>
+</body>
+</html>
