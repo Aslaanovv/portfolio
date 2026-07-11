@@ -968,17 +968,75 @@ function MalmoumV1CaseStudy({ work, nextWork, gallery }: any) {
 function NextProjectLink({ nextWork }: any) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-24 md:mb-32"
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+      className="mb-24 md:mb-32"
     >
-      <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4 block">Next Project</span>
-      <Link href={`/works/${nextWork.slug}`} className="inline-block group">
-        <h2 className="text-5xl md:text-7xl font-display font-bold text-foreground group-hover:text-primary transition-colors flex items-center justify-center gap-6">
-          {nextWork.title}
-          <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-10 h-10 group-hover:translate-x-2 transition-transform filter invert-0 dark:invert group-hover:invert-[0.4] sepia-[1] saturate-[100] hue-rotate-[0deg] brightness-[1]" style={{ filter: "brightness(0) saturate(100%) invert(49%) sepia(87%) saturate(3065%) hue-rotate(18deg) brightness(101%) contrast(106%)" }} />
-        </h2>
+      <Link href={`/works/${nextWork.slug}`} className="block group">
+        <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-primary">
+          {/* Project Thumbnail */}
+          <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden">
+            <img
+              src={nextWork.image}
+              alt={nextWork.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Dark overlay on hover */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+          </div>
+
+          {/* Content Overlay */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-12 text-center">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-sm md:text-base font-semibold uppercase tracking-widest text-white/90 mb-4 backdrop-blur-sm bg-black/30 px-4 py-2 rounded-full"
+            >
+              Next Project
+            </motion.span>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 drop-shadow-lg"
+            >
+              {nextWork.title}
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-lg md:text-xl text-white/80 mb-6 max-w-2xl drop-shadow"
+            >
+              {nextWork.category}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex items-center gap-3 text-white group-hover:gap-6 transition-all duration-300"
+            >
+              <span className="text-sm font-semibold uppercase tracking-wider">View Project</span>
+              <div className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300">
+                <img
+                  src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
+                  alt="View"
+                  className="w-5 h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </Link>
     </motion.div>
   );
