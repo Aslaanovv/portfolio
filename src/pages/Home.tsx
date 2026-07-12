@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <Seo title="Home" description="Product Designer & Web Developer with 7+ years of experience crafting digital experiences. Available for freelance work." />
+      <Seo title="Home" description="Product Designer & Frontend Engineer crafting products from strategy to shipped code. Turning complex problems into products people love to use." />
 
       <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
 
@@ -26,17 +26,20 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="w-full max-w-5xl mx-auto mb-20"
         >
-          <Link href="/about" className="block group">
+          <Link href="/credentials" className="block group">
             <div className="bg-card rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 border border-border shadow-sm flex flex-col-reverse sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 hover:shadow-xl hover:border-primary transition-all duration-500 relative overflow-hidden">
               <div className="flex-1 text-center sm:text-left relative z-10 order-2 sm:order-1 min-w-0">
                 <span className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-3 sm:mb-4 block">
-                  Available for freelance work
+                  Product Thinking × Design × Code
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-foreground mb-4 sm:mb-6 tracking-tight leading-[0.9]">
                   Muhammad <br /> Aslaan.
                 </h1>
-                <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-md mx-auto sm:mx-0">
-                  Product Designer & Web Developer with 7+ years of experience crafting digital experiences.
+                <p className="text-foreground font-semibold text-sm sm:text-base md:text-lg max-w-md mx-auto sm:mx-0 mb-2">
+                  Turning complex ideas into products people use.
+                </p>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base max-w-md mx-auto sm:mx-0">
+                  Product Designer & Frontend Engineer crafting products from strategy to shipped code.
                 </p>
               </div>
 
