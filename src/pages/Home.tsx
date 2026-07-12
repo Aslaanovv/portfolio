@@ -56,7 +56,7 @@ export default function Home() {
                 <img
                   src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                   alt="Arrow"
-                  className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:rotate-45 dark:brightness-0 dark:saturate-100"
+                  className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:rotate-45 brightness-0 saturate-100"
                 />
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function Home() {
                       <img
                         src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                         alt="View"
-                        className="w-5 h-5 transition-transform group-hover:translate-x-1 brightness-0 invert"
+                        className="w-5 h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
                       />
                     </div>
                   </motion.div>
@@ -163,7 +163,7 @@ export default function Home() {
                     <h3 className="text-2xl font-display font-bold">Credentials</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 dark:group-hover:brightness-0 dark:group-hover:invert transition-all" />
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function Home() {
                     <h3 className="text-2xl font-display font-bold">Projects</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 dark:group-hover:brightness-0 dark:group-hover:invert transition-all" />
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function Home() {
                     <h3 className="text-2xl font-display font-bold">Services</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 dark:group-hover:brightness-0 dark:group-hover:invert transition-all" />
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
                   </div>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-display font-bold">Services Offering</h3>
                   </div>
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5 opacity-50 group-hover:opacity-100 dark:group-hover:brightness-0 dark:group-hover:invert transition-all" />
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
                   </div>
                 </div>
               </div>

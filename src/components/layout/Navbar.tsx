@@ -1,9 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTheme } from "next-themes";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,12 +17,6 @@ export function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +30,6 @@ export function Navbar() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <>
@@ -82,16 +71,6 @@ export function Navbar() {
               })}
             </ul>
             <div className="flex items-center gap-4">
-              {/* Theme Toggle */}
-              {mounted && (
-                <button
-                  onClick={toggleTheme}
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
-                  aria-label="Toggle theme"
-                >
-                  {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-                </button>
-              )}
               <Link
                 href="/contact"
                 className="bg-foreground text-background px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
@@ -153,17 +132,8 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-12 flex items-center gap-4"
+              className="mt-12"
             >
-              {mounted && (
-                <button
-                  onClick={toggleTheme}
-                  className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
-                  aria-label="Toggle theme"
-                >
-                  {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-                </button>
-              )}
               <Link
                 href="/contact"
                 className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:bg-foreground transition-colors duration-300"
