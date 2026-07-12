@@ -1031,7 +1031,7 @@ function NextProjectLink({ nextWork }: any) {
                 <img
                   src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                   alt="View"
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
+                  className="w-5 h-5 transition-transform group-hover:translate-x-1 brightness-0 invert"
                 />
               </div>
             </motion.div>

@@ -42,11 +42,10 @@ export function BlogCard({ slug, title, excerpt, date, image, index = 0 }: BlogC
             </p>
             <div className="mt-auto flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
               <span>Read More</span>
-              <img 
-                src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" 
+              <img
+                src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                 alt="Read more"
-                className="w-4 h-4 transition-transform group-hover:translate-x-1 filter invert-0 dark:invert group-hover:invert-[0.4] sepia-[1] saturate-[100] hue-rotate-[0deg] brightness-[1]"
-                style={{ filter: "brightness(0) saturate(100%) invert(49%) sepia(87%) saturate(3065%) hue-rotate(18deg) brightness(101%) contrast(106%)" }}
+                className="w-4 h-4 transition-transform group-hover:translate-x-1 dark:brightness-0 dark:invert"
               />
             </div>
           </div>
