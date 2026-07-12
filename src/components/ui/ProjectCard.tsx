@@ -42,7 +42,7 @@ export function ProjectCard({ slug, category, title, image, index = 0 }: Project
               <img
                 src="https://framerusercontent.com/images/RNA8Jba4vAtFxrA1ensbbd4eT8.svg"
                 alt="Go"
-                className="w-4 h-4 sm:w-5 sm:h-5 filter invert-0 dark:invert group-hover:invert-0 group-hover:brightness-0 group-hover:invert transition-all"
+                className="w-4 h-4 sm:w-5 sm:h-5 dark:brightness-0 dark:invert group-hover:brightness-0 group-hover:invert transition-all"
               />
             </div>
           </div>
