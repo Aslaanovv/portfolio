@@ -45,7 +45,7 @@ export function BlogCard({ slug, title, excerpt, date, image, index = 0 }: BlogC
               <img
                 src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                 alt="Read more"
-                className="w-4 h-4 transition-transform group-hover:translate-x-1 dark:brightness-0 dark:invert"
+                className="w-4 h-4 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
               />
             </div>
           </div>

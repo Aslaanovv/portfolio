@@ -59,7 +59,7 @@ export default function Service() {
               className="bg-card rounded-xl md:rounded-[2rem] border border-border p-5 md:p-8 lg:p-12 shadow-sm flex flex-col md:flex-row gap-5 md:gap-8 items-start hover:shadow-xl hover:border-primary transition-all duration-300 group"
             >
               <div className="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 bg-background border border-border rounded-xl md:rounded-[1.5rem] flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                <img src={service.icon} alt="" className="w-7 h-7 md:w-10 md:h-10 dark:group-hover:brightness-0 dark:group-hover:invert transition-all" />
+                <img src={service.icon} alt="" className="w-7 h-7 md:w-10 md:h-10 filter group-hover:brightness-0 group-hover:invert transition-all" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold mb-3 md:mb-4">{service.title}</h3>
