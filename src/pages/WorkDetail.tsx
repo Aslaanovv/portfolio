@@ -4,6 +4,7 @@ import { Seo } from "@/components/ui/Seo";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { works, sharedGallery, laCamilleGallery, malmoumGallery } from "@/data/works";
 import { useEffect } from "react";
+import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
 
 export default function WorkDetail() {
   const [, params] = useRoute("/works/:slug");
@@ -32,6 +33,7 @@ export default function WorkDetail() {
   // Special case studies
   const isMalmoum = currentSlug === "malmoum-v1";
   const isLaCamille = currentSlug === "la-camille";
+  const isRabtek = currentSlug === "rabtek-website";
 
   let gallery;
   if (isMalmoum) gallery = malmoumGallery;
@@ -46,6 +48,8 @@ export default function WorkDetail() {
         <MalmoumV1CaseStudy work={work} nextWork={nextWork} gallery={gallery} />
       ) : isLaCamille ? (
         <LaCamilleCaseStudy work={work} nextWork={nextWork} gallery={gallery} dividerIcon={dividerIcon} lineIcon={lineIcon} />
+      ) : isRabtek ? (
+        <RabtekCaseStudy work={work} nextWork={nextWork} />
       ) : (
         <StandardCaseStudy work={work} nextWork={nextWork} gallery={gallery} dividerIcon={dividerIcon} lineIcon={lineIcon} />
       )}

@@ -43,16 +43,16 @@ export const works = [
   },
   {
     slug: "rabtek-website",
-    category: "WEB DEVELOPMENT",
+    category: "TECHNICAL SALES • ODOO ERP • WEB DEVELOPMENT",
     title: "Rabtek Integrated Solutions",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
     client: "Rabtek Integrated Solutions",
-    year: "2023",
-    services: "WEB DESIGN • DEVELOPMENT • ODOO ERP",
-    description1: "A comprehensive website and Odoo ERP implementation for Rabtek Integrated Solutions. As both Technical Sales Representative and Web Developer, I handled the full project from client negotiation to delivery.",
-    description2: "The solution includes a modern website showcasing their IT services, integrated Odoo modules for business management, and ongoing SEO support. The project demonstrates my ability to bridge technical and business requirements.",
-    about: "Rabtek Integrated Solutions specializes in Odoo ERP implementation, website development, and digital services. My role involved understanding client needs, proposing appropriate solutions, and delivering end-to-end web development projects.",
-    paragraph1: "This project highlights my unique position as someone who understands both the technical implementation and business development aspects of web services. The result is a solution that truly serves the client's needs.",
+    year: "2022–2024",
+    services: "TECHNICAL SALES • ODOO IMPLEMENTATION • WEB DEVELOPMENT",
+    description1: "A two-year journey bridging technical sales and product implementation. Client conversations revealed what businesses actually need from ERP systems — and those insights shaped every implementation decision.",
+    description2: "From sales presentations to Odoo deployments, this case study shows how facing customers directly transformed how I approach product development.",
+    about: "Rabtek Integrated Solutions provides Odoo ERP implementation and web development services. My role spanned technical sales, web development, and Odoo implementation — creating a direct feedback loop between customer needs and technical solutions.",
+    paragraph1: "Every client conversation taught me something about product thinking. Feature requests were symptoms. Adoption was the real metric. Integration mattered more than individual tools. Those lessons now inform how I approach every product decision.",
     paragraph2: ""
   },
   {
