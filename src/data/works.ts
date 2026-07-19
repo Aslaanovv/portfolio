@@ -45,7 +45,7 @@ export const works = [
     slug: "rabtek-website",
     category: "TECHNICAL SALES • ODOO ERP • WEB DEVELOPMENT",
     title: "Rabtek Integrated Solutions",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+    image: "/projects/rabtek/thumbnail.png",
     client: "Rabtek Integrated Solutions",
     year: "2022–2024",
     services: "TECHNICAL SALES • ODOO IMPLEMENTATION • WEB DEVELOPMENT",
