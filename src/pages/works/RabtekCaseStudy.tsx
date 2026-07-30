@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { MouseGlow } from "@/components/case-study/MouseGlow";
 import { NextProject } from "@/components/case-study/NextProject";
+import type { Work } from "@/types/work";
 
 interface RabtekCaseStudyProps {
-  work: any;
-  nextWork: any;
+  work: Work;
+  nextWork: Work;
 }
 
-export function RabtekCaseStudy({ work, nextWork }: RabtekCaseStudyProps) {
+export function RabtekCaseStudy({ work: _work, nextWork }: RabtekCaseStudyProps) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -162,7 +163,6 @@ export function RabtekCaseStudy({ work, nextWork }: RabtekCaseStudyProps) {
       <NextProject
         slug={nextWork.slug}
         title={nextWork.title}
-        category={nextWork.category}
         image={nextWork.image}
       />
 

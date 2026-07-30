@@ -4,7 +4,6 @@ import { Link } from "wouter";
 interface NextProjectProps {
   slug: string;
   title: string;
-  category: string;
   image: string;
 }
 
@@ -12,7 +11,7 @@ interface NextProjectProps {
  * Reusable "Next Project" card for case study navigation.
  * Used at the end of each case study to guide to the next work.
  */
-export function NextProject({ slug, title, category, image }: NextProjectProps) {
+export function NextProject({ slug, title, image }: NextProjectProps) {
   return (
     <div className="w-full bg-background">
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
