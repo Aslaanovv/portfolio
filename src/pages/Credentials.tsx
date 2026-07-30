@@ -228,8 +228,16 @@ export default function Credentials() {
                 <div>
                   <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1">Multi-media Programming & Graphic Design</h3>
                   <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">International Academy for Engineering & Media Science (IAEMS)</p>
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-2">
                     Developed foundational technical skills that made it possible to move from concept to implementation.
+                  </p>
+                  <p className="text-xs text-muted-foreground">GPA: 2.85</p>
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1">Nile Garden Language School</h3>
+                  <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">High School</p>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    Completed secondary education with a focus on languages and academic foundations.
                   </p>
                 </div>
               </div>
