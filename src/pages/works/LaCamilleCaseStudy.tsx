@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { NextProject } from "@/components/case-study/NextProject";
+import type { Work } from "@/types/work";
 
 interface LaCamilleCaseStudyProps {
-  work: any;
-  nextWork: any;
+  work: Work;
+  nextWork: Work;
   gallery: string[];
 }
 
-export function LaCamilleCaseStudy({ work, nextWork, gallery }: LaCamilleCaseStudyProps) {
+export function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: LaCamilleCaseStudyProps) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -284,7 +285,6 @@ export function LaCamilleCaseStudy({ work, nextWork, gallery }: LaCamilleCaseStu
         <NextProject
           slug={nextWork.slug}
           title={nextWork.title}
-          category={nextWork.category}
           image={nextWork.image}
         />
 
