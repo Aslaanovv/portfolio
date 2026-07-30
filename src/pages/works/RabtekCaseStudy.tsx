@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
+import { MouseGlow } from "@/components/case-study/MouseGlow";
+import { NextProject } from "@/components/case-study/NextProject";
 
 interface RabtekCaseStudyProps {
   work: any;
@@ -158,7 +159,12 @@ export function RabtekCaseStudy({ work, nextWork }: RabtekCaseStudyProps) {
       {/* ==================================== */}
       {/* SECTION 12 - NEXT PROJECT */}
       {/* ==================================== */}
-      <NextProject nextWork={nextWork} />
+      <NextProject
+        slug={nextWork.slug}
+        title={nextWork.title}
+        category={nextWork.category}
+        image={nextWork.image}
+      />
 
     </div>
   );
@@ -1140,98 +1146,5 @@ function LessonsLearned() {
 
       </div>
     </div>
-  );
-}
-
-// ====================================
-// SECTION 12 - NEXT PROJECT
-// ====================================
-
-interface NextProjectProps {
-  nextWork: any;
-}
-
-function NextProject({ nextWork }: NextProjectProps) {
-  return (
-    <div className="w-full bg-background">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <p className="text-sm text-muted-foreground/50">Continue exploring</p>
-        </motion.div>
-
-        <Link href={`/works/${nextWork.slug}`}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative w-full aspect-[21/9] rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer"
-          >
-            {/* Image */}
-            <div className="absolute inset-0">
-              <img
-                src={nextWork.image}
-                alt={nextWork.title}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
-            </div>
-
-            {/* Content */}
-            <div className="absolute inset-0 flex items-center justify-center p-8">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white text-center">
-                {nextWork.title}
-              </h3>
-            </div>
-          </motion.div>
-        </Link>
-
-      </div>
-    </div>
-  );
-}
-
-// Mouse glow follower component
-function MouseGlow() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isInView, setIsInView] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isInView) return;
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleMouseEnter = () => setIsInView(true);
-    const handleMouseLeave = () => setIsInView(false);
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseenter', handleMouseEnter);
-    window.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseenter', handleMouseEnter);
-      window.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [isInView]);
-
-  return (
-    <div
-      ref={containerRef}
-      className="pointer-events-none fixed w-[400px] h-[400px] rounded-full bg-primary/3 blur-3xl -z-10 transition-transform duration-500 ease-out"
-      style={{
-        transform: `translate(${position.x - 200}px, ${position.y - 200}px)`,
-        opacity: isInView ? 1 : 0
-      }}
-    />
   );
 }
