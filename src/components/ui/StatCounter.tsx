@@ -31,12 +31,12 @@ export function StatCounter({ value, prefix = "", suffix = "", label }: StatCoun
   }, [isInView, value]);
 
   return (
-    <div 
-      ref={ref} 
+    <div
+      ref={ref}
       className="bg-card border border-border p-8 rounded-3xl flex flex-col items-center justify-center text-center shadow-sm"
       data-testid={`stat-counter-${label.replace(/\s+/g, '-').toLowerCase()}`}
     >
-      <div className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4">
+      <div className="text-5xl md:text-6xl font-display font-bold text-primary mb-4">
         {prefix}{count < 10 && count > 0 && prefix === "" ? `0${count}` : count === 0 && prefix === "" && value < 10 ? "00" : count}{suffix}
       </div>
       <div className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">
