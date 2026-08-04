@@ -27,7 +27,7 @@ export default function Contact() {
     }
   });
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  function onSubmit(_data: z.infer<typeof formSchema>) {
     toast({
       title: "Message Sent",
       description: "Thanks for reaching out! I'll get back to you soon.",

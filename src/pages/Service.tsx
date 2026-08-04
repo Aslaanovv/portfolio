@@ -100,7 +100,7 @@ export default function Service() {
                    <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-5 h-5 md:w-6 md:h-6 rotate-180 opacity-50 group-hover:rotate-0 transition-transform duration-500" />
                 </div>
                 <div className="mt-auto">
-                  <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-1.5 md:mb-2 block">Stay with me</span>
+                  <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary mb-1.5 md:mb-2 block">Stay with me</span>
                   <h3 className="text-lg md:text-xl font-display font-bold">Profiles</h3>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default function Service() {
                    <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="mt-auto">
-                  <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-1.5 md:mb-2 block">More About Me</span>
+                  <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary mb-1.5 md:mb-2 block">More About Me</span>
                   <h3 className="text-lg md:text-xl font-display font-bold">Credentials</h3>
                 </div>
               </div>

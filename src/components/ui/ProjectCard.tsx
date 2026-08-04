@@ -18,7 +18,7 @@ export function ProjectCard({ slug, category, title, image, index = 0 }: Project
       transition={{ delay: index * 0.1, duration: 0.5 }}
       data-testid={`project-card-${slug}`}
     >
-      <Link href={`/works/${slug}`} className="block group">
+      <Link href={`/projects/${slug}`} className="block group">
         <div className="bg-card p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary flex flex-col h-full">
           <div className="rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-6 relative bg-muted">
             <img

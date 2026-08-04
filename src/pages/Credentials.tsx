@@ -91,22 +91,22 @@ export default function Credentials() {
 
               {/* Chapter 01 */}
               <div className="mb-8 md:mb-12">
-                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4 md:mb-6">Chapter 01 — Business & Leadership Foundation</h3>
+                <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4 md:mb-6">Chapter 01 — Business & Leadership Foundation</h3>
                 <p className="text-sm text-muted-foreground mb-6 max-w-2xl">These years shaped how I think about people, decisions, and value.</p>
                 <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">El Tayeb Real Estate — 2018 to 2019</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Sales Executive</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">El Tayeb Real Estate — 2018 to 2019</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Sales Executive</p>
                     <p className="text-sm text-muted-foreground">Learned how customers make decisions and what actually influences their choices. Every conversation revealed patterns in how people evaluate value.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">QUE Real Estate — 2019 to 2021</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Team Leader</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">QUE Real Estate — 2019 to 2021</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Team Leader</p>
                     <p className="text-sm text-muted-foreground">Led a sales team while learning how to align people around shared goals. Negotiation taught me that every interaction involves multiple perspectives.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">4 Gates Real Estate — 2021 to 2022</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Senior Sales</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">4 Gates Real Estate — 2021 to 2022</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Sales</p>
                     <p className="text-sm text-muted-foreground">Designed and developed the company website between client meetings. This was when I realized that digital products could multiply the impact of business relationships.</p>
                   </div>
                 </div>
@@ -114,27 +114,27 @@ export default function Credentials() {
 
               {/* Chapter 02 */}
               <div>
-                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4 md:mb-6">Chapter 02 — Digital Transformation & Product</h3>
+                <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4 md:mb-6">Chapter 02 — Digital Transformation & Product</h3>
                 <p className="text-sm text-muted-foreground mb-6 max-w-2xl">Every role moved closer to building digital products end-to-end.</p>
                 <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">Rabtek Integrated Solutions — 2022 to March 2024</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Technical Sales, Web Developer & Odoo Implementor</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Rabtek Integrated Solutions — 2022 to March 2024</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Technical Sales, Web Developer & Odoo Implementor</p>
                     <p className="text-sm text-muted-foreground">This role shifted how I approach problems. Instead of just selling solutions, I was helping build them. Managing web development, Odoo ERP implementations, and digital transformation projects taught me how business requirements become technical solutions.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">Carprogini Auto Protection — Early 2024</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Senior Direct Sales</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Carprogini Auto Protection — Early 2024</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Direct Sales</p>
                     <p className="text-sm text-muted-foreground">Working closely with customers while contributing to marketing, branding, and digital initiatives strengthened my understanding of customer behavior, communication, and how product positioning affects business outcomes.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">Abdo El Amir Auto Protection — April to November 2024</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Senior Sales & Graphic Designer</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Abdo El Amir Auto Protection — April to November 2024</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Sales & Graphic Designer</p>
                     <p className="text-sm text-muted-foreground">Combining sales with graphic design improved my ability to connect business objectives with visual communication. I learned that design is most effective when it serves clear business goals.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold mb-1">Al Waha / Shourbagy Oasis — Late 2024 to Present</h4>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Senior Sales</p>
+                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Al Waha / Shourbagy Oasis — Late 2024 to Present</h4>
+                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Sales</p>
                     <p className="text-sm text-muted-foreground">Beyond sales responsibilities, I contribute to website improvements, marketing strategy, content, branding, and digital communication. Each role continues the journey toward product thinking — understanding what users need and how businesses can deliver it.</p>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function Credentials() {
                     <p className="text-muted-foreground italic mb-3 md:mb-4 text-sm sm:text-base">"The UX/UI design for our home services app works well. Muhammad understood our vision and created an interface our users use."</p>
                     <p className="font-bold text-sm sm:text-base">Nadia Fathy</p>
                     <p className="text-xs sm:text-sm text-primary mb-2">Product Manager, Malmoum App</p>
-                    <Link href="/works/malmoum-v1" className="text-xs text-primary hover:underline">View Case Study →</Link>
+                    <Link href="/projects/malmoum-v1" className="text-xs text-primary hover:underline">View Case Study →</Link>
                   </div>
                 </div>
               </motion.div>
@@ -185,7 +185,7 @@ export default function Credentials() {
 
               {/* Final CTA */}
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
-                <Link href="/works" className="group inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-foreground hover:text-background transition-all duration-300">
+                <Link href="/projects" className="group inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-foreground hover:text-background transition-all duration-300">
                   <span>View Selected Case Studies</span>
                   <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
