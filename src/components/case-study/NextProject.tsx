@@ -26,7 +26,7 @@ export function NextProject({ slug, title, image }: NextProjectProps) {
           <p className="text-sm text-muted-foreground/50">Continue exploring</p>
         </motion.div>
 
-        <Link href={`/works/${slug}`}>
+        <Link href={`/projects/${slug}`}>
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}

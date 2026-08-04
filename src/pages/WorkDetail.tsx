@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
 
 export default function WorkDetail() {
-  const [, params] = useRoute("/works/:slug");
+  const [, params] = useRoute("/projects/:slug");
   const currentSlug = params?.slug;
   
   const currentIndex = works.findIndex(w => w.slug === currentSlug);
@@ -21,7 +21,7 @@ export default function WorkDetail() {
     return (
       <div className="container mx-auto px-4 py-32 text-center">
         <h1 className="text-4xl font-bold mb-4">Project not found</h1>
-        <Link href="/works" className="text-primary hover:underline">Back to Works</Link>
+        <Link href="/projects" className="text-primary hover:underline">Back to Projects</Link>
       </div>
     );
   }
@@ -42,7 +42,7 @@ export default function WorkDetail() {
 
   return (
     <>
-      <Seo title={`${work.title} | Works`} description={work.description1} />
+      <Seo title={`${work.title} | Projects`} description={work.description1} />
 
       {isMalmoum ? (
         <MalmoumV1CaseStudy work={work} nextWork={nextWork} gallery={gallery} />
@@ -164,7 +164,7 @@ function StandardCaseStudy({ work, nextWork, gallery, dividerIcon, lineIcon }: a
 }
 
 // Premium La Camille case study with hero video
-function LaCamilleCaseStudy({ work, nextWork, gallery }: any) {
+function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: any) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -445,7 +445,7 @@ function LaCamilleCaseStudy({ work, nextWork, gallery }: any) {
 }
 
 // Malmoum V1 Case Study - Independent Product
-function MalmoumV1CaseStudy({ work, nextWork, gallery }: any) {
+function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -978,7 +978,7 @@ function NextProjectLink({ nextWork }: any) {
       transition={{ duration: 0.8 }}
       className="mb-24 md:mb-32"
     >
-      <Link href={`/works/${nextWork.slug}`} className="block group">
+      <Link href={`/projects/${nextWork.slug}`} className="block group">
         <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-primary">
           {/* Project Thumbnail */}
           <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden">

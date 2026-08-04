@@ -16,7 +16,7 @@ export function Footer() {
           </div>
 
           <nav className="flex items-center gap-4 md:gap-6 flex-wrap justify-center">
-            {["Home", "About", "Service", "Works", "Credentials", "Contact"].map((label) => (
+            {["Home", "About", "Service", "Projects", "Credentials", "Contact"].map((label) => (
               <Link
                 key={label}
                 href={label === "Home" ? "/" : `/${label.toLowerCase()}`}

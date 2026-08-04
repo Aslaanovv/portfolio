@@ -15,9 +15,9 @@ export function Marquee() {
               <span className="text-sm font-semibold tracking-[0.2em] uppercase text-foreground">
                 Latest Work And Featured
               </span>
-              <img 
-                src="https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg" 
-                alt="*" 
+              <img
+                src="https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg"
+                alt="*"
                 className="w-4 h-4"
               />
             </div>

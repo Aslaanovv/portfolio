@@ -30,7 +30,7 @@ export default function Home() {
             <div className="bg-card rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 border border-border shadow-sm flex flex-col-reverse sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 hover:shadow-xl hover:border-primary transition-all duration-500 relative overflow-hidden">
               <div className="flex-1 text-center sm:text-left relative z-10 order-2 sm:order-1 min-w-0">
                 <span className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-3 sm:mb-4 block">
-                  Product Thinking × Design × Code
+                  Product Thinking <span className="text-primary">×</span> Design <span className="text-primary">×</span> Code
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-foreground mb-4 sm:mb-6 tracking-tight leading-[0.9]">
                   Muhammad <br /> Aslaan.
@@ -79,7 +79,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="w-full -mx-4 md:-mx-8 mb-20"
         >
-          <Link href="/works/malmoum-v1" className="block group">
+          <Link href="/projects/malmoum-v1" className="block group">
             <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border hover:border-primary transition-all duration-500">
               {/* Video Background */}
               <div className="relative aspect-[21/9] md:aspect-[16/7] overflow-hidden">
@@ -162,7 +162,7 @@ export default function Home() {
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
-                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">More About Me</span>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">More About Me</span>
                     <h3 className="text-2xl font-display font-bold">Credentials</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
@@ -174,14 +174,14 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <Link href="/works" className="block group h-full">
+            <Link href="/projects" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
                   <img src="https://framerusercontent.com/images/DarH9E4Ou5gzGBivriCWY2Oc8.png" alt="Works Portfolio" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
-                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">Showcase</span>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">Showcase</span>
                     <h3 className="text-2xl font-display font-bold">Projects</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
@@ -200,7 +200,7 @@ export default function Home() {
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
-                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">What I Do</span>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">What I Do</span>
                     <h3 className="text-2xl font-display font-bold">Services</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
@@ -231,7 +231,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-end justify-between">
                   <div>
-                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">Specialization</span>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">Specialization</span>
                     <h3 className="text-2xl md:text-3xl font-display font-bold">Services Offering</h3>
                   </div>
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
@@ -250,7 +250,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-end justify-between mt-auto">
                   <div>
-                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2 block">Stay with me</span>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">Stay with me</span>
                     <h3 className="text-xl md:text-2xl font-display font-bold">Profiles</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
