@@ -207,30 +207,6 @@ export default function Home() {
 
         </div>
 
-        {/* PROFILES */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2 lg:col-start-2">
-            <Link href="/contact" className="block group h-full">
-              <div className="bg-card p-6 sm:p-8 md:p-12 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between">
-                <div className="bg-muted w-full aspect-square rounded-full flex items-center justify-center mb-6 md:mb-8 border border-border relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg')] bg-center bg-no-repeat bg-[length:40%] opacity-20 group-hover:rotate-45 group-hover:scale-110 transition-all duration-500"></div>
-                </div>
-                <div className="flex items-end justify-between mt-auto">
-                  <div>
-                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">Stay with me</span>
-                    <h3 className="text-xl md:text-2xl font-display font-bold">Profiles</h3>
-                  </div>
-                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-
-        </div>
-
         {/* STATS */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <StatCounter value={7} prefix="0+" label="Years Experience" />
