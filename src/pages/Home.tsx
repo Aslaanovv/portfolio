@@ -6,6 +6,12 @@ import { CtaBanner } from "@/components/ui/CtaBanner";
 import { StatCounter } from "@/components/ui/StatCounter";
 
 export default function Home() {
+  const serviceIcons = [
+    { name: "UX/UI Design", icon: "https://framerusercontent.com/images/K13RDSP01nuPzaFw396WcnQGqAQ.svg" },
+    { name: "Web Development", icon: "https://framerusercontent.com/images/ztUMbbffxmRPIHucB8JDDw1MIs.svg" },
+    { name: "Branding", icon: "https://framerusercontent.com/images/anlWrCCP00uS2seSO4dXnN9G9c.svg" },
+    { name: "Odoo ERP", icon: "https://framerusercontent.com/images/Rstu8XY2NsBMaWhqZq67KuwJ0.svg" }
+  ];
 
   return (
     <>
@@ -145,8 +151,8 @@ export default function Home() {
           </Link>
         </motion.div>
 
-        {/* FEATURE CARDS */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        {/* 3 FEATURE CARDS */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
             <Link href="/credentials" className="block group h-full">
@@ -186,8 +192,76 @@ export default function Home() {
             </Link>
           </motion.div>
 
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
+            <Link href="/service" className="block group h-full">
+              <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
+                  <img src="https://framerusercontent.com/images/F6zvHN84xgsMwNeNdcRXZmhxOU.png" alt="Services Offered" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                </div>
+                <div className="mt-auto flex items-end justify-between">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">What I Do</span>
+                    <h3 className="text-2xl font-display font-bold">Services</h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
         </div>
 
+        {/* SERVICES AND PROFILES */}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 mb-20">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="lg:col-span-3"
+          >
+            <Link href="/service" className="block group h-full">
+              <div className="bg-card p-6 sm:p-8 md:p-12 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between relative overflow-hidden">
+                <div className="flex flex-wrap gap-8 md:gap-12 mb-10 md:mb-16 justify-center md:justify-start">
+                  {serviceIcons.map((service) => (
+                    <div key={service.name} className="flex flex-col items-center gap-4">
+                      <img src={service.icon} alt={service.name + ' service icon'} className="w-10 h-10 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-end justify-between">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">Specialization</span>
+                    <h3 className="text-2xl md:text-3xl font-display font-bold">Services Offering</h3>
+                  </div>
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <Link href="/contact" className="block group h-full">
+              <div className="bg-card p-6 sm:p-8 md:p-12 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between">
+                <div className="bg-muted w-full aspect-square rounded-full flex items-center justify-center mb-6 md:mb-8 border border-border relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg')] bg-center bg-no-repeat bg-[length:40%] opacity-20 group-hover:rotate-45 group-hover:scale-110 transition-all duration-500"></div>
+                </div>
+                <div className="flex items-end justify-between mt-auto">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">Stay with me</span>
+                    <h3 className="text-xl md:text-2xl font-display font-bold">Profiles</h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
+                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="Arrow" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+        </div>
 
         {/* STATS */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
