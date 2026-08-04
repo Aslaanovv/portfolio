@@ -209,10 +209,10 @@ export default function Home() {
 
         {/* STATS */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          <StatCounter value={7} prefix="0+" label="Years Experience" />
+          <StatCounter value={7} prefix="+" label="Years Experience" />
           <StatCounter value={25} prefix="+" label="Projects Completed" />
           <StatCounter value={15} prefix="+" label="Happy Clients" />
-          <StatCounter value={100} prefix="+" label="Client Satisfaction" />
+          <StatCounter value={98} suffix="%" label="Client Satisfaction" />
         </div>
 
         <CtaBanner />
