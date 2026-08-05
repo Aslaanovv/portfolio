@@ -27,6 +27,17 @@ export default function Service() {
     }
   ];
 
+  const tools = [
+    { name: "Figma", category: "Design" },
+    { name: "React", category: "Frontend" },
+    { name: "TypeScript", category: "Frontend" },
+    { name: "Tailwind", category: "Styling" },
+    { name: "Cursor", category: "AI" },
+    { name: "Claude", category: "AI" },
+    { name: "Vite", category: "Build" },
+    { name: "Framer Motion", category: "Animation" }
+  ];
+
   return (
     <>
       <Seo title="Service" />
@@ -146,18 +157,27 @@ export default function Service() {
           viewport={{ once: true }}
           className="w-full max-w-5xl mx-auto mb-16 md:mb-24"
         >
-          <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6 md:mb-8 text-center">Tools & Technologies</h2>
-          <div className="bg-card rounded-xl md:rounded-[2rem] border border-border p-5 md:p-8 lg:p-12">
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 md:gap-6 text-center">
-              {['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'VS Code', 'GitHub', 'Odoo', 'WordPress'].map((tool) => (
-                <div key={tool} className="flex flex-col items-center gap-2 md:gap-3">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-muted rounded-lg md:rounded-xl flex items-center justify-center">
-                    <span className="text-xl md:text-2xl">⚡</span>
-                  </div>
-                  <span className="text-[10px] sm:text-xs md:text-sm font-medium text-muted-foreground">{tool}</span>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold mb-4 md:mb-6 text-center">Tools & Technologies</h2>
+          <p className="text-muted-foreground text-center mb-10 md:mb-12 max-w-2xl mx-auto">
+            The modern stack I use to ship products.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {tools.map((tool, index) => (
+              <motion.div
+                key={tool.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-card border border-border rounded-xl md:rounded-2xl p-5 md:p-6 text-center hover:border-primary hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-muted rounded-lg md:rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-primary/10 transition-colors">
+                  <span className="text-xl md:text-2xl font-display font-bold text-primary">{tool.name.charAt(0)}</span>
                 </div>
-              ))}
-            </div>
+                <span className="text-sm md:text-base font-semibold text-foreground block">{tool.name}</span>
+                <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">{tool.category}</span>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
