@@ -84,6 +84,61 @@ export default function Service() {
           ))}
         </div>
 
+        {/* Process Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="w-full max-w-5xl mx-auto mb-16 md:mb-24"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 md:mb-6 text-center">How I Work</h2>
+          <p className="text-muted-foreground text-center mb-10 md:mb-16 max-w-2xl mx-auto">
+            A clear process from our first conversation to final delivery.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {[
+              {
+                number: "01",
+                title: "Discovery",
+                desc: "Understanding your needs, goals, and constraints"
+              },
+              {
+                number: "02",
+                title: "Design",
+                desc: "Creating the solution — from concepts to polished designs"
+              },
+              {
+                number: "03",
+                title: "Build",
+                desc: "Bringing it to life with clean, scalable code"
+              },
+              {
+                number: "04",
+                title: "Deliver",
+                desc: "Launch, support, and ensuring everything works perfectly"
+              }
+            ].map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <span className="text-5xl md:text-6xl font-display font-bold text-primary/80 block mb-4">
+                  {step.number}
+                </span>
+                <h3 className="text-lg md:text-xl font-display font-bold mb-2">{step.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Tools & Technologies */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
