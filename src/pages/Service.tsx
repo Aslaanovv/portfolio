@@ -2,27 +2,28 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Seo } from "@/components/ui/Seo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PenTool, Code, Sparkles, Building2 } from "lucide-react";
 
 export default function Service() {
   const services = [
     {
       title: "UX/UI Design",
-      icon: "https://framerusercontent.com/images/K13RDSP01nuPzaFw396WcnQGqAQ.svg",
+      icon: PenTool,
       desc: "Creating intuitive and beautiful user experiences that delight users and drive engagement. From wireframes to high-fidelity prototypes, I design interfaces that are both visually stunning and highly functional."
     },
     {
       title: "Web Development",
-      icon: "https://framerusercontent.com/images/ztUMbbffxmRPIHucB8JDDw1MIs.svg",
+      icon: Code,
       desc: "Building modern, responsive web applications using cutting-edge technologies. Specializing in React, TypeScript, and modern frameworks to create fast, secure, and scalable websites."
     },
     {
       title: "Branding",
-      icon: "https://framerusercontent.com/images/anlWrCCP00uS2seSO4dXnN9G9c.svg",
+      icon: Sparkles,
       desc: "Crafting memorable brand identities that resonate. From logo design to comprehensive brand guidelines, I create cohesive visual systems that tell your story across all touchpoints."
     },
     {
       title: "Odoo ERP",
-      icon: "https://framerusercontent.com/images/Rstu8XY2NsBMaWhqZq67KuwJ0.svg",
+      icon: Building2,
       desc: "Enterprise solutions and Odoo ERP implementations. From needs assessment to module configuration and staff training, I help businesses streamline operations with powerful ERP systems."
     }
   ];
@@ -65,7 +66,7 @@ export default function Service() {
         >
           {services.map((s, i) => (
             <div key={i} className="bg-card border border-border px-5 md:px-8 py-2.5 md:py-4 rounded-full shadow-sm flex items-center gap-2 md:gap-4 hover:border-primary transition-colors">
-              <img src={s.icon} alt="" className="w-4 h-4 md:w-6 md:h-6" />
+              <s.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
               <span className="font-semibold uppercase tracking-wider text-[10px] sm:text-xs md:text-sm">{s.title}</span>
             </div>
           ))}
@@ -85,7 +86,7 @@ export default function Service() {
               className="bg-card rounded-xl md:rounded-[2rem] border border-border p-5 md:p-8 lg:p-12 shadow-sm flex flex-col md:flex-row gap-5 md:gap-8 items-start hover:shadow-xl hover:border-primary transition-all duration-300 group"
             >
               <div className="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 bg-background border border-border rounded-xl md:rounded-[1.5rem] flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                <img src={service.icon} alt="" className="w-7 h-7 md:w-10 md:h-10 filter group-hover:brightness-0 group-hover:invert transition-all" />
+                <service.icon className="w-7 h-7 md:w-10 md:h-10 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold mb-3 md:mb-4">{service.title}</h3>
