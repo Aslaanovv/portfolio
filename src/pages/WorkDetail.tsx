@@ -72,7 +72,7 @@ function StandardCaseStudy({ work, nextWork, gallery, dividerIcon, lineIcon }: a
         </span>
         <img src={dividerIcon} alt="" className="h-6 mx-auto mb-8" />
         <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight max-w-3xl mx-auto mb-8 text-balance">
-          Aesthetic design for brand / new startup
+          {work.title}
         </h1>
         <img src={dividerIcon} alt="" className="h-6 mx-auto" />
       </div>
