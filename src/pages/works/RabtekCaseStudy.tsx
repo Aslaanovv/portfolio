@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { MouseGlow } from "@/components/case-study/MouseGlow";
 import { NextProject } from "@/components/case-study/NextProject";
 import type { Work } from "@/types/work";
+import { ExternalLink } from "lucide-react";
 
 interface RabtekCaseStudyProps {
   work: Work;
   nextWork: Work;
 }
 
-export function RabtekCaseStudy({ work: _work, nextWork }: RabtekCaseStudyProps) {
+export function RabtekCaseStudy({ work, nextWork }: RabtekCaseStudyProps) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -88,6 +89,22 @@ export function RabtekCaseStudy({ work: _work, nextWork }: RabtekCaseStudyProps)
               <p className="text-base md:text-lg text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
                 A two-year journey at Rabtek where client-facing technical sales informed every implementation decision.
               </p>
+
+              {/* VIEW LIVE BUTTON */}
+              {work.liveUrl && (
+                <motion.a
+                  href={work.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full transition-colors mt-8"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  View Live Project
+                </motion.a>
+              )}
             </motion.div>
           </motion.div>
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { NextProject } from "@/components/case-study/NextProject";
 import type { Work } from "@/types/work";
+import { ExternalLink } from "lucide-react";
 
 interface LaCamilleCaseStudyProps {
   work: Work;
@@ -9,7 +10,7 @@ interface LaCamilleCaseStudyProps {
   gallery: string[];
 }
 
-export function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: LaCamilleCaseStudyProps) {
+export function LaCamilleCaseStudy({ work, nextWork, gallery }: LaCamilleCaseStudyProps) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -42,6 +43,26 @@ export function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: LaCamille
             <span>UX/UI + Development</span>
           </div>
         </motion.div>
+
+        {/* VIEW LIVE BUTTON */}
+        {work.liveUrl && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mb-8"
+          >
+            <a
+              href={work.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View Live Project
+            </a>
+          </motion.div>
+        )}
       </div>
 
       {/* HERO VIDEO SECTION */}
