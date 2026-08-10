@@ -79,7 +79,7 @@ export function RabtekCaseStudy({ work: _work, nextWork }: RabtekCaseStudyProps)
               transition={{ delay: 0.6, duration: 1.2 }}
               className="mt-16 text-center"
             >
-              <p className="text-xs md:text-sm font-mono text-primary mb-6 tracking-widest uppercase">
+              <p className="text-xs md:text-sm font-mono text-blue mb-6 tracking-widest uppercase">
                 2022 — March 2024
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground mb-6 leading-tight tracking-tight">
@@ -99,7 +99,7 @@ export function RabtekCaseStudy({ work: _work, nextWork }: RabtekCaseStudyProps)
             className="absolute bottom-8 left-1/2 -translate-x-1/2"
           >
             <div className="w-px h-16 bg-gradient-to-b from-transparent via-border/50 to-transparent mx-auto mb-4" />
-            <p className="text-[10px] font-mono text-primary uppercase tracking-widest text-center">
+            <p className="text-[10px] font-mono text-blue uppercase tracking-widest text-center">
               Scroll
             </p>
           </motion.div>
@@ -207,7 +207,7 @@ function ProjectSnapshot() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Project Snapshot
           </p>
         </motion.div>
@@ -223,7 +223,7 @@ function ProjectSnapshot() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight tracking-tight">
             Rabtek Integrated Solutions
           </h2>
-          <p className="text-lg md:text-xl text-primary/80 mt-3">
+          <p className="text-lg md:text-xl text-blue/80 mt-3">
             Enterprise Website & Digital Transformation
           </p>
         </motion.div>
@@ -247,7 +247,7 @@ function ProjectSnapshot() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-16 md:mb-24"
         >
-          <p className="text-xs font-mono text-primary/70 uppercase tracking-wider mb-8">
+          <p className="text-xs font-mono text-blue/70 uppercase tracking-wider mb-8">
             Executive Summary
           </p>
 
@@ -261,10 +261,10 @@ function ProjectSnapshot() {
                 transition={{ duration: 0.5, delay: 0.4 + (index * 0.05) }}
                 className="flex justify-start items-baseline py-3 border-b border-border/10"
               >
-                <span className="text-[10px] font-mono text-primary uppercase tracking-wider w-32 flex-shrink-0">
+                <span className="text-[10px] font-mono text-blue uppercase tracking-wider w-32 flex-shrink-0">
                   {item.label}
                 </span>
-                <span className="text-sm text-primary flex-1">
+                <span className="text-sm text-blue flex-1">
                   {item.value}
                 </span>
               </motion.div>
@@ -281,7 +281,7 @@ function ProjectSnapshot() {
           className="pt-8 border-t border-border/10"
         >
           <p className="text-xs text-muted-foreground/40 max-w-3xl leading-relaxed">
-            <span className="font-mono uppercase tracking-wider text-primary/60">Editorial Note:</span> Every implementation decision documented in this case study is based on real project work. Where representative implementation environments are presented later in the case study, they are clearly identified to preserve complete authenticity.
+            <span className="font-mono uppercase tracking-wider text-blue/60">Editorial Note:</span> Every implementation decision documented in this case study is based on real project work. Where representative implementation environments are presented later in the case study, they are clearly identified to preserve complete authenticity.
           </p>
         </motion.div>
 
@@ -316,7 +316,7 @@ function Introduction() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Introduction
           </p>
         </motion.div>
@@ -357,7 +357,7 @@ function Introduction() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-wider mb-10">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-wider mb-10">
             Supporting Facts
           </p>
 
@@ -372,10 +372,10 @@ function Introduction() {
                 className="py-5 border-b border-border/10 last:border-0"
               >
                 <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-6">
-                  <span className="text-[10px] font-mono text-primary uppercase tracking-wider w-40 flex-shrink-0">
+                  <span className="text-[10px] font-mono text-blue uppercase tracking-wider w-40 flex-shrink-0">
                     {fact.label}
                   </span>
-                  <span className="text-sm text-primary/90">
+                  <span className="text-sm text-blue/90">
                     {fact.value}
                   </span>
                 </div>
@@ -427,7 +427,7 @@ function UnderstandingBusiness() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Understanding the Business
           </p>
         </motion.div>
@@ -460,7 +460,7 @@ function UnderstandingBusiness() {
               <div className="flex items-start gap-6 md:gap-10">
                 <div className="flex-shrink-0">
                   <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${stage.color} border border-border/20 flex items-center justify-center`}>
-                    <span className="text-xs md:text-sm font-mono text-primary/80">
+                    <span className="text-xs md:text-sm font-mono text-blue/80">
                       {stage.number}
                     </span>
                   </div>
@@ -539,7 +539,7 @@ function ConversationsToDecisions() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             From Conversations to Decisions
           </p>
         </motion.div>
@@ -589,10 +589,10 @@ function ConversationsToDecisions() {
 
 function WebsiteGallery() {
   const galleryImages = [
-    { src: "/projects/rabtek/homepage.png", label: "Homepage", description: "Enterprise-focused hero with clear value proposition" },
-    { src: "/projects/rabtek/about.png", label: "About", description: "Company story and service offerings" },
-    { src: "/projects/rabtek/services.png", label: "Services", description: "Odoo and web service capabilities" },
-    { src: "/projects/rabtek/contact.png", label: "Contact", description: "Lead capture and inquiry forms" },
+    { src: "/projects/rabtek/homepage.webp", label: "Homepage", description: "Enterprise-focused hero with clear value proposition" },
+    { src: "/projects/rabtek/about.webp", label: "About", description: "Company story and service offerings" },
+    { src: "/projects/rabtek/services.webp", label: "Services", description: "Odoo and web service capabilities" },
+    { src: "/projects/rabtek/contact.webp", label: "Contact", description: "Lead capture and inquiry forms" },
   ];
 
   return (
@@ -607,7 +607,7 @@ function WebsiteGallery() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Website Gallery
           </p>
         </motion.div>
@@ -620,7 +620,7 @@ function WebsiteGallery() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-16 md:mb-20 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue leading-tight tracking-tight">
             Across the Website
           </h2>
           <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl mx-auto">
@@ -648,7 +648,7 @@ function WebsiteGallery() {
                     <div className="w-2 h-2 rounded-full bg-green-500/40" />
                   </div>
                   <div className="flex-1">
-                    <span className="text-[10px] text-primary/70 font-mono">rabtek.net/{item.label.toLowerCase()}</span>
+                    <span className="text-[10px] text-blue/70 font-mono">rabtek.net/{item.label.toLowerCase()}</span>
                   </div>
                 </div>
 
@@ -664,7 +664,7 @@ function WebsiteGallery() {
                 {/* Info */}
                 <div className="p-5 md:p-6">
                   <h3 className="text-lg md:text-xl font-display font-bold text-foreground mb-2">{item.label}</h3>
-                  <p className="text-sm text-primary/80">{item.description}</p>
+                  <p className="text-sm text-blue/80">{item.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -679,7 +679,7 @@ function WebsiteGallery() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <p className="text-xs text-primary/70 max-w-xl mx-auto">
+          <p className="text-xs text-blue/70 max-w-xl mx-auto">
             Each page designed with clear information hierarchy, focused CTAs, and mobile responsiveness — ensuring the site works as hard as the team behind it.
           </p>
         </motion.div>
@@ -706,7 +706,7 @@ function MobileExperience() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Mobile Experience
           </p>
         </motion.div>
@@ -719,7 +719,7 @@ function MobileExperience() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-16 md:mb-20 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue leading-tight tracking-tight">
             Professional on Every Screen
           </h2>
           <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl mx-auto">
@@ -739,11 +739,11 @@ function MobileExperience() {
             className="relative w-[160px] md:w-[200px]"
           >
             <img
-              src="/projects/rabtek/mobile-home.png"
+              src="/projects/rabtek/mobile-home.webp"
               alt="Mobile Homepage"
               className="w-full h-auto rounded-3xl shadow-2xl object-cover"
             />
-            <p className="text-center text-xs text-primary mt-4 font-mono">Home</p>
+            <p className="text-center text-xs text-blue mt-4 font-mono">Home</p>
           </motion.div>
 
           {/* Phone 2 */}
@@ -755,11 +755,11 @@ function MobileExperience() {
             className="relative w-[160px] md:w-[200px]"
           >
             <img
-              src="/projects/rabtek/mobile-services.png"
+              src="/projects/rabtek/mobile-services.webp"
               alt="Mobile Services"
               className="w-full h-auto rounded-3xl shadow-2xl object-cover"
             />
-            <p className="text-center text-xs text-primary mt-4 font-mono">Services</p>
+            <p className="text-center text-xs text-blue mt-4 font-mono">Services</p>
           </motion.div>
 
           {/* Phone 3 */}
@@ -771,11 +771,11 @@ function MobileExperience() {
             className="relative w-[160px] md:w-[200px]"
           >
             <img
-              src="/projects/rabtek/mobile-contact.png"
+              src="/projects/rabtek/mobile-contact.webp"
               alt="Mobile Contact"
               className="w-full h-auto rounded-3xl shadow-2xl object-cover"
             />
-            <p className="text-center text-xs text-primary mt-4 font-mono">Contact</p>
+            <p className="text-center text-xs text-blue mt-4 font-mono">Contact</p>
           </motion.div>
 
         </div>
@@ -790,7 +790,7 @@ function MobileExperience() {
         >
           <div className="text-center">
             <div className="w-10 h-10 bg-muted rounded-xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </div>
@@ -799,7 +799,7 @@ function MobileExperience() {
           </div>
           <div className="text-center">
             <div className="w-10 h-10 bg-muted rounded-xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
@@ -808,7 +808,7 @@ function MobileExperience() {
           </div>
           <div className="text-center">
             <div className="w-10 h-10 bg-muted rounded-xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
@@ -853,10 +853,10 @@ function EvidenceStrip() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + (index * 0.08) }}
             >
-              <p className="text-xs font-mono text-primary uppercase tracking-wider mb-2">
+              <p className="text-xs font-mono text-blue uppercase tracking-wider mb-2">
                 {item.label}
               </p>
-              <p className="text-sm text-primary/80">
+              <p className="text-sm text-blue/80">
                 {item.description}
               </p>
             </motion.div>
@@ -885,7 +885,7 @@ function BeyondWebsite() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Beyond the Website
           </p>
         </motion.div>
@@ -919,7 +919,7 @@ function BeyondWebsite() {
             {/* Screen */}
             <div className="relative bg-black rounded-[1.5rem] overflow-hidden aspect-[4/3]">
               <img
-                src="/projects/rabtek/odoo-crm.png"
+                src="/projects/rabtek/odoo-crm.webp"
                 alt="Representative Odoo implementation environment"
                 className="w-full h-full object-cover"
               />
@@ -975,7 +975,7 @@ function ImplementationProcess() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Implementation Process
           </p>
         </motion.div>
@@ -1008,7 +1008,7 @@ function ImplementationProcess() {
               className="flex items-start gap-6 py-6 border-b border-border/10 last:border-0"
             >
               <div className="flex-shrink-0 w-12">
-                <div className="text-xs font-mono text-primary/70">
+                <div className="text-xs font-mono text-blue/70">
                   {String(index + 1).padStart(2, '0')}
                 </div>
               </div>
@@ -1054,7 +1054,7 @@ function ConnectedExperience() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Connected Experience
           </p>
         </motion.div>
@@ -1169,7 +1169,7 @@ function MyContribution() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             My Contribution
           </p>
         </motion.div>
@@ -1197,13 +1197,13 @@ function MyContribution() {
           {/* Matrix header */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 pb-4 border-b border-border/20 mb-4">
             <div className="md:col-span-4">
-              <p className="text-[10px] font-mono text-primary uppercase tracking-wider">Responsibility</p>
+              <p className="text-[10px] font-mono text-blue uppercase tracking-wider">Responsibility</p>
             </div>
             <div className="md:col-span-3">
-              <p className="text-[10px] font-mono text-primary uppercase tracking-wider">Ownership</p>
+              <p className="text-[10px] font-mono text-blue uppercase tracking-wider">Ownership</p>
             </div>
             <div className="md:col-span-5">
-              <p className="text-[10px] font-mono text-primary uppercase tracking-wider">Notes</p>
+              <p className="text-[10px] font-mono text-blue uppercase tracking-wider">Notes</p>
             </div>
           </div>
 
@@ -1219,7 +1219,7 @@ function MyContribution() {
                 className="grid grid-cols-1 md:grid-cols-12 gap-4 py-4 border-b border-border/10 last:border-0"
               >
                 <div className="md:col-span-4">
-                  <p className="text-sm text-primary">{item.area}</p>
+                  <p className="text-sm text-blue">{item.area}</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className={`text-sm ${item.ownership === 'Owned' ? 'text-foreground/70' : item.ownership === 'Supported' ? 'text-muted-foreground/50' : 'text-muted-foreground/30'}`}>
@@ -1227,7 +1227,7 @@ function MyContribution() {
                   </p>
                 </div>
                 <div className="md:col-span-5">
-                  <p className="text-sm text-primary/70">{item.notes}</p>
+                  <p className="text-sm text-blue/70">{item.notes}</p>
                 </div>
               </motion.div>
             ))}
@@ -1279,7 +1279,7 @@ function LessonsLearned() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-[10px] font-mono text-primary uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-blue uppercase tracking-widest">
             Lessons Learned
           </p>
         </motion.div>
@@ -1296,7 +1296,7 @@ function LessonsLearned() {
           >
             <div className="flex items-start gap-8 md:gap-12">
               <div className="flex-shrink-0">
-                <span className="text-6xl md:text-7xl lg:text-8xl font-display font-bold text-primary/20 leading-none">
+                <span className="text-6xl md:text-7xl lg:text-8xl font-display font-bold text-blue/20 leading-none">
                   {item.number}
                 </span>
               </div>

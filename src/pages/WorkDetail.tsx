@@ -186,277 +186,568 @@ function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: any) {
   return (
     <div className="w-full">
 
-      {/* HERO TEXT SECTION - BEFORE VIDEO */}
-      <div className="w-full min-h-[50vh] flex flex-col items-center justify-center px-4 text-center bg-background">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
-          <p className="text-sm md:text-base font-semibold uppercase tracking-widest mb-6 text-muted-foreground">
-            WEB DESIGN & DEVELOPMENT
-          </p>
+      {/* HERO - Cinematic full-screen with video */}
+      <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8 text-balance text-foreground">
-            La Camille
-          </h1>
-
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12 text-muted-foreground leading-relaxed">
-            Designing and developing a premium Shopify experience for a luxury lingerie brand.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-sm md:text-base text-muted-foreground">
-            <span>February – April 2026</span>
-            <span>2 Months</span>
-            <span>Shopify</span>
-            <span>UX/UI + Development</span>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* HERO VIDEO SECTION */}
-      <div className="relative w-full overflow-hidden aspect-[16/9]">
+        {/* Hero Video Background */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
           poster="/projects/la-camille/thumbnail.webp"
         >
           <source src="/la-camille-hero.mp4" type="video/mp4" />
         </video>
+
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+
+        {/* Hero Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          className="relative z-10 flex flex-col items-center justify-center px-4 text-center"
+        >
+          <p className="text-sm md:text-base font-mono text-amber mb-6 tracking-widest uppercase">
+            2026
+          </p>
+
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-tight mb-8 text-balance text-foreground">
+            La Camille
+          </h1>
+
+          <p className="text-xl md:text-2xl max-w-2xl mx-auto text-muted-foreground leading-relaxed">
+            Premium Shopify experience for a luxury lingerie brand.
+          </p>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        >
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-border/50 to-transparent mx-auto mb-4" />
+          <p className="text-[10px] font-mono text-amber uppercase tracking-widest text-center">
+            Scroll
+          </p>
+        </motion.div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 max-w-5xl py-20">
+      <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
 
         {/* SECTION 01: PROJECT SNAPSHOT */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+            Project Snapshot
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight tracking-tight">
+            La Camille
+          </h2>
+          <p className="text-lg md:text-xl text-amber/80 mt-3">
+            Luxury E-commerce on Shopify
+          </p>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-base md:text-lg text-muted-foreground/80 max-w-3xl leading-relaxed mb-16 md:mb-24"
+        >
+          A premium e-commerce experience for La Camille, combining Shopify's power with bespoke design. Every touchpoint crafted to showcase products beautifully and convert visitors into customers.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <p className="text-xs font-mono text-amber/70 uppercase tracking-wider mb-8">
+            Executive Summary
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 mb-16">
             {[
-              { label: "Role", value: "Designer + Developer" },
-              { label: "Timeline", value: "Feb – Apr 2026" },
+              { label: "Client", value: "La Camille" },
               { label: "Industry", value: "Fashion & E-commerce" },
-              { label: "Platform", value: "Shopify" },
-              { label: "Tech Stack", value: "Liquid, CSS, JavaScript" },
-              { label: "Status", value: "Launched" }
-            ].map((item) => (
-              <div key={item.label} className="bg-card border border-border p-6 rounded-2xl">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest block mb-2">{item.label}</span>
-                <span className="font-display font-bold text-base">{item.value}</span>
-              </div>
+              { label: "Project Type", value: "Shopify Store Design & Development" },
+              { label: "Timeline", value: "2 Months" },
+              { label: "Platform", value: "Shopify (Dawn Theme)" },
+              { label: "Role", value: "UX/UI Designer • Frontend Developer • Liquid" },
+              { label: "Deliverables", value: "Theme Customization • Responsive Design • Custom Templates" },
+              { label: "Outcome", value: "Launched Premium E-commerce Store" }
+            ].map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 + (index * 0.05) }}
+                className="flex justify-start items-baseline py-3 border-b border-border/10"
+              >
+                <span className="text-[10px] font-mono text-amber uppercase tracking-wider w-32 flex-shrink-0">
+                  {item.label}
+                </span>
+                <span className="text-sm text-amber flex-1">
+                  {item.value}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Subtle section divider */}
+      <div className="w-full h-px bg-border/10 max-w-[1000px] mx-auto" />
+
+      <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
+
+        {/* SECTION 02: INTRODUCTION */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+            Introduction
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-16 md:mb-20"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight tracking-tight max-w-3xl">
+            Building Digital Luxury
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="space-y-6 mb-16 md:mb-24"
+        >
+          <p className="text-base md:text-lg text-muted-foreground/80 max-w-3xl leading-relaxed">
+            La Camille is a luxury lingerie brand that needed an online presence matching their premium positioning. The challenge was translating the intimate, high-end in-store experience to a digital screen while maintaining the boutique's exclusive feel.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground/80 max-w-3xl leading-relaxed">
+            I designed and built their Shopify store from the ground up, focusing on creating an elegant shopping experience that feels intimate and sophisticated while ensuring seamless functionality.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <p className="text-[10px] font-mono text-amber uppercase tracking-wider mb-10">
+            Supporting Facts
+          </p>
+
+          <div className="space-y-0">
+            {[
+              { label: "Business Focus", value: "Luxury Fashion & Lingerie" },
+              { label: "Platform", value: "Shopify Ecosystem" },
+              { label: "Project Goal", value: "Create a premium digital shopping experience matching boutique quality." }
+            ].map((fact, index) => (
+              <motion.div
+                key={fact.label}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 + (index * 0.08) }}
+                className="py-5 border-b border-border/10 last:border-0"
+              >
+                <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-6">
+                  <span className="text-[10px] font-mono text-amber uppercase tracking-wider w-40 flex-shrink-0">
+                    {fact.label}
+                  </span>
+                  <span className="text-sm text-amber/90">
+                    {fact.value}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* SECTION 02: OVERVIEW */}
+      </div>
+
+      {/* SECTION 03: HOMEPAGE EXPERIENCE */}
+      <div className="w-full bg-muted/20">
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 py-24 md:py-32">
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+              Homepage Experience
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16 md:mb-20 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-amber leading-tight tracking-tight">
+              Setting the Tone
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl mx-auto">
+              The homepage sets the tone immediately. Large imagery, generous whitespace, and minimal navigation create that luxury feeling from the first scroll.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border"
+          >
+            <img src={gallery[0]} alt="Homepage showcase" className="w-full h-auto" />
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* SECTION 04: COLLECTION EXPERIENCE */}
+      <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">Overview</h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
-            La Camille is a luxury lingerie brand that needed an online presence matching their premium positioning.
-            I designed and built their Shopify store from the ground up, focusing on creating an elegant shopping experience
-            that feels intimate and sophisticated.
+          <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+            Collection Experience
           </p>
         </motion.div>
 
-        {/* SECTION 03: CHALLENGE */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-16 md:mb-24"
         >
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
-            <div className="md:col-span-4">
-              <h2 className="text-2xl font-display font-bold">Challenge</h2>
-            </div>
-            <div className="md:col-span-8">
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Luxury brands face a specific tension online: they need to feel exclusive while remaining accessible.
-                La Camille had no digital presence, only offline sales through select boutiques.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                The challenge was translating that intimate, high-end in-store experience to a screen.
-                Every design decision needed to reinforce the luxury feeling while making the shopping process effortless.
-              </p>
-            </div>
-          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight tracking-tight max-w-3xl">
+            Browsing Like a Lookbook
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl">
+            Browsing collections should feel like flipping through a lookbook, not scanning a spreadsheet.
+          </p>
         </motion.div>
 
-        {/* SECTION 04: HOMEPAGE EXPERIENCE */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center"
         >
-          <div className="mb-8">
-            <h2 className="text-3xl font-display font-bold mb-4">Homepage Experience</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              The homepage sets the tone immediately. Large imagery, generous whitespace, and minimal navigation
-              create that luxury feeling from the first scroll.
+          <div className="md:col-span-5 order-2 md:order-1">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              I used larger product cards with more whitespace to let the photography breathe. Filters are tucked away until needed. The focus remains on the products themselves, with category navigation that feels natural rather than mechanical.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Every design choice reinforces the luxury feeling while making the shopping process effortless.
             </p>
           </div>
 
-          <div className="w-full rounded-[2rem] overflow-hidden border border-border">
-            <img src={gallery[0]} alt="Homepage showcase" className="w-full h-auto" />
-          </div>
-        </motion.div>
-
-        {/* SECTION 05: COLLECTION EXPERIENCE */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
-            <div className="md:col-span-5 order-2 md:order-1">
-              <h2 className="text-3xl font-display font-bold mb-6">Collection Experience</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Browsing collections should feel like flipping through a lookbook, not scanning a spreadsheet.
-                I used larger product cards with more whitespace to let the photography breathe.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Filters are tucked away until needed. The focus remains on the products themselves,
-                with category navigation that feels natural rather than mechanical.
-              </p>
-            </div>
-
-            <div className="md:col-span-7 order-1 md:order-2">
-              <div className="rounded-[2rem] overflow-hidden border border-border">
-                <img src={gallery[1]} alt="Collection page showcase" className="w-full h-auto" />
-              </div>
+          <div className="md:col-span-7 order-1 md:order-2">
+            <div className="rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border">
+              <img src={gallery[1]} alt="Collection page showcase" className="w-full h-auto" />
             </div>
           </div>
         </motion.div>
 
-        {/* SECTION 06: PRODUCT EXPERIENCE */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="mb-8">
-            <h2 className="text-3xl font-display font-bold mb-4">Product Experience</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mb-6">
-              The product page is where the purchase decision happens. Three elements mattered most:
+      </div>
+
+      {/* SECTION 05: PRODUCT EXPERIENCE */}
+      <div className="w-full bg-muted/20">
+        <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+              Product Experience
             </p>
-            <ul className="text-muted-foreground text-lg space-y-2 max-w-2xl">
-              <li>• <strong className="text-foreground">Product gallery</strong> — Large, zoomable images with multiple angles</li>
-              <li>• <strong className="text-foreground">Product information</strong> — Concise details without overwhelming</li>
-              <li>• <strong className="text-foreground">Purchase experience</strong> — Clear CTA, minimal friction</li>
-            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16 md:mb-20"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight tracking-tight max-w-3xl">
+              Where Decisions Happen
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl">
+              The product page is where the purchase decision happens. Three elements mattered most.
+            </p>
+          </motion.div>
+
+          {/* Three key elements */}
+          <div className="grid grid-cols-3 gap-6 md:gap-12 max-w-4xl mx-auto mb-16">
+            {[
+              { number: "01", title: "Product Gallery", desc: "Large, zoomable images with multiple angles" },
+              { number: "02", title: "Information", desc: "Concise details without overwhelming" },
+              { number: "03", title: "Purchase Flow", desc: "Clear CTA, minimal friction" }
+            ].map((element) => (
+              <motion.div
+                key={element.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: parseInt(element.number) * 0.1 }}
+                className="text-center"
+              >
+                <span className="text-4xl md:text-5xl font-display font-bold text-amber/80 mb-3 block">
+                  {element.number}
+                </span>
+                <p className="text-lg font-semibold text-foreground mb-2">{element.title}</p>
+                <p className="text-sm text-muted-foreground">{element.desc}</p>
+              </motion.div>
+            ))}
           </div>
 
-          <div className="w-full rounded-[2rem] overflow-hidden border border-border">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border"
+          >
             <img src={gallery[2]} alt="Product page showcase" className="w-full h-auto" />
-          </div>
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* SECTION 06: RESPONSIVE EXPERIENCE */}
+      <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+            Responsive Experience
+          </p>
         </motion.div>
 
-        {/* SECTION 07: RESPONSIVE EXPERIENCE */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-16 md:mb-20 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-amber leading-tight tracking-tight">
+            Premium on Every Screen
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl mx-auto">
+            Most luxury fashion browsing happens on mobile. The experience had to feel just as premium on a phone as on desktop — same elegance, same ease, different proportions.
+          </p>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border"
         >
-          <div className="mb-8">
-            <h2 className="text-3xl font-display font-bold mb-4">Responsive Experience</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              Most luxury fashion browsing happens on mobile. The experience had to feel just as premium
-              on a phone as on desktop — same elegance, same ease, different proportions.
+          <img src={gallery[3]} alt="Responsive design showcase" className="w-full h-auto" />
+        </motion.div>
+
+      </div>
+
+      {/* SECTION 07: BUILDING WITH SHOPIFY */}
+      <div className="w-full bg-muted/30">
+        <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+              Building with Shopify
             </p>
-          </div>
+          </motion.div>
 
-          <div className="w-full rounded-[2rem] overflow-hidden border border-border">
-            <img src={gallery[3]} alt="Responsive design showcase" className="w-full h-auto" />
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16 md:mb-20"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight tracking-tight max-w-3xl">
+              Custom Within Constraints
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground/60 mt-6 max-w-2xl">
+              Building on Shopify's Dawn theme while creating a unique brand experience.
+            </p>
+          </motion.div>
 
-        {/* SECTION 08: BUILDING WITH SHOPIFY */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center"
+          >
             <div className="md:col-span-5">
-              <h2 className="text-3xl font-display font-bold mb-6">Building with Shopify</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                I started with Dawn, Shopify's free theme, as the foundation. It was the right choice
-                — well-structured, performant, and regularly updated.
+                I started with Dawn, Shopify's free theme, as the foundation — well-structured, performant, and regularly updated. The customization happened in the templates.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                The customization happened in the templates. I modified the Liquid files to create
-                unique layouts for the homepage, collection, and product pages while keeping the
-                core functionality intact.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                CSS handled the visual layer. Custom fonts, refined spacing, and the color system
-                that matches La Camille's brand identity.
+                I modified the Liquid files to create unique layouts for the homepage, collection, and product pages while keeping the core functionality intact.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                JavaScript additions were minimal — just enough for the interactive elements that
-                Shopify doesn't provide out of the box.
+                CSS handled the visual layer — custom fonts, refined spacing, and the color system that matches La Camille's brand identity.
               </p>
             </div>
 
             <div className="md:col-span-7">
-              <div className="rounded-[2rem] overflow-hidden border border-border">
+              <div className="rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border bg-background">
                 <img src={gallery[4]} alt="Shopify development" className="w-full h-auto" />
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* SECTION 09: REFLECTION */}
+        </div>
+      </div>
+
+      {/* SECTION 08: REFLECTION */}
+      <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 py-32 md:py-40">
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-card border border-border p-8 md:p-16 rounded-[2rem] mb-24"
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          <h2 className="text-3xl font-display font-bold mb-6">Reflection</h2>
+          <p className="text-[10px] font-mono text-amber uppercase tracking-widest">
+            Reflection
+          </p>
+        </motion.div>
 
-          <div className="prose prose-lg dark:prose-invert max-w-3xl">
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong className="text-foreground">What worked well:</strong> Starting with a proven theme saved weeks of development.
-              Dawn provided solid foundations — responsive grids, cart functionality, performance optimizations.
-              I could focus on the custom layers instead of rebuilding basics.
-            </p>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-card border border-border p-8 md:p-16 lg:p-24 rounded-[2rem] md:rounded-[3rem]"
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-12 md:mb-16">
+            What I Learned
+          </h2>
 
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong className="text-foreground">What I learned:</strong> Luxury e-commerce is about restraint as much as
-              presentation. Every element earns its place. I learned to say no to features that didn't
-              serve the core shopping experience.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <p className="text-[10px] font-mono text-amber uppercase tracking-widest mb-4">
+                What Worked
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Starting with a proven theme saved weeks of development. Dawn provided solid foundations — responsive grids, cart functionality, performance optimizations.
+              </p>
+            </motion.div>
 
-            <p className="text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">What I'd improve today:</strong> I'd spend more time on the mobile gallery
-              experience. Pinch-to-zoom and smoother image transitions would elevate the mobile feel.
-              Also, product filtering could be more sophisticated without adding complexity.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <p className="text-[10px] font-mono text-amber uppercase tracking-widest mb-4">
+                Core Lesson
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Luxury e-commerce is about restraint as much as presentation. Every element earns its place. I learned to say no to features that didn't serve the shopping experience.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <p className="text-[10px] font-mono text-amber uppercase tracking-widest mb-4">
+                Future Focus
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Enhanced mobile gallery with pinch-to-zoom, smoother image transitions, and more sophisticated product filtering without adding complexity.
+              </p>
+            </motion.div>
           </div>
         </motion.div>
 
-        {/* SECTION 10: NEXT PROJECT */}
-        <NextProjectLink nextWork={nextWork} />
-
       </div>
+
+      {/* SECTION 09: NEXT PROJECT */}
+      <NextProjectLink nextWork={nextWork} />
+
     </div>
   );
 }
@@ -557,7 +848,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
             {/* Text Right - 33% */}
             <div className="md:col-span-4 order-2">
-              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-6">
                 The Problem
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -592,11 +883,11 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
             </div>
             <div className="flex justify-center gap-12 md:gap-20 mt-12 text-center">
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Meaning</p>
+                <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-2">Meaning</p>
                 <p className="text-lg md:text-xl font-display font-semibold">Bringing it all together</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Approach</p>
+                <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-2">Approach</p>
                 <p className="text-lg md:text-xl font-display font-semibold">One ecosystem</p>
               </div>
             </div>
@@ -612,7 +903,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
               The Ecosystem
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold">
@@ -653,7 +944,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
+            <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
               How It Works
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -709,7 +1000,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
             {/* Text Right - 40% */}
             <div className="md:col-span-5 order-2">
-              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-6">
                 Interactive Map
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -734,7 +1025,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
+            <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
               Key Differentiator
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -759,7 +1050,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
+            <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
               Integrated Marketplace
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -788,7 +1079,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Text Left - 40% */}
             <div className="md:col-span-5 order-1">
-              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-6">
                 Core Experience
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -820,7 +1111,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
+            <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
               Design System
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold">
@@ -834,15 +1125,15 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
           <div className="flex justify-center gap-12 md:gap-20 mt-12 text-center">
             <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Typography</p>
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-2">Typography</p>
               <p className="text-sm md:text-base font-display font-semibold">Clear hierarchy</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Colors</p>
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-2">Colors</p>
               <p className="text-sm md:text-base font-display font-semibold">Warm palette</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Components</p>
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-2">Components</p>
               <p className="text-sm md:text-base font-display font-semibold">Reusable library</p>
             </div>
           </div>
@@ -860,7 +1151,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Text Left - 40% */}
               <div className="md:col-span-5 order-1">
-                <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
+                <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-6">
                   Frontend Development
                 </p>
                 <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -902,7 +1193,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
             {/* Text Right - 40% */}
             <div className="md:col-span-5 order-2">
-              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
+              <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-6">
                 Coming in V2
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -938,7 +1229,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
                   What I Learned
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
@@ -952,7 +1243,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
                   Core Principle
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
@@ -966,7 +1257,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                <p className="text-[10px] font-mono text-purple uppercase tracking-widest mb-4">
                   V2 Focus
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">

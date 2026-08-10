@@ -40,6 +40,14 @@
   --purple: 275 80% 60%;
   --purple-foreground: 0 0% 100%;
 
+  /* Blue accent for Rabtek case study */
+  --blue: 215 90% 55%;
+  --blue-foreground: 0 0% 100%;
+
+  /* Amber accent for La Camille case study */
+  --amber: 35 85% 55%;
+  --amber-foreground: 0 0% 100%;
+
   --sidebar: 0 0% 9%;
   --sidebar-foreground: 45 29% 96%;
   --sidebar-border: 0 0% 20%;
