@@ -208,11 +208,10 @@ export default function Home() {
         </div>
 
         {/* STATS */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-3 gap-4 md:gap-6">
           <StatCounter value={7} prefix="+" label="Years Experience" />
           <StatCounter value={25} prefix="+" label="Projects Completed" />
-          <StatCounter value={15} prefix="+" label="Happy Clients" />
-          <StatCounter value={98} suffix="%" label="Client Satisfaction" />
+          <StatCounter value={98} suffix="%" label="Happy Clients" />
         </div>
 
         <CtaBanner />
