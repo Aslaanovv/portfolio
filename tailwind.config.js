@@ -69,6 +69,14 @@ export default {
           DEFAULT: 'hsl(var(--purple))',
           foreground: 'hsl(var(--purple-foreground))',
         },
+        blue: {
+          DEFAULT: 'hsl(var(--blue))',
+          foreground: 'hsl(var(--blue-foreground))',
+        },
+        amber: {
+          DEFAULT: 'hsl(var(--amber))',
+          foreground: 'hsl(var(--amber-foreground))',
+        },
       },
       borderRadius: {
         sm: 'calc(var(--radius) - 4px)',
