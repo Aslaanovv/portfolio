@@ -36,7 +36,7 @@ export default function Projects() {
 
         {/* All projects grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto mb-16 md:mb-20">
-          {works.filter(w => ['rabtek-website', 'la-camille', 'malmoum-v1'].includes(w.slug)).map((work, idx) => (
+          {works.map((work, idx) => (
             <ProjectCard key={work.slug} {...work} index={idx} />
           ))}
         </div>
