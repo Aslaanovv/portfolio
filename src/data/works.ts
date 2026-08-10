@@ -3,7 +3,7 @@ export const works = [
     slug: "malmoum-v1",
     category: "PRODUCT DESIGN • UX/UI • FRONTEND DEVELOPMENT",
     title: "Malmoum V1",
-    image: "/projects/malmoum/thumbnail.png",
+    image: "/projects/malmoum/thumbnail.webp",
     client: "Independent Product",
     year: "2024",
     services: "PRODUCT STRATEGY • UX RESEARCH • UX/UI DESIGN • FRONTEND",
@@ -17,7 +17,7 @@ export const works = [
     slug: "la-camille",
     category: "WEB DESIGN & DEVELOPMENT",
     title: "La Camille",
-    image: "/projects/la-camille/thumbnail.png",
+    image: "/projects/la-camille/thumbnail.webp",
     client: "La Camille",
     year: "2024",
     services: "E-COMMERCE • SHOPIFY • DESIGN",
@@ -31,7 +31,7 @@ export const works = [
     slug: "rabtek-website",
     category: "TECHNICAL SALES • ODOO ERP • WEB DEVELOPMENT",
     title: "Rabtek Integrated Solutions",
-    image: "/projects/rabtek/thumbnail.png",
+    image: "/projects/rabtek/thumbnail.webp",
     client: "Rabtek Integrated Solutions",
     year: "2022–2024",
     services: "TECHNICAL SALES • ODOO IMPLEMENTATION • WEB DEVELOPMENT",
@@ -52,10 +52,10 @@ export const sharedGallery = [
 ];
 
 export const laCamilleGallery = [
-  "/projects/la-camille/homepage.png", // [Homepage Showcase Image]
-  "/projects/la-camille/collection.png", // [Collection Showcase Image]
-  "/projects/la-camille/product.png", // [Product Showcase Image]
-  "/projects/la-camille/responsive.png", // [Responsive Devices Image]
+  "/projects/la-camille/homepage.webp", // [Homepage Showcase Image]
+  "/projects/la-camille/collection.webp", // [Collection Showcase Image]
+  "/projects/la-camille/product.webp", // [Product Showcase Image]
+  "/projects/la-camille/responsive.webp", // [Responsive Devices Image]
   "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop", // [Shopify Development Screenshot]
 ];
 

@@ -1,2 +1,16 @@
+# robots.txt for Muhammad Aslaan Portfolio
+
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Disallow common paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Sitemap location
+Sitemap: https://muhammadaslaanportfolio.vercel.app/sitemap.xml
+
+# Crawl delay (respectful crawling)
+Crawl-delay: 1
