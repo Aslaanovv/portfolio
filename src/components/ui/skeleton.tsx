@@ -12,4 +12,15 @@ function Skeleton({
   );
 }
 
+// Image skeleton with shimmer effect for better loading UX
+export function ImageSkeleton({ className }: { className?: string }) {
+  return (
+    <div className={cn('relative overflow-hidden bg-primary/10 rounded-xl', className)}>
+      <div className="absolute inset-0 animate-shimmer">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-full h-full" />
+      </div>
+    </div>
+  );
+}
+
 export { Skeleton };

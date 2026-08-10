@@ -2,6 +2,7 @@ import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
 import { Seo } from "@/components/ui/Seo";
 import { CtaBanner } from "@/components/ui/CtaBanner";
+import { ImageWithLoading } from "@/components/ui/ImageWithLoading";
 import { works, sharedGallery, laCamilleGallery, malmoumGallery } from "@/data/works";
 import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
@@ -82,7 +83,13 @@ function StandardCaseStudy({ work, nextWork, gallery, dividerIcon, lineIcon }: a
         initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         className="w-full rounded-[2rem] overflow-hidden mb-16 shadow-lg border border-border"
       >
-        <img src={work.image} alt={work.title} className="w-full h-auto" />
+        <ImageWithLoading
+          src={work.image}
+          alt={work.title}
+          className="w-full"
+          aspectRatio="aspect-[16/9]"
+          loading="eager"
+        />
       </motion.div>
 
       <img src={lineIcon} alt="" className="w-full max-w-xs mx-auto mb-16" />
@@ -114,7 +121,11 @@ function StandardCaseStudy({ work, nextWork, gallery, dividerIcon, lineIcon }: a
             viewport={{ once: true }}
             className={`rounded-[2rem] overflow-hidden border border-border ${idx === 2 ? 'md:col-span-2' : ''}`}
           >
-            <img src={img} alt="" className="w-full h-full object-cover aspect-[4/3] hover:scale-105 transition-transform duration-700" />
+            <ImageWithLoading
+              src={img}
+              alt={`${work.title} gallery image ${idx + 1}`}
+              className="hover:scale-105 transition-transform duration-700"
+            />
           </motion.div>
         ))}
       </div>
@@ -155,7 +166,12 @@ function StandardCaseStudy({ work, nextWork, gallery, dividerIcon, lineIcon }: a
         initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
         className="w-full rounded-[2rem] overflow-hidden mb-24 shadow-lg border border-border"
       >
-        <img src={work.image} alt={work.title} className="w-full h-auto" />
+        <ImageWithLoading
+          src={work.image}
+          alt={work.title}
+          className="w-full"
+          aspectRatio="aspect-[16/9]"
+        />
       </motion.div>
 
       <NextProjectLink nextWork={nextWork} />
@@ -200,13 +216,14 @@ function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: any) {
       </div>
 
       {/* HERO VIDEO SECTION */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden aspect-[16/9]">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-cover"
+          poster="/projects/la-camille/thumbnail.webp"
         >
           <source src="/la-camille-hero.mp4" type="video/mp4" />
         </video>
