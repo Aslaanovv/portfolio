@@ -65,6 +65,10 @@ export default {
           'accent-border': 'var(--sidebar-accent-border)',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        purple: {
+          DEFAULT: 'hsl(var(--purple))',
+          foreground: 'hsl(var(--purple-foreground))',
+        },
       },
       borderRadius: {
         sm: 'calc(var(--radius) - 4px)',

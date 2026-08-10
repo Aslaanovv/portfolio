@@ -36,6 +36,10 @@
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 100%;
 
+  /* Purple accent for Malmoum case study */
+  --purple: 275 80% 60%;
+  --purple-foreground: 0 0% 100%;
+
   --sidebar: 0 0% 9%;
   --sidebar-foreground: 45 29% 96%;
   --sidebar-border: 0 0% 20%;

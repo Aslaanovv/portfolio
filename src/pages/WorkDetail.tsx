@@ -557,7 +557,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
             {/* Text Right - 33% */}
             <div className="md:col-span-4 order-2">
-              <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
                 The Problem
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -612,7 +612,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
               The Ecosystem
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold">
@@ -653,7 +653,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
               How It Works
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -681,7 +681,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
                 transition={{ delay: parseInt(step.number) * 0.1 }}
                 className="text-center"
               >
-                <span className="text-4xl md:text-5xl font-display font-bold text-primary/80 mb-3 block">
+                <span className="text-4xl md:text-5xl font-display font-bold text-purple/80 mb-3 block">
                   {step.number}
                 </span>
                 <p className="text-lg font-semibold text-foreground mb-2">{step.title}</p>
@@ -709,7 +709,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
             {/* Text Right - 40% */}
             <div className="md:col-span-5 order-2">
-              <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
                 Interactive Map
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -734,7 +734,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
               Key Differentiator
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -759,7 +759,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
               Integrated Marketplace
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -788,7 +788,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Text Left - 40% */}
             <div className="md:col-span-5 order-1">
-              <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
                 Core Experience
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -820,7 +820,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           className="mb-32 md:mb-40"
         >
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-4">
               Design System
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold">
@@ -860,7 +860,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Text Left - 40% */}
               <div className="md:col-span-5 order-1">
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">
+                <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
                   Frontend Development
                 </p>
                 <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
@@ -902,7 +902,7 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
 
             {/* Text Right - 40% */}
             <div className="md:col-span-5 order-2">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-purple mb-6">
                 Coming in V2
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">
