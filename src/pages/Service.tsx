@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Seo } from "@/components/ui/Seo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PenTool, Code, Sparkles, Building2 } from "lucide-react";
+import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Hammer, Rocket } from "lucide-react";
 
 export default function Service() {
   const services = [
@@ -29,19 +29,22 @@ export default function Service() {
   ];
 
   const tools = [
-    { name: "Figma", category: "Design" },
-    { name: "React", category: "Frontend" },
-    { name: "TypeScript", category: "Frontend" },
-    { name: "Tailwind", category: "Styling" },
-    { name: "Cursor", category: "AI" },
-    { name: "Claude", category: "AI" },
-    { name: "Vite", category: "Build" },
-    { name: "Framer Motion", category: "Animation" }
+    { name: "Figma", category: "Design", icon: Figma },
+    { name: "React", category: "Frontend", icon: Atom },
+    { name: "TypeScript", category: "Frontend", icon: FileCode2 },
+    { name: "Tailwind", category: "Styling", icon: Wind },
+    { name: "Cursor", category: "AI", icon: MousePointer2 },
+    { name: "Claude", category: "AI", icon: Bot },
+    { name: "Vite", category: "Build", icon: Zap },
+    { name: "Framer Motion", category: "Animation", icon: Move3D }
   ];
 
   return (
     <>
-      <Seo title="Service" />
+      <Seo
+        title="Services | Muhammad Aslaan"
+        description="Product design, frontend development, branding, and Odoo ERP services. From strategy to shipped code — turning complex ideas into products people use."
+      />
       <div className="container mx-auto px-4 md:px-8">
 
         {/* Hero Section */}
@@ -113,22 +116,26 @@ export default function Service() {
               {
                 number: "01",
                 title: "Discovery",
-                desc: "Understanding your needs, goals, and constraints"
+                desc: "Understanding your needs, goals, and constraints",
+                icon: MessageSquare
               },
               {
                 number: "02",
                 title: "Design",
-                desc: "Creating the solution — from concepts to polished designs"
+                desc: "Creating the solution — from concepts to polished designs",
+                icon: PenTool
               },
               {
                 number: "03",
                 title: "Build",
-                desc: "Bringing it to life with clean, scalable code"
+                desc: "Bringing it to life with clean, scalable code",
+                icon: Code
               },
               {
                 number: "04",
                 title: "Deliver",
-                desc: "Launch, support, and ensuring everything works perfectly"
+                desc: "Launch, support, and ensuring everything works perfectly",
+                icon: Rocket
               }
             ].map((step, index) => (
               <motion.div
@@ -139,7 +146,10 @@ export default function Service() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <span className="text-5xl md:text-6xl font-display font-bold text-primary/80 block mb-4">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-muted rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <step.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+                </div>
+                <span className="text-sm md:text-base font-display font-bold text-primary/60 block mb-2">
                   {step.number}
                 </span>
                 <h3 className="text-lg md:text-xl font-display font-bold mb-2">{step.title}</h3>
@@ -173,7 +183,7 @@ export default function Service() {
                 className="bg-card border border-border rounded-xl md:rounded-2xl p-5 md:p-6 text-center hover:border-primary hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-muted rounded-lg md:rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-primary/10 transition-colors">
-                  <span className="text-xl md:text-2xl font-display font-bold text-primary">{tool.name.charAt(0)}</span>
+                  <tool.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
                 <span className="text-sm md:text-base font-semibold text-foreground block">{tool.name}</span>
                 <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">{tool.category}</span>
@@ -183,7 +193,7 @@ export default function Service() {
         </motion.div>
 
         {/* BOTTOM WIDGETS */}
-        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
              <Link href="/contact" className="block group h-full">
               <div className="bg-card p-5 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between text-center items-center">
