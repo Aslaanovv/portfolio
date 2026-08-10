@@ -25,7 +25,8 @@ export const works = [
     description2: "From theme customization to responsive implementation, this project demonstrates the intersection of design thinking and technical execution on Shopify's platform.",
     about: "La Camille needed an online presence that reflected their premium brand while leveraging Shopify's robust e-commerce capabilities. The challenge was balancing custom design with platform constraints.",
     paragraph1: "I approached this project with mobile-first thinking, ensuring every screen felt premium while maintaining Shopify's functionality. The result is a shopping experience that guides users naturally from discovery to purchase.",
-    paragraph2: "Working within Shopify's ecosystem, I customized themes, wrote Liquid templates, and crafted responsive CSS/JavaScript to deliver a cohesive brand experience across all devices."
+    paragraph2: "Working within Shopify's ecosystem, I customized themes, wrote Liquid templates, and crafted responsive CSS/JavaScript to deliver a cohesive brand experience across all devices.",
+    liveUrl: "https://lacamille.myshopify.com/"
   },
   {
     slug: "rabtek-website",
@@ -39,7 +40,8 @@ export const works = [
     description2: "From sales presentations to Odoo deployments, this case study shows how facing customers directly transformed how I approach product development.",
     about: "Rabtek Integrated Solutions provides Odoo ERP implementation and web development services. My role spanned technical sales, web development, and Odoo implementation — creating a direct feedback loop between customer needs and technical solutions.",
     paragraph1: "Every client conversation taught me something about product thinking. Feature requests were symptoms. Adoption was the real metric. Integration mattered more than individual tools. Those lessons now inform how I approach every product decision.",
-    paragraph2: ""
+    paragraph2: "",
+    liveUrl: "https://rabtek.net/"
   }
 ];
 

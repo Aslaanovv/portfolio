@@ -6,6 +6,7 @@ import { ImageWithLoading } from "@/components/ui/ImageWithLoading";
 import { works, sharedGallery, laCamilleGallery, malmoumGallery } from "@/data/works";
 import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
+import { ExternalLink } from "lucide-react";
 
 export default function WorkDetail() {
   const [, params] = useRoute("/projects/:slug");
@@ -180,7 +181,7 @@ function StandardCaseStudy({ work, nextWork, gallery, dividerIcon, lineIcon }: a
 }
 
 // Premium La Camille case study with hero video
-function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: any) {
+function LaCamilleCaseStudy({ work, nextWork, gallery }: any) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -222,6 +223,22 @@ function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: any) {
           <p className="text-xl md:text-2xl max-w-2xl mx-auto text-muted-foreground leading-relaxed">
             Premium Shopify experience for a luxury lingerie brand.
           </p>
+
+          {/* VIEW LIVE BUTTON */}
+          {work.liveUrl && (
+            <motion.a
+              href={work.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full transition-colors mt-8"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View Live Project
+            </motion.a>
+          )}
         </motion.div>
 
         {/* Scroll indicator */}
@@ -753,7 +770,7 @@ function LaCamilleCaseStudy({ work: _work, nextWork, gallery }: any) {
 }
 
 // Malmoum V1 Case Study - Independent Product
-function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
+function MalmoumV1CaseStudy({ work, nextWork, gallery }: any) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
@@ -794,6 +811,22 @@ function MalmoumV1CaseStudy({ work: _work, nextWork, gallery }: any) {
           <p className="text-xl md:text-2xl max-w-2xl mx-auto text-muted-foreground leading-relaxed">
             Building a smarter home services marketplace for Egypt.
           </p>
+
+          {/* VIEW LIVE BUTTON - Malmoum doesn't have a live URL yet, so this is hidden */}
+          {work.liveUrl && (
+            <motion.a
+              href={work.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full transition-colors mt-8"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View Live Project
+            </motion.a>
+          )}
         </motion.div>
 
         {/* Scroll indicator */}

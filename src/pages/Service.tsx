@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Seo } from "@/components/ui/Seo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Rocket } from "lucide-react";
+import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Rocket, ArrowRight } from "lucide-react";
+import { works } from "@/data/works";
 
 export default function Service() {
   const services = [
     {
-      title: "UX/UI Design",
+      title: "Product Design",
       icon: PenTool,
       desc: "Creating intuitive and beautiful user experiences that delight users and drive engagement. From wireframes to high-fidelity prototypes, I design interfaces that are both visually stunning and highly functional."
     },
@@ -187,6 +188,91 @@ export default function Service() {
                 </div>
                 <span className="text-sm md:text-base font-semibold text-foreground block">{tool.name}</span>
                 <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">{tool.category}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* SELECTED WORK */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="w-full max-w-5xl mx-auto mb-16 md:mb-24"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 md:mb-6 text-center">Selected Work</h2>
+          <p className="text-muted-foreground text-center mb-10 md:mb-16 max-w-2xl mx-auto">
+            Projects that demonstrate each service in action.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              {
+                service: "Product Design",
+                projects: [works[0], works[1]], // Malmoum V1, La Camille
+                icon: PenTool,
+                accent: "text-primary"
+              },
+              {
+                service: "Web Development",
+                projects: [works[2], works[1]], // Rabtek, La Camille
+                icon: Code,
+                accent: "text-primary"
+              },
+              {
+                service: "Branding",
+                projects: [works[0]], // Malmoum V1
+                icon: Sparkles,
+                accent: "text-primary"
+              },
+              {
+                service: "Odoo ERP",
+                projects: [works[2]], // Rabtek
+                icon: Building2,
+                accent: "text-primary"
+              }
+            ].map((category, catIndex) => (
+              <motion.div
+                key={category.service}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: catIndex * 0.1 }}
+                className="bg-card border border-border rounded-2xl md:rounded-[2rem] p-6 md:p-8 hover:shadow-xl hover:border-primary transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-muted rounded-xl flex items-center justify-center">
+                    <category.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-display font-bold">{category.service}</h3>
+                </div>
+                <div className="space-y-4">
+                  {category.projects.map((project) => (
+                    <Link key={project.slug} href={`/projects/${project.slug}`}>
+                      <motion.div
+                        whileHover={{ x: 4 }}
+                        className="flex items-center gap-4 p-3 rounded-xl hover:bg-muted/50 transition-colors cursor-pointer group"
+                      >
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden shrink-0">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-display font-semibold text-sm md:text-base truncate group-hover:text-primary transition-colors">
+                            {project.title}
+                          </h4>
+                          <p className="text-xs md:text-sm text-muted-foreground truncate">
+                            {project.client}
+                          </p>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                      </motion.div>
+                    </Link>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>

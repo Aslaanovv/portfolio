@@ -15,4 +15,5 @@ export interface Work {
   about: string;
   paragraph1: string;
   paragraph2: string;
+  liveUrl?: string;
 }
