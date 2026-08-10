@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface ProjectCardProps {
   slug: string;
@@ -10,6 +12,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ slug, category, title, image, index = 0 }: ProjectCardProps) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -20,12 +24,18 @@ export function ProjectCard({ slug, category, title, image, index = 0 }: Project
     >
       <Link href={`/projects/${slug}`} className="block group">
         <div className="bg-card p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary flex flex-col h-full">
-          <div className="rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-6 relative bg-muted">
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-6 relative bg-muted aspect-[4/3]">
+            {!imageLoaded && (
+              <Skeleton className="absolute inset-0 w-full h-full" />
+            )}
             <img
               src={image}
               alt={title}
-              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
               loading="lazy"
+              onLoad={() => setImageLoaded(true)}
             />
           </div>
 

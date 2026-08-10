@@ -83,7 +83,7 @@ export default function Home() {
                   loop
                   playsInline
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  poster="/projects/malmoum/thumbnail.png"
+                  poster="/projects/malmoum/thumbnail.webp"
                 >
                   <source src="/projects/malmoum/hero-video.mp4" type="video/mp4" />
                 </video>
