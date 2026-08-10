@@ -8,8 +8,21 @@ export default function Projects() {
 
   return (
     <>
-      <Seo title="Projects" />
+      <Seo
+        title="Projects | Muhammad Aslaan"
+        description="Selected work featuring product design, frontend development, and branding projects. From independent products to enterprise implementations."
+      />
       <div className="container mx-auto px-4 md:px-8">
+
+        {/* Page Header */}
+        <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4 md:mb-6">
+            Projects
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground">
+            A selection of work spanning product design, frontend development, and branding. From concept to shipped code.
+          </p>
+        </div>
 
         {/* Featured Projects */}
         <SectionHeading title="FEATURED PROJECTS" />
