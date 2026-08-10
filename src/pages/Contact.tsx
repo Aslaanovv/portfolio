@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Seo } from "@/components/ui/Seo";
-import { Instagram, Twitter, Linkedin, Dribbble, Mail } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +17,7 @@ const formSchema = z.object({
 
 export default function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -27,12 +29,42 @@ export default function Contact() {
     }
   });
 
-  function onSubmit(_data: z.infer<typeof formSchema>) {
-    toast({
-      title: "Message Sent",
-      description: "Thanks for reaching out! I'll get back to you soon.",
-    });
-    form.reset();
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+
+    try {
+      // Using Formspree for form handling
+      const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || "YOUR_FORMSPREE_ID";
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent! 🎉",
+          description: "Thanks for reaching out! I'll get back to you within 24-48 hours.",
+          variant: "default"
+        });
+        form.reset();
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Something went wrong 😕",
+        description: "Please try again or email me directly at contact@aslaan.dev",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -184,9 +216,17 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-foreground text-background py-4 md:py-5 rounded-lg md:rounded-xl font-bold text-base md:text-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                  disabled={isSubmitting}
+                  className="w-full bg-foreground text-background py-4 md:py-5 rounded-lg md:rounded-xl font-bold text-base md:text-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-foreground disabled:hover:text-background flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             </Form>
