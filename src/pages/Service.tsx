@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Seo } from "@/components/ui/Seo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Hammer, Rocket } from "lucide-react";
+import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Rocket } from "lucide-react";
 
 export default function Service() {
   const services = [
