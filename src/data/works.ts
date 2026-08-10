@@ -28,20 +28,6 @@ export const works = [
     paragraph2: "Working within Shopify's ecosystem, I customized themes, wrote Liquid templates, and crafted responsive CSS/JavaScript to deliver a cohesive brand experience across all devices."
   },
   {
-    slug: "tech-planet",
-    category: "WEB DESIGN & DEVELOPMENT",
-    title: "Tech Planet",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    client: "Tech Planet",
-    year: "2024",
-    services: "WEB DESIGN • DEVELOPMENT • BRANDING",
-    description1: "A complete portfolio website for Tech Planet, an IT solutions company. I delivered an exceptional website that perfectly captures their brand identity and effectively showcases their services.",
-    description2: "The project included custom design, responsive development, and SEO optimization. The site features modern animations, intuitive navigation, and a professional aesthetic that resonates with their tech-focused audience.",
-    about: "Tech Planet needed a strong online presence to compete in the crowded IT solutions market. I worked closely with their CEO to understand their unique value proposition and created a website that communicates their expertise and reliability.",
-    paragraph1: "The design process involved multiple iterations based on stakeholder feedback, resulting in a final product that exceeded expectations. The website has improved their lead generation and brand visibility.",
-    paragraph2: ""
-  },
-  {
     slug: "rabtek-website",
     category: "TECHNICAL SALES • ODOO ERP • WEB DEVELOPMENT",
     title: "Rabtek Integrated Solutions",
@@ -53,48 +39,6 @@ export const works = [
     description2: "From sales presentations to Odoo deployments, this case study shows how facing customers directly transformed how I approach product development.",
     about: "Rabtek Integrated Solutions provides Odoo ERP implementation and web development services. My role spanned technical sales, web development, and Odoo implementation — creating a direct feedback loop between customer needs and technical solutions.",
     paragraph1: "Every client conversation taught me something about product thinking. Feature requests were symptoms. Adoption was the real metric. Integration mattered more than individual tools. Those lessons now inform how I approach every product decision.",
-    paragraph2: ""
-  },
-  {
-    slug: "poole-digital",
-    category: "BRANDING",
-    title: "Poole Digital",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
-    client: "Poole Digital",
-    year: "2024",
-    services: "BRANDING • WEB DESIGN",
-    description1: "A striking brand identity and website for Poole Digital featuring a bold black neon aesthetic. The branding and website perfectly represent their innovative approach as a digital agency.",
-    description2: "The project included logo design, color palette development, brand guidelines, and a complete website implementation. The dark theme with neon accents creates a memorable, cutting-edge impression.",
-    about: "Poole Digital wanted a brand that would stand out in the competitive digital agency space. I created an identity that embraces darkness and neon to convey innovation, creativity, and a forward-thinking mindset.",
-    paragraph1: "The Marketing Director praised the design work for making their agency stand out. The branding has been applied across all touchpoints including website, social media, and marketing materials.",
-    paragraph2: ""
-  },
-  {
-    slug: "odoo-erp-implementation",
-    category: "ODOO ERP",
-    title: "Odoo Enterprise Solutions",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-    client: "Multiple Clients",
-    year: "2023",
-    services: "ODOO ERP • IMPLEMENTATION • TRAINING",
-    description1: "Enterprise Resource Planning solutions using Odoo for various businesses. I handle everything from needs assessment to module configuration, data migration, and staff training.",
-    description2: "These implementations streamline business operations, improve efficiency, and provide real-time insights into business performance. Each solution is customized to the specific needs of the client.",
-    about: "Odoo ERP implementations require deep understanding of business processes and technical configuration. I work with clients across industries to implement solutions that transform their operations.",
-    paragraph1: "My approach combines technical expertise with business acumen gained from years in technical sales roles. I understand not just how to configure the software, but why businesses need specific features.",
-    paragraph2: ""
-  },
-  {
-    slug: "real-estate-websites",
-    category: "WEB DESIGN",
-    title: "Real Estate Digital Presence",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-    client: "Multiple Real Estate Companies",
-    year: "2022-2024",
-    services: "WEB DESIGN • SOCIAL MEDIA • MARKETING",
-    description1: "Multiple real estate companies benefited from my expertise in web design, social media campaign planning, and digital marketing. These projects include website development and comprehensive online presence management.",
-    description2: "Working with companies like 4 Gates Real Estate, QUE Real Estate, and El Tayeb Real Estate, I created digital strategies that increased visibility and drove lead generation.",
-    about: "The real estate sector requires a strong digital presence to compete effectively. My experience in technical sales for real estate gives me unique insight into what works in this industry.",
-    paragraph1: "Each project included website design, social media content planning, and ongoing digital marketing support. The integrated approach ensured consistent branding across all channels.",
     paragraph2: ""
   }
 ];
