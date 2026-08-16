@@ -14,6 +14,21 @@ export const works = [
     paragraph2: ""
   },
   {
+    slug: "ehtwaa",
+    category: "WEB DESIGN & DEVELOPMENT • BILINGUAL",
+    title: "Ehtwaa Mental Health",
+    image: "/projects/ehtwaa/thumbnail.webp",
+    client: "Ehtwaa Therapy Center",
+    year: "2025",
+    services: "UX/UI DESIGN • REACT • TYPESCRIPT • BILINGUAL SYSTEM",
+    description1: "A bilingual mental health platform for therapy centers in Egypt. Built with React and TypeScript, featuring RTL support, contact forms, and Calendly booking integration.",
+    description2: "From concept to deployment — designed and developed a complete therapy center website with multilingual support, professional animations, and production-ready features.",
+    about: "Ehtwaa (احتواء) means 'containment' or 'embrace' in Arabic — reflecting the supportive, therapeutic approach the center takes. The platform serves both Arabic and English speakers with seamless language switching.",
+    paragraph1: "I handled the entire product lifecycle: UX research for bilingual users, UI design with calming aesthetics, and full-stack development using React, TypeScript, and Tailwind CSS. The result is a polished, accessible platform that helps people find mental health support.",
+    paragraph2: "Key features include a custom language context system with RTL support, Framer Motion animations, EmailJS contact forms, WhatsApp integration, and GDPR-compliant cookie consent. Built for performance and accessibility.",
+    liveUrl: "https://ehtwaa-mentalhealth.vercel.app"
+  },
+  {
     slug: "la-camille",
     category: "WEB DESIGN & DEVELOPMENT",
     title: "La Camille",
@@ -74,4 +89,13 @@ export const malmoumGallery = [
   "/projects/malmoum/design-system.webp", // [Design System Board]
   "/projects/malmoum/development.webp", // [Development Screenshot]
   "/projects/malmoum/ai-concept.webp", // [AI Concept Illustration]
+];
+
+export const ehtwaaGallery = [
+  "/projects/ehtwaa/hero.webp", // [Hero Section]
+  "/projects/ehtwaa/services.webp", // [Services Overview]
+  "/projects/ehtwaa/bilingual.webp", // [Language Switch]
+  "/projects/ehtwaa/team.webp", // [Team Section]
+  "/projects/ehtwaa/contact-form.webp", // [Contact Form]
+  "/projects/ehtwaa/responsive.webp" // [Responsive Design]
 ];

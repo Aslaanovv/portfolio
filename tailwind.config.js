@@ -77,6 +77,10 @@ export default {
           DEFAULT: 'hsl(var(--amber))',
           foreground: 'hsl(var(--amber-foreground))',
         },
+        pink: {
+          DEFAULT: 'hsl(var(--pink))',
+          foreground: 'hsl(var(--pink-foreground))',
+        },
       },
       borderRadius: {
         sm: 'calc(var(--radius) - 4px)',
