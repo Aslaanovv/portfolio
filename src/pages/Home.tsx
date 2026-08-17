@@ -88,13 +88,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30" />
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16 text-center">
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 sm:px-8 md:px-16 text-center max-w-4xl mx-auto">
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-sm md:text-base font-semibold uppercase tracking-widest text-white mb-4 backdrop-blur-md bg-black/50 px-4 py-2 rounded-full"
+                    className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-widest text-white mb-4 backdrop-blur-md bg-black/50 px-3 sm:px-4 py-2 rounded-full"
                   >
                     Featured Project
                   </motion.span>
@@ -104,7 +104,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 drop-shadow-2xl"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white mb-4 drop-shadow-2xl px-2"
                   >
                     Ehtwaa Mental Health
                   </motion.h2>
@@ -114,7 +114,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl drop-shadow-lg font-medium"
+                    className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-xl mx-auto drop-shadow-lg font-medium px-2"
                   >
                     Bilingual Platform • UX/UI Design • React & TypeScript
                   </motion.p>
@@ -124,14 +124,14 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    className="flex items-center gap-4 text-white group-hover:gap-6 transition-all duration-300"
+                    className="flex items-center gap-3 sm:gap-4 text-white group-hover:gap-5 sm:group-hover:gap-6 transition-all duration-300"
                   >
-                    <span className="text-sm font-semibold uppercase tracking-wider drop-shadow-md">View Case Study</span>
-                    <div className="w-12 h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300 backdrop-blur-sm bg-black/30">
+                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider drop-shadow-md">View Case Study</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300 backdrop-blur-sm bg-black/30 shrink-0">
                       <img
                         src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                         alt="View"
-                        className="w-5 h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
+                        className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
                       />
                     </div>
                   </motion.div>
