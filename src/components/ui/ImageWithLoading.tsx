@@ -7,6 +7,7 @@ interface ImageWithLoadingProps {
   className?: string;
   aspectRatio?: string;
   loading?: "eager" | "lazy";
+  onError?: () => void;
 }
 
 export function ImageWithLoading({
@@ -14,7 +15,8 @@ export function ImageWithLoading({
   alt,
   className = "",
   aspectRatio = "aspect-[4/3]",
-  loading = "lazy"
+  loading = "lazy",
+  onError
 }: ImageWithLoadingProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -31,6 +33,7 @@ export function ImageWithLoading({
         }`}
         loading={loading}
         onLoad={() => setIsLoaded(true)}
+        onError={onError}
       />
     </div>
   );
