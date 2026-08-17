@@ -3,13 +3,46 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      // Fast Refresh in dev mode
+      fastRefresh: true,
+      // Don't transform during serve - faster HMR
+      babel: {
+        plugins: process.env.NODE_ENV === 'development' ? [] : undefined,
+      },
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
   },
   root: path.resolve(__dirname),
+
+  // Faster dev server with esbuild
+  esbuild: {
+    target: 'es2020',
+    // Minify in dev for faster parsing
+    minify: process.env.NODE_ENV === 'production',
+  },
+
+  // Optimize dependencies for faster dev start
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'wouter',
+      'framer-motion',
+      'react-hook-form',
+      'zod',
+      '@tanstack/react-query',
+      'lucide-react',
+      'react-icons',
+    ],
+    // Force pre-bundle for faster cold starts
+    force: false,
+  },
   build: {
     outDir: path.resolve(__dirname, 'dist'),
     emptyOutDir: true,
@@ -48,5 +81,14 @@ export default defineConfig({
     port: 5173,
     host: true,
     open: true,
+    // Faster HMR
+    hmr: {
+      overlay: true,
+    },
+    // Watch settings for better performance
+    watch: {
+      // Ignore node_modules to reduce file watching
+      ignored: ['**/node_modules/**', '**/.git/**'],
+    },
   },
 });
