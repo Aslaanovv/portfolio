@@ -4,6 +4,7 @@ import { Seo } from "@/components/ui/Seo";
 import { Marquee } from "@/components/ui/Marquee";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { StatCounter } from "@/components/ui/StatCounter";
+import { LazyVideo } from "@/components/ui/LazyVideo";
 
 export default function Home() {
 
@@ -75,18 +76,13 @@ export default function Home() {
         >
           <Link href="/projects/malmoum-v1" className="block group">
             <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border hover:border-primary transition-all duration-500">
-              {/* Video Background */}
+              {/* Video Background - Lazy loaded */}
               <div className="relative aspect-[21/9] md:aspect-[16/7] overflow-hidden">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                <LazyVideo
+                  src="/projects/malmoum/hero-video.mp4"
                   poster="/projects/malmoum/thumbnail.webp"
-                >
-                  <source src="/projects/malmoum/hero-video.mp4" type="video/mp4" />
-                </video>
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
