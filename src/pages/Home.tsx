@@ -74,18 +74,18 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="w-full -mx-4 md:-mx-8 mb-20"
         >
-          <Link href="/projects/malmoum-v1" className="block group">
+          <Link href="/projects/ehtwaa" className="block group">
             <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border hover:border-primary transition-all duration-500">
               {/* Video Background - Lazy loaded */}
               <div className="relative aspect-[21/9] md:aspect-[16/7] overflow-hidden">
                 <LazyVideo
-                  src="/projects/malmoum/hero-video.mp4"
-                  poster="/projects/malmoum/thumbnail.webp"
+                  src="/projects/ehtwaa/hero-video.mp4"
+                  poster="/projects/ehtwaa/hero.webp"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                {/* Gradient Overlay - Darker for better readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30" />
 
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16 text-center">
@@ -94,7 +94,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-sm md:text-base font-semibold uppercase tracking-widest text-white/90 mb-4 backdrop-blur-sm bg-black/30 px-4 py-2 rounded-full"
+                    className="text-sm md:text-base font-semibold uppercase tracking-widest text-white mb-4 backdrop-blur-md bg-black/50 px-4 py-2 rounded-full"
                   >
                     Featured Project
                   </motion.span>
@@ -104,9 +104,9 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 drop-shadow-lg"
+                    className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 drop-shadow-2xl"
                   >
-                    Malmoum V1
+                    Ehtwaa Mental Health
                   </motion.h2>
 
                   <motion.p
@@ -114,9 +114,9 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl drop-shadow"
+                    className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl drop-shadow-lg font-medium"
                   >
-                    Independent Product • UX/UI Design • Frontend Development
+                    Bilingual Platform • UX/UI Design • React & TypeScript
                   </motion.p>
 
                   <motion.div
@@ -126,8 +126,8 @@ export default function Home() {
                     transition={{ delay: 0.5 }}
                     className="flex items-center gap-4 text-white group-hover:gap-6 transition-all duration-300"
                   >
-                    <span className="text-sm font-semibold uppercase tracking-wider">View Case Study</span>
-                    <div className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300">
+                    <span className="text-sm font-semibold uppercase tracking-wider drop-shadow-md">View Case Study</span>
+                    <div className="w-12 h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300 backdrop-blur-sm bg-black/30">
                       <img
                         src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
                         alt="View"
