@@ -8,12 +8,18 @@ import { works } from "@/data/works";
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
-  // Filter projects based on selected filter
-  const filteredWorks = works.filter(work =>
-    matchesFilter(work.category, activeFilter)
-  );
-
+  // Featured projects (first 2)
   const featured = works.slice(0, 2);
+
+  // Filter projects for main grid - exclude featured from "All" to avoid duplication
+  const filteredWorks = works.filter(work => {
+    const matches = matchesFilter(work.category, activeFilter);
+    // Exclude featured projects from "all" filter to avoid duplication
+    if (activeFilter === 'all' && featured.some(f => f.slug === work.slug)) {
+      return false;
+    }
+    return matches;
+  });
 
   return (
     <>
