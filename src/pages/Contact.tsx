@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Seo } from "@/components/ui/Seo";
-import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2 } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2, AlertCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,11 +9,35 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  subject: z.string().min(2, "Subject is required"),
-  message: z.string().min(10, "Message is too short")
+  name: z.string()
+    .min(2, "Name must be at least 2 characters")
+    .max(50, "Name is too long")
+    .regex(/^[a-zA-Z\s'-]+$/, "Name can only contain letters"),
+  email: z.string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .refine((val) => val.endsWith('.com') || val.endsWith('.dev') || val.endsWith('.io') || val.endsWith('.co') || val.endsWith('.org') || val.endsWith('.net') || val.endsWith('.edu') || val.includes('@'), {
+      message: "Please enter a valid email domain"
+    }),
+  subject: z.string()
+    .min(1, "Please select a subject"),
+  message: z.string()
+    .min(20, "Message must be at least 20 characters")
+    .max(2000, "Message is too long (max 2000 characters)")
+    .refine((val) => val.trim().split(/\s+/).length >= 5, {
+      message: "Please provide more details (at least 5 words)"
+    })
 });
+
+const SUBJECT_OPTIONS = [
+  "Project Inquiry",
+  "Freelance Opportunity",
+  "Job Opportunity",
+  "Collaboration",
+  "General Question",
+  "Feedback",
+  "Other"
+] as const;
 
 export default function Contact() {
   const { toast } = useToast();
@@ -28,6 +52,12 @@ export default function Contact() {
       message: ""
     }
   });
+
+  // Watch message length for character counter
+  const messageValue = form.watch('message') || '';
+  const messageLength = messageValue.length;
+  const isApproachingLimit = messageLength > 1500;
+  const isAtLimit = messageLength >= 2000;
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
@@ -184,11 +214,24 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="sr-only">Subject</FormLabel>
                       <FormControl>
-                        <input
-                          {...field}
-                          placeholder="Your Subject *"
-                          className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
-                        />
+                        <div className="relative">
+                          <select
+                            {...field}
+                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
+                          >
+                            <option value="">What is this about? *</option>
+                            {SUBJECT_OPTIONS.map((option) => (
+                              <option key={option} value={option}>
+                                {option}
+                              </option>
+                            ))}
+                          </select>
+                          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                            <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -202,12 +245,29 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="sr-only">Message</FormLabel>
                       <FormControl>
-                        <textarea
-                          {...field}
-                          placeholder="Your Message *"
-                          rows={5}
-                          className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none text-sm sm:text-base"
-                        />
+                        <div className="relative">
+                          <textarea
+                            {...field}
+                            placeholder="Tell me about your project, timeline, budget, or any questions you have... *"
+                            rows={6}
+                            className={`w-full bg-background border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-all resize-none text-sm sm:text-base ${
+                              form.getFieldState('message').error
+                                ? 'border-destructive focus:ring-destructive'
+                                : 'border-border focus:ring-primary focus:border-transparent'
+                            }`}
+                          />
+                          {/* Character counter */}
+                          <div className={`absolute bottom-3 right-4 text-xs flex items-center gap-1.5 ${
+                            isAtLimit
+                              ? 'text-destructive'
+                              : isApproachingLimit
+                              ? 'text-amber-500'
+                              : 'text-muted-foreground'
+                          }`}>
+                            {isAtLimit && <AlertCircle className="w-3 h-3" />}
+                            {messageLength} / 2000
+                          </div>
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>

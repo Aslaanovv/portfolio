@@ -2,12 +2,21 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
+import { GoogleAnalytics, VercelAnalytics } from '@/components/ui/GoogleAnalytics';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter, useLocation } from 'wouter';
-import { useEffect, Suspense, lazy } from 'react';
+import { useEffect, Suspense, lazy, useRef } from 'react';
 
 import { Layout } from '@/components/layout/Layout';
 import { PageTransition } from '@/components/ui/PageTransition';
+import {
+  PageSkeleton,
+  CredentialsSkeleton,
+  ServiceSkeleton,
+  CaseStudySkeleton,
+  ContactSkeleton
+} from '@/components/ui/PageSkeletons';
+import { trackPageView } from '@/lib/analytics';
 
 // Lazy load routes for faster initial load
 const Home = lazy(() => import('@/pages/Home'));
@@ -19,25 +28,33 @@ const Contact = lazy(() => import('@/pages/Contact'));
 
 const queryClient = new QueryClient();
 
-// Minimal loading fallback for lazy loaded routes
-function RouteFallback() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
-    </div>
-  );
-}
-
 function Router() {
   const [location] = useLocation();
+  const prevLocationRef = useRef(location);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Track page view on route change
+    if (prevLocationRef.current !== location) {
+      trackPageView(location, prevLocationRef.current);
+      prevLocationRef.current = location;
+    }
   }, [location]);
+
+  // Route-specific skeleton loader
+  function RouteSkeleton() {
+    if (location === '/') return <PageSkeleton />;
+    if (location === '/credentials') return <CredentialsSkeleton />;
+    if (location === '/service') return <ServiceSkeleton />;
+    if (location === '/contact') return <ContactSkeleton />;
+    if (location.startsWith('/projects/')) return <CaseStudySkeleton />;
+    return <PageSkeleton />;
+  }
 
   return (
     <Layout>
-      <Suspense fallback={<RouteFallback />}>
+      <Suspense fallback={<RouteSkeleton />}>
         <PageTransition>
           <Switch>
             <Route path="/" component={Home} />
@@ -63,6 +80,9 @@ function App() {
             <Router />
           </WouterRouter>
           <Toaster />
+          {/* Analytics */}
+          <GoogleAnalytics />
+          <VercelAnalytics />
         </TooltipProvider>
       </QueryClientProvider>
     </ErrorBoundary>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { MouseGlow } from "@/components/case-study/MouseGlow";
 import { NextProject } from "@/components/case-study/NextProject";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { ExternalLink } from "lucide-react";

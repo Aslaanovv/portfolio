@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { Seo } from "@/components/ui/Seo";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { ImageWithLoading } from "@/components/ui/ImageWithLoading";
-import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
-import { NextProject } from "@/components/case-study/NextProject";
 import { works, sharedGallery, laCamilleGallery, malmoumGallery, ehtwaaGallery } from "@/data/works";
 import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
