@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Seo } from "@/components/ui/Seo";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { ImageWithLoading } from "@/components/ui/ImageWithLoading";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { NextProject } from "@/components/case-study/NextProject";
 import { works, sharedGallery, laCamilleGallery, malmoumGallery, ehtwaaGallery } from "@/data/works";
 import { useEffect } from "react";
@@ -194,7 +195,7 @@ function EhtwaaCaseStudy({ work, nextWork, gallery }: any) {
         transition={{ duration: 1 }}
         className="relative w-full overflow-hidden border-y border-border"
       >
-        <img src={gallery[0]} alt="Ehtwaa Hero" className="w-full h-auto" />
+        <ImageWithFallback src={gallery[0]} alt="Ehtwaa Hero" className="w-full" aspectRatio="aspect-auto" loading="eager" />
       </motion.div>
 
       <div className="container mx-auto px-4 md:px-8 max-w-6xl py-24">
@@ -303,7 +304,7 @@ function EhtwaaCaseStudy({ work, nextWork, gallery }: any) {
           </div>
 
           <div className="w-full rounded-[2rem] overflow-hidden border border-border/50 shadow-2xl">
-            <img src={gallery[1]} alt="Services" className="w-full h-auto" />
+            <ImageWithFallback src={gallery[1]} alt="Services" className="w-full" aspectRatio="aspect-auto" />
           </div>
         </motion.div>
 
@@ -339,7 +340,7 @@ function EhtwaaCaseStudy({ work, nextWork, gallery }: any) {
             </div>
 
             <div className="rounded-[2rem] overflow-hidden border border-border/50">
-              <img src={gallery[2]} alt="Language Switch" className="w-full h-auto" />
+              <ImageWithFallback src={gallery[2]} alt="Language Switch" className="w-full" aspectRatio="aspect-auto" />
             </div>
           </div>
         </motion.div>
@@ -355,7 +356,7 @@ function EhtwaaCaseStudy({ work, nextWork, gallery }: any) {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 rounded-[2rem] overflow-hidden border border-border/50">
-              <img src={gallery[3]} alt="Team" className="w-full h-auto" />
+              <ImageWithFallback src={gallery[3]} alt="Team" className="w-full" aspectRatio="aspect-auto" />
             </div>
 
             <div className="order-1 md:order-2">
@@ -408,7 +409,7 @@ function EhtwaaCaseStudy({ work, nextWork, gallery }: any) {
             </div>
 
             <div className="rounded-[2rem] overflow-hidden border border-border/50">
-              <img src={gallery[4]} alt="Contact Form" className="w-full h-auto" />
+              <ImageWithFallback src={gallery[4]} alt="Contact Form" className="w-full" aspectRatio="aspect-auto" />
             </div>
           </div>
         </motion.div>
@@ -476,7 +477,7 @@ function EhtwaaCaseStudy({ work, nextWork, gallery }: any) {
           </div>
 
           <div className="w-full rounded-[2rem] overflow-hidden border border-border/50">
-            <img src={gallery[5]} alt="Responsive Design" className="w-full h-auto" />
+            <ImageWithFallback src={gallery[5]} alt="Responsive Design" className="w-full" aspectRatio="aspect-auto" />
           </div>
         </motion.div>
 
