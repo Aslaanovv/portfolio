@@ -44,4 +44,7 @@ lerna-debug.log*
 # TypeScript
 *.tsbuildinfo
 
+# Claude Code local state
+.claude/
+
 .vercel

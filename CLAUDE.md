@@ -390,8 +390,8 @@ crafting products from strategy to shipped code."
 | `/` | Home | Hero, featured work, services preview, stats |
 | `/credentials` | Credentials | About, experience, skills, background |
 | `/service` | Service | Services offered, process, pricing |
-| `/works` | Works | All projects grid |
-| `/works/:slug` | WorkDetail | Individual case study |
+| `/projects` | Projects | All projects grid with filters |
+| `/projects/:slug` | WorkDetail | Individual case study |
 | `/contact` | Contact | Contact form, social links |
 
 ### Key Components
@@ -402,19 +402,37 @@ components/
 │   ├── Layout.tsx       # Main layout wrapper
 │   ├── Navbar.tsx       # Navigation with scroll state
 │   └── Footer.tsx       # Footer with social links
+├── case-study/
+│   └── NextProject.tsx  # Case study navigation card
 ├── ui/
 │   ├── PageTransition.tsx  # Route animations
 │   ├── Marquee.tsx         # Scrolling brand strip
 │   ├── CtaBanner.tsx       # Call-to-action banner
 │   ├── StatCounter.tsx    # Animated number counters
+│   ├── ProjectCard.tsx    # Works grid card
+│   ├── ProjectFilter.tsx  # Category filter pills
+│   ├── ImageWithLoading.tsx # Image with skeleton
 │   └── Seo.tsx            # Meta tags management
+
+pages/
+├── case-studies/        # Dedicated case study components
+│   ├── EhtwaaCaseStudy.tsx
+│   └── ZeroGuiltCaseStudy.tsx
+└── works/
+    └── RabtekCaseStudy.tsx
 ```
+
+### Case Study Architecture
+
+Each project slug in `src/data/works.ts` maps to a dedicated case study
+component in `WorkDetail.tsx` (with its own gallery export). Projects
+without a dedicated component fall through to `StandardCaseStudy`.
 
 ### Navigation Order
 
 1. Home
 2. Service
-3. Works
+3. Projects
 4. Credentials
 5. Contact
 
