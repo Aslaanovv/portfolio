@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Seo } from "@/components/ui/Seo";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { ImageWithLoading } from "@/components/ui/ImageWithLoading";
-import { works, sharedGallery, laCamilleGallery, malmoumGallery, ehtwaaGallery, zeroGuiltGallery } from "@/data/works";
+import { works, laCamilleGallery, malmoumGallery, ehtwaaGallery, zeroGuiltGallery } from "@/data/works";
 import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
 import { EhtwaaCaseStudy } from "@/pages/case-studies/EhtwaaCaseStudy";
@@ -41,12 +41,11 @@ export default function WorkDetail() {
   const isEhtwaa = currentSlug === "ehtwaa";
   const isZeroGuilt = currentSlug === "zero-guilt";
 
-  let gallery;
+  let gallery: string[] = [];
   if (isMalmoum) gallery = malmoumGallery;
   else if (isLaCamille) gallery = laCamilleGallery;
   else if (isEhtwaa) gallery = ehtwaaGallery;
   else if (isZeroGuilt) gallery = zeroGuiltGallery;
-  else gallery = sharedGallery;
 
   return (
     <>
@@ -795,7 +794,7 @@ function MalmoumV1CaseStudy({ work, nextWork, gallery }: any) {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          poster="/projects/malmoum/thumbnail.png"
+          poster="/projects/malmoum/thumbnail.webp"
         >
           <source src="/projects/malmoum/hero-video.mp4" type="video/mp4" />
         </video>

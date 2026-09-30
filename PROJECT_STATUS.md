@@ -242,8 +242,26 @@ transition={{ duration: 0.6 }}
 - [ ] Add skeleton loading states
 - [ ] Implement error boundaries
 - [ ] Add form validation on contact page
-- [ ] Create sitemap.xml
-- [ ] Add robots.txt
+- [x] Create sitemap.xml (corrected to /projects routes)
+- [x] Add robots.txt
+
+### Session Log — 2026-09-29/30
+
+- **Zero Guilt Protein Bars** project added: works grid (#1), premium
+  case study at `/projects/zero-guilt` with live JSX recreations of the
+  store's custom Liquid components (flavor upsell, subscription picker,
+  claims accordions), device mockups, and home featured swap
+- **Domain unified** to `aslaansportfolio.vercel.app` across meta tags,
+  robots.txt, sitemap, and docs (was split across 3 domains)
+- **Sitemap corrected** to actual `/projects` routes; added zero-guilt
+  and ehtwaa entries
+- **Service page** now maps projects by slug, not array index
+- **og:image** created (public/og-image.png, source: og-card.html) and
+  wired into og/twitter meta tags
+- **JSON-LD** Person structured data added
+- **Cleanup**: removed duplicate LaCamilleCaseStudy.tsx, sharedGallery
+  Unsplash placeholders, fixed Malmoum video poster path, .claude/
+  gitignored
 
 ---
 

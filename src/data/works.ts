@@ -75,14 +75,6 @@ export const works = [
   }
 ];
 
-export const sharedGallery = [
-  "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
-];
-
 export const laCamilleGallery = [
   "/projects/la-camille/homepage.webp", // [Homepage Showcase Image]
   "/projects/la-camille/collection.webp", // [Collection Showcase Image]

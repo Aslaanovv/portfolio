@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #171717;
+    color: #F5F5F4;
+    position: relative;
+  }
+  /* Ambient orange glow — top right */
+  .glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    right: -220px; top: -280px;
+    background: radial-gradient(circle, rgba(249,115,22,0.22) 0%, rgba(249,115,22,0.05) 45%, transparent 70%);
+    border-radius: 50%;
+  }
+  /* Faint grid */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(245,245,244,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,245,244,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 30% 40%, black 30%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse at 30% 40%, black 30%, transparent 85%);
+  }
+  /* Orange accent bar — left edge */
+  .bar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 10px;
+    background: linear-gradient(180deg, #F97316 0%, #EA580C 60%, #7C2D12 100%);
+  }
+  .content {
+    position: absolute; inset: 0;
+    padding: 72px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 28px;
+  }
+  .badge .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #F97316;
+    box-shadow: 0 0 16px rgba(249,115,22,0.8);
+  }
+  .badge span {
+    font-size: 15px; font-weight: 600; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #F97316;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 88px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+  h1 .accent { color: #F97316; }
+  .role {
+    font-size: 27px; font-weight: 600; color: #D6D3D1;
+    margin-bottom: 14px;
+  }
+  .tagline {
+    font-size: 20px; font-weight: 400; color: #A8A29E;
+    max-width: 760px; line-height: 1.5;
+  }
+  .footer {
+    position: absolute; left: 80px; right: 80px; bottom: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .domain {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 19px; font-weight: 600; color: #F5F5F4;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .domain .mark { color: #F97316; font-size: 22px; }
+  .stack {
+    display: flex; gap: 10px;
+  }
+  .chip {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #A8A29E;
+    border: 1px solid rgba(245,245,244,0.16);
+    border-radius: 999px;
+    padding: 8px 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid"></div>
+  <div class="bar"></div>
+
+  <div class="content">
+    <div class="badge">
+      <span class="dot"></span>
+      <span>Product Thinking &times; Design &times; Code</span>
+    </div>
+    <h1>Muhammad<br>Aslaan<span class="accent">.</span></h1>
+    <div class="role">Product Designer &amp; Frontend Engineer</div>
+    <div class="tagline">Turning complex ideas into products people use — from strategy to shipped code.</div>
+  </div>
+
+  <div class="footer">
+    <div class="domain"><span class="mark">&#9670;</span> aslaansportfolio.vercel.app</div>
+    <div class="stack">
+      <span class="chip">Design</span>
+      <span class="chip">React</span>
+      <span class="chip">Shopify</span>
+    </div>
+  </div>
+</body>
+</html>
