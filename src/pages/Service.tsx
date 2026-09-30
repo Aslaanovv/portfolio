@@ -5,6 +5,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Rocket, ArrowRight } from "lucide-react";
 import { works } from "@/data/works";
 
+// Slug-based lookup keeps the service→project mapping stable
+// regardless of display order in the works array
+const bySlug = (slug: string) => {
+  const work = works.find((w) => w.slug === slug);
+  if (!work) throw new Error(`Project not found: ${slug}`);
+  return work;
+};
+
 export default function Service() {
   const services = [
     {
@@ -209,25 +217,25 @@ export default function Service() {
             {[
               {
                 service: "Product Design",
-                projects: [works[0], works[1]], // Malmoum V1, La Camille
+                projects: [bySlug("malmoum-v1"), bySlug("ehtwaa")],
                 icon: PenTool,
                 accent: "text-primary"
               },
               {
                 service: "Web Development",
-                projects: [works[2], works[1]], // Rabtek, La Camille
+                projects: [bySlug("zero-guilt"), bySlug("ehtwaa")],
                 icon: Code,
                 accent: "text-primary"
               },
               {
                 service: "Branding",
-                projects: [works[0]], // Malmoum V1
+                projects: [bySlug("malmoum-v1")],
                 icon: Sparkles,
                 accent: "text-primary"
               },
               {
                 service: "Odoo ERP",
-                projects: [works[2]], // Rabtek
+                projects: [bySlug("rabtek-website")],
                 icon: Building2,
                 accent: "text-primary"
               }

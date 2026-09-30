@@ -2,59 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Main Pages -->
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/credentials</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/credentials</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/service</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/service</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/works</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/projects</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/contact</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/contact</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Case Studies -->
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/works/malmoum-v1</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/projects/zero-guilt</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/works/la-camille</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/projects/ehtwaa</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://muhammadaslaanportfolio.vercel.app/works/rabtek-website</loc>
-    <lastmod>2025-01-12</lastmod>
+    <loc>https://aslaansportfolio.vercel.app/projects/malmoum-v1</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://aslaansportfolio.vercel.app/projects/la-camille</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://aslaansportfolio.vercel.app/projects/rabtek-website</loc>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

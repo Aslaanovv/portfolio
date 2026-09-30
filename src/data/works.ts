@@ -1,5 +1,20 @@
 export const works = [
   {
+    slug: "zero-guilt",
+    category: "E-COMMERCE • SHOPIFY • FULL STORE LAUNCH",
+    title: "Zero Guilt Protein Bars",
+    image: "/projects/zero-guilt/card-mockup.webp",
+    client: "Zero Guilt",
+    year: "2026",
+    services: "PRODUCT STRATEGY • SHOPIFY • STORE SETUP • COPYWRITING",
+    description1: "Full store launch for a US protein bar brand making dessert-inspired bars with 20g of protein and no added sugar. I owned the entire launch — product strategy, Shopify build, and copy — from empty store to live checkout.",
+    description2: "The store pairs bold, flavor-first merchandising with the conversion essentials: promo banners, benefit marquees, bundle pricing, and newsletter capture — all on a customized Shopify theme.",
+    about: "Zero Guilt set out to reframe protein bars as dessert, not supplements. Six flavors — from Peanut Butter to Pistachios Cream — each with 20g of protein, zero added sugar, and a brand voice that leans into indulgence rather than restriction. My job was to translate that personality into a store that sells.",
+    paragraph1: "I started with positioning: the bars aren't a compromise, they're the dessert. That drove the design direction — big flavor imagery, scrolling benefit marquees, and product pages that read like a treat, not a nutrition label.",
+    paragraph2: "On the build side, I customized the Shopify theme end to end — hero carousel, product grid, promo and bundle sections, free-shipping and 15%-off incentives, and newsletter capture. The store launched production-ready with payments and social channels wired in.",
+    liveUrl: "https://www.zeroguiltus.com/"
+  },
+  {
     slug: "malmoum-v1",
     category: "PRODUCT DESIGN • UX/UI • FRONTEND DEVELOPMENT",
     title: "Malmoum V1",
@@ -98,4 +113,23 @@ export const ehtwaaGallery = [
   "/projects/ehtwaa/team.webp", // [Team Section]
   "/projects/ehtwaa/contact-form.webp", // [Contact Form]
   "/projects/ehtwaa/responsive.webp" // [Responsive Design]
+];
+
+export const zeroGuiltGallery = [
+  "/projects/zero-guilt/hero-banner.webp", // [0] Flavor Lineup Hero
+  "/projects/zero-guilt/hero-screenshot.webp", // [1] Site screenshot — 3rd hero banner
+  "/projects/zero-guilt/flavors-banner.webp", // [2] 6-Flavors Color Banner
+  "/projects/zero-guilt/mixed-box.webp", // [3] Mixed Box Section
+  "/projects/zero-guilt/lifestyle-basketball.webp", // [4] Basketball Lifestyle
+  "/projects/zero-guilt/lifestyle-car.webp", // [5] Car Lifestyle
+  "/projects/zero-guilt/lifestyle-workout.webp", // [6] Workout Lifestyle
+  "/projects/zero-guilt/logo.webp", // [7] Brand Logo
+  "/projects/zero-guilt/product-peanut.webp", // [8] Peanut Butter Infographic
+  "/projects/zero-guilt/product-cinnamon.webp", // [9] Cinnamon Swirl Infographic
+  "/projects/zero-guilt/product-salted-caramel.webp", // [10] Salted Caramel Infographic
+  "/projects/zero-guilt/product-pistachio.webp", // [11] Pistachios Cream Infographic
+  "/projects/zero-guilt/product-hazelnut.webp", // [12] Hazelnut Cream Infographic
+  "/projects/zero-guilt/product-coconut.webp", // [13] Coconut Cream Infographic
+  "/projects/zero-guilt/product-peanut-2.webp", // [14] Peanut Butter Bar Shot
+  "/projects/zero-guilt/nutrition-facts.webp" // [15] Nutrition Facts Label
 ];
