@@ -612,7 +612,7 @@ Before implementing anything new, ask:
 
 ### External Assets
 
-- **Profile Image:** `https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg`
+- **Profile Image:** `https://aslaansportfolio.vercel.app/assets/profile-cDg9_8PP.jpg`
 - **Icons:** Primarily from `framerusercontent.com`
 - **Fonts:** Google Fonts (Plus Jakarta Sans, Syne)
 
@@ -626,7 +626,7 @@ Before implementing anything new, ask:
 ### Deployment
 
 - **Platform:** Vercel
-- **Domain:** muhammadaslaanportfolio.vercel.app
+- **Domain:** aslaansportfolio.vercel.app
 - **Build:** `npm run build`
 - **Preview:** `npm run preview`
 
