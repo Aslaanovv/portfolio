@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import { Seo } from "@/components/ui/Seo";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { ImageWithLoading } from "@/components/ui/ImageWithLoading";
-import { works, sharedGallery, laCamilleGallery, malmoumGallery, ehtwaaGallery } from "@/data/works";
+import { works, sharedGallery, laCamilleGallery, malmoumGallery, ehtwaaGallery, zeroGuiltGallery } from "@/data/works";
 import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
 import { EhtwaaCaseStudy } from "@/pages/case-studies/EhtwaaCaseStudy";
+import { ZeroGuiltCaseStudy } from "@/pages/case-studies/ZeroGuiltCaseStudy";
 import { ExternalLink } from "lucide-react";
 
 export default function WorkDetail() {
@@ -38,11 +39,13 @@ export default function WorkDetail() {
   const isLaCamille = currentSlug === "la-camille";
   const isRabtek = currentSlug === "rabtek-website";
   const isEhtwaa = currentSlug === "ehtwaa";
+  const isZeroGuilt = currentSlug === "zero-guilt";
 
   let gallery;
   if (isMalmoum) gallery = malmoumGallery;
   else if (isLaCamille) gallery = laCamilleGallery;
   else if (isEhtwaa) gallery = ehtwaaGallery;
+  else if (isZeroGuilt) gallery = zeroGuiltGallery;
   else gallery = sharedGallery;
 
   return (
@@ -57,6 +60,8 @@ export default function WorkDetail() {
         <RabtekCaseStudy work={work} nextWork={nextWork} />
       ) : isEhtwaa ? (
         <EhtwaaCaseStudy work={work} nextWork={nextWork} gallery={gallery} />
+      ) : isZeroGuilt ? (
+        <ZeroGuiltCaseStudy work={work} nextWork={nextWork} gallery={gallery} />
       ) : (
         <StandardCaseStudy work={work} nextWork={nextWork} gallery={gallery} dividerIcon={dividerIcon} lineIcon={lineIcon} />
       )}

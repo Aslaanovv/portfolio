@@ -4,7 +4,6 @@ import { Seo } from "@/components/ui/Seo";
 import { Marquee } from "@/components/ui/Marquee";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { StatCounter } from "@/components/ui/StatCounter";
-import { LazyVideo } from "@/components/ui/LazyVideo";
 
 export default function Home() {
 
@@ -74,14 +73,15 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="w-full -mx-4 md:-mx-8 mb-20"
         >
-          <Link href="/projects/ehtwaa" className="block group">
+          <Link href="/projects/zero-guilt" className="block group">
             <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border hover:border-primary transition-all duration-500">
-              {/* Video Background - Lazy loaded */}
+              {/* Featured Background */}
               <div className="relative aspect-[21/9] md:aspect-[16/7] overflow-hidden">
-                <LazyVideo
-                  src="/projects/ehtwaa/hero-video.mp4"
-                  poster="/projects/ehtwaa/hero.webp"
+                <img
+                  src="/projects/zero-guilt/goalkeeper.webp"
+                  alt="Zero Guilt Protein Bars"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
 
                 {/* Gradient Overlay - Darker for better readability */}
@@ -106,7 +106,7 @@ export default function Home() {
                     transition={{ delay: 0.3 }}
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white mb-4 drop-shadow-2xl px-2"
                   >
-                    Ehtwaa Mental Health
+                    Zero Guilt Protein Bars
                   </motion.h2>
 
                   <motion.p
@@ -116,7 +116,7 @@ export default function Home() {
                     transition={{ delay: 0.4 }}
                     className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-xl mx-auto drop-shadow-lg font-medium px-2"
                   >
-                    Bilingual Platform • UX/UI Design • React & TypeScript
+                    E-Commerce • Full Store Launch • Shopify
                   </motion.p>
 
                   <motion.div
