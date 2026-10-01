@@ -114,8 +114,7 @@ export default function Contact() {
               </div>
               <div className="flex-1 min-w-0">
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">EMAIL ME</span>
-                <a href="mailto:contact@aslaan.dev" className="block text-foreground hover:text-primary transition-colors font-medium mb-1 text-sm sm:text-base truncate">contact@aslaan.dev</a>
-                <a href="mailto:work@aslaan.dev" className="block text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base truncate">work@aslaan.dev</a>
+                <a href="mailto:mohamedaslaangit@gmail.com" className="block text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base truncate">mohamedaslaangit@gmail.com</a>
               </div>
             </motion.div>
 
