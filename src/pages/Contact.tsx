@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Seo } from "@/components/ui/Seo";
-import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2, AlertCircle } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check, ChevronDown } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,12 +15,11 @@ const formSchema = z.object({
     .regex(/^[a-zA-Z\s'-]+$/, "Name can only contain letters"),
   email: z.string()
     .min(1, "Email is required")
-    .email("Please enter a valid email address")
-    .refine((val) => val.endsWith('.com') || val.endsWith('.dev') || val.endsWith('.io') || val.endsWith('.co') || val.endsWith('.org') || val.endsWith('.net') || val.endsWith('.edu') || val.includes('@'), {
-      message: "Please enter a valid email domain"
-    }),
+    .email("Please enter a valid email address"),
   subject: z.string()
     .min(1, "Please select a subject"),
+  budget: z.string().optional(),
+  timeline: z.string().optional(),
   message: z.string()
     .min(20, "Message must be at least 20 characters")
     .max(2000, "Message is too long (max 2000 characters)")
@@ -39,19 +38,44 @@ const SUBJECT_OPTIONS = [
   "Other"
 ] as const;
 
+const PROJECT_SUBJECTS: string[] = ["Project Inquiry", "Freelance Opportunity"];
+
+const BUDGET_OPTIONS = [
+  "Under $1,000",
+  "$1,000 – $5,000",
+  "$5,000 – $10,000",
+  "$10,000+",
+  "Not sure yet"
+] as const;
+
+const TIMELINE_OPTIONS = [
+  "ASAP",
+  "1–2 weeks",
+  "1–3 months",
+  "Flexible"
+] as const;
+
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [shakeCount, setShakeCount] = useState(0);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    mode: "onBlur",
     defaultValues: {
       name: "",
       email: "",
       subject: "",
+      budget: "",
+      timeline: "",
       message: ""
     }
   });
+
+  const subjectValue = form.watch("subject");
+  const showProjectFields = PROJECT_SUBJECTS.includes(subjectValue);
 
   // Watch message length for character counter
   const messageValue = form.watch('message') || '';
@@ -75,11 +99,7 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        toast({
-          title: "Message Sent! 🎉",
-          description: "Thanks for reaching out! I'll get back to you within 24-48 hours.",
-          variant: "default"
-        });
+        setIsSent(true);
         form.reset();
       } else {
         const errorData = await response.json().catch(() => ({}));
@@ -87,9 +107,10 @@ export default function Contact() {
       }
     } catch (error) {
       console.error("Form submission error:", error);
+      setShakeCount((count) => count + 1);
       toast({
-        title: "Something went wrong 😕",
-        description: "Please try again or email me directly at contact@aslaan.dev",
+        title: "Something went wrong",
+        description: "Please try again or email me directly at mohamedaslaangit@gmail.com",
         variant: "destructive"
       });
     } finally {
@@ -165,130 +186,258 @@ export default function Contact() {
               Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
             </p>
 
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="sr-only">Name</FormLabel>
-                        <FormControl>
-                          <input
-                            {...field}
-                            placeholder="Name *"
-                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="sr-only">Email</FormLabel>
-                        <FormControl>
-                          <input
-                            {...field}
-                            type="email"
-                            placeholder="Email *"
-                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="sr-only">Subject</FormLabel>
-                      <FormControl>
-                        <div className="relative">
-                          <select
-                            {...field}
-                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
-                          >
-                            <option value="">What is this about? *</option>
-                            {SUBJECT_OPTIONS.map((option) => (
-                              <option key={option} value={option}>
-                                {option}
-                              </option>
-                            ))}
-                          </select>
-                          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
-                            <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                          </div>
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="sr-only">Message</FormLabel>
-                      <FormControl>
-                        <div className="relative">
-                          <textarea
-                            {...field}
-                            placeholder="Tell me about your project, timeline, budget, or any questions you have... *"
-                            rows={6}
-                            className={`w-full bg-background border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-all resize-none text-sm sm:text-base ${
-                              form.getFieldState('message').error
-                                ? 'border-destructive focus:ring-destructive'
-                                : 'border-border focus:ring-primary focus:border-transparent'
-                            }`}
-                          />
-                          {/* Character counter */}
-                          <div className={`absolute bottom-3 right-4 text-xs flex items-center gap-1.5 ${
-                            isAtLimit
-                              ? 'text-destructive'
-                              : isApproachingLimit
-                              ? 'text-amber-500'
-                              : 'text-muted-foreground'
-                          }`}>
-                            {isAtLimit && <AlertCircle className="w-3 h-3" />}
-                            {messageLength} / 2000
-                          </div>
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-foreground text-background py-4 md:py-5 rounded-lg md:rounded-xl font-bold text-base md:text-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-foreground disabled:hover:text-background flex items-center justify-center gap-2"
+            <AnimatePresence mode="wait">
+              {isSent ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="py-12 md:py-20 flex flex-col items-center text-center"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </button>
-              </form>
-            </Form>
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.15, type: "spring", stiffness: 300, damping: 20 }}
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center mb-6 md:mb-8"
+                  >
+                    <Check className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={2.5} />
+                  </motion.div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-3 md:mb-4">Message sent.</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base max-w-md mb-8 md:mb-10">
+                    Thanks for reaching out — I'll get back to you within 24–48 hours. Meanwhile, feel free to check out my latest work.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setIsSent(false)}
+                    className="bg-foreground text-background px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.div key="form" exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.25 }}>
+                  <motion.div
+                    key={shakeCount}
+                    animate={shakeCount > 0 ? { x: [0, -10, 10, -6, 6, -2, 0] } : undefined}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <Form {...form}>
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                          <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="sr-only">Name</FormLabel>
+                                <FormControl>
+                                  <input
+                                    {...field}
+                                    placeholder="Name *"
+                                    className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="sr-only">Email</FormLabel>
+                                <FormControl>
+                                  <input
+                                    {...field}
+                                    type="email"
+                                    placeholder="Email *"
+                                    className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+
+                        <FormField
+                          control={form.control}
+                          name="subject"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="sr-only">Subject</FormLabel>
+                              <FormControl>
+                                <div className="relative">
+                                  <select
+                                    {...field}
+                                    onChange={(e) => {
+                                      field.onChange(e);
+                                      if (!PROJECT_SUBJECTS.includes(e.target.value)) {
+                                        form.setValue("budget", "");
+                                        form.setValue("timeline", "");
+                                      }
+                                    }}
+                                    className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
+                                  >
+                                    <option value="">What is this about? *</option>
+                                    {SUBJECT_OPTIONS.map((option) => (
+                                      <option key={option} value={option}>
+                                        {option}
+                                      </option>
+                                    ))}
+                                  </select>
+                                  <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                                    <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                                  </div>
+                                </div>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <AnimatePresence initial={false}>
+                          {showProjectFields && (
+                            <motion.div
+                              key="project-fields"
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.3, ease: "easeOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                                <FormField
+                                  control={form.control}
+                                  name="budget"
+                                  render={({ field }) => (
+                                    <FormItem>
+                                      <FormLabel className="sr-only">Budget range</FormLabel>
+                                      <FormControl>
+                                        <div className="relative">
+                                          <select
+                                            {...field}
+                                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
+                                          >
+                                            <option value="">Budget range</option>
+                                            {BUDGET_OPTIONS.map((option) => (
+                                              <option key={option} value={option}>
+                                                {option}
+                                              </option>
+                                            ))}
+                                          </select>
+                                          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                                            <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                                          </div>
+                                        </div>
+                                      </FormControl>
+                                    </FormItem>
+                                  )}
+                                />
+
+                                <FormField
+                                  control={form.control}
+                                  name="timeline"
+                                  render={({ field }) => (
+                                    <FormItem>
+                                      <FormLabel className="sr-only">Timeline</FormLabel>
+                                      <FormControl>
+                                        <div className="relative">
+                                          <select
+                                            {...field}
+                                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
+                                          >
+                                            <option value="">Timeline</option>
+                                            {TIMELINE_OPTIONS.map((option) => (
+                                              <option key={option} value={option}>
+                                                {option}
+                                              </option>
+                                            ))}
+                                          </select>
+                                          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                                            <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                                          </div>
+                                        </div>
+                                      </FormControl>
+                                    </FormItem>
+                                  )}
+                                />
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
+                        <FormField
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="sr-only">Message</FormLabel>
+                              <FormControl>
+                                <div className="relative">
+                                  <textarea
+                                    {...field}
+                                    placeholder="Tell me about your project, timeline, budget, or any questions you have... *"
+                                    rows={6}
+                                    className={`w-full bg-background border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-all resize-none text-sm sm:text-base ${
+                                      form.formState.errors.message
+                                        ? 'border-destructive focus:ring-destructive'
+                                        : 'border-border focus:ring-primary focus:border-transparent'
+                                    }`}
+                                  />
+                                  {/* Character counter */}
+                                  <div className={`absolute bottom-3 right-4 text-xs flex items-center gap-1.5 ${
+                                    isAtLimit
+                                      ? 'text-destructive'
+                                      : isApproachingLimit
+                                      ? 'text-amber-500'
+                                      : 'text-muted-foreground'
+                                  }`}>
+                                    {isAtLimit && <AlertCircle className="w-3 h-3" />}
+                                    {messageLength} / 2000
+                                  </div>
+                                </div>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full bg-foreground text-background py-4 md:py-5 rounded-lg md:rounded-xl font-bold text-base md:text-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-foreground disabled:hover:text-background flex items-center justify-center gap-2"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                              Sending...
+                            </>
+                          ) : (
+                            "Send Message"
+                          )}
+                        </button>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 pt-1">
+                          <span className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
+                            <Clock className="w-3.5 h-3.5 text-primary" />
+                            Replies within 24–48 hours
+                          </span>
+                          <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground/40" aria-hidden="true" />
+                          <span className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
+                            <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+                            No spam — straight to my inbox
+                          </span>
+                        </div>
+                      </form>
+                    </Form>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
 
         </div>
