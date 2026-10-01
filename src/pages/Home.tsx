@@ -40,9 +40,9 @@ export default function Home() {
               <div className="relative shrink-0 order-1 sm:order-2 flex items-center justify-center sm:justify-end ml-0 sm:ml-4">
                 <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden bg-muted border-[3px] sm:border-4 border-background group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-lg ml-0 sm:ml-8">
                   <img
-                    src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
+                    src="/profile.webp"
                     alt="Muhammad Aslaan - Product Designer"
-                    className="w-full h-full object-cover object-bottom"
+                    className="w-full h-full object-cover"
                     loading="eager"
                     fetchPriority="high"
                   />

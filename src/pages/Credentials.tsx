@@ -21,7 +21,7 @@ export default function Credentials() {
             <div className="bg-card p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-border shadow-sm text-center">
               <div className="w-full aspect-square rounded-xl md:rounded-[1.5rem] overflow-hidden mb-4 md:mb-6 border-4 border-background bg-muted">
                 <img
-                  src="https://muhammadaslaanportfolio.vercel.app/assets/profile-cDg9_8PP.jpg"
+                  src="/profile.webp"
                   alt="Muhammad Aslaan"
                   className="w-full h-full object-cover"
                 />
