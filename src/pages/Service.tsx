@@ -319,7 +319,7 @@ export default function Service() {
                 </div>
                 <div className="mt-auto">
                   <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary mb-1.5 md:mb-2 block">More About Me</span>
-                  <h3 className="text-lg md:text-xl font-display font-bold">Credentials</h3>
+                  <h3 className="text-lg md:text-xl font-display font-bold">Who's Aslaan?</h3>
                 </div>
               </div>
             </Link>

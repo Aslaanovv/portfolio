@@ -148,12 +148,12 @@ export default function Home() {
             <Link href="/credentials" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="Credentials" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="Muhammad Aslaan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
                     <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">More About Me</span>
-                    <h3 className="text-2xl font-display font-bold">Credentials</h3>
+                    <h3 className="text-2xl font-display font-bold">Who's Aslaan?</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
                      <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />

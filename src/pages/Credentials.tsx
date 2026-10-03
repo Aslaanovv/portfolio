@@ -6,7 +6,7 @@ import { Instagram, Twitter, Linkedin, Github } from "lucide-react";
 export default function Credentials() {
   return (
     <>
-      <Seo title="Credentials" />
+      <Seo title="Who's Aslaan?" />
       <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
 
         <div className="w-full max-w-5xl mx-auto flex flex-col lg:flex-row gap-8 md:gap-12 mb-16 md:mb-20">

@@ -388,7 +388,7 @@ crafting products from strategy to shipped code."
 | Route | Page | Purpose |
 |-------|------|---------|
 | `/` | Home | Hero, featured work, services preview, stats |
-| `/credentials` | Credentials | About, experience, skills, background |
+| `/credentials` | Who's Aslaan? | About, experience, skills, background |
 | `/service` | Service | Services offered, process, pricing |
 | `/projects` | Projects | All projects grid with filters |
 | `/projects/:slug` | WorkDetail | Individual case study |
@@ -433,7 +433,7 @@ without a dedicated component fall through to `StandardCaseStudy`.
 1. Home
 2. Service
 3. Projects
-4. Credentials
+4. Who's Aslaan?
 5. Contact
 
 ---
