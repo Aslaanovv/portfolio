@@ -48,3 +48,4 @@ lerna-debug.log*
 .claude/
 
 .vercel
+.env*.local
