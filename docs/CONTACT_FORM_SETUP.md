@@ -2,80 +2,60 @@
 
 ## Current Implementation
 
-The contact form uses **Formspree** for email delivery (free tier available).
+The contact form uses **EmailJS** for email delivery (free tier available).
 
 ### Features
 - ✅ Form validation (name, email, subject, message)
-- ✅ Loading state during submission
-- ✅ Success toast notification
-- ✅ Error handling with fallback
+- ✅ Validation on blur
+- ✅ Conditional budget/timeline fields for project inquiries
+- ✅ Inline success state with "Send another message"
+- ✅ Error shake + toast with direct email fallback
 - ✅ Accessible form fields with ARIA labels
 
 ## Setup Instructions
 
-### Option 1: Formspree (Recommended - Free Tier)
-
-1. Go to [formspree.io](https://formspree.io/)
-2. Create a free account
-3. Create a new form
-4. Copy your Formspree ID
-5. Update `Contact.tsx` line 38:
-   ```ts
-   const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+1. Go to [emailjs.com](https://www.emailjs.com/) and create a free account
+2. **Email Service:** Dashboard → Email Services → Add New Service → connect Gmail → copy the **Service ID** (`service_xxxxxxx`)
+3. **Email Template:** Dashboard → Email Templates → Create Template → copy the **Template ID** (`template_xxxxxxx`)
+4. **Public Key:** Account → API Keys → copy the **Public Key**
+5. Create a `.env` file in the project root (copy from `.env.example`):
+   ```env
+   VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+   VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
    ```
+6. Restart the dev server (`npm run dev`) — Vite only reads `.env` at startup
+
+### Recommended Template
+
+Use these variables in your EmailJS template:
+
+| Variable | Value |
+|----------|-------|
+| `{{name}}` | Sender name |
+| `{{email}}` | Sender email (set as Reply-To) |
+| `{{subject}}` | Selected subject |
+| `{{budget}}` | Budget range (or "Not specified") |
+| `{{timeline}}` | Timeline (or "Not specified") |
+| `{{message}}` | Message body |
+
+Set the template's **Reply-To** field to `{{email}}` so replies go straight to the sender.
 
 **Free Tier Limits:**
-- 50 submissions/month
-- 1 form
-- Email notifications
+- 200 emails/month
+- 2 email services
+- Basic spam filtering
 
-### Option 2: Resend (Requires Backend API)
+## Deployment (Vercel)
 
-For production with higher volume:
+The `.env` file is local only. For the deployed site:
 
-1. Create a Vercel Edge Function at `api/contact.ts`:
-   ```ts
-   import { Resend } from 'resend';
+1. Vercel dashboard → your project → Settings → Environment Variables
+2. Add `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`
+3. Redeploy
 
-   const resend = new Resend(process.env.RESEND_API_KEY);
+## Troubleshooting
 
-   export default async function handler(req: Request) {
-     const { name, email, subject, message } = await req.json();
-
-     await resend.emails.send({
-       from: 'portfolio@yourdomain.com',
-       to: 'contact@aslaan.dev',
-       subject: `${subject} - from ${name}`,
-       html: `
-         <p><strong>Name:</strong> ${name}</p>
-         <p><strong>Email:</strong> ${email}</p>
-         <p><strong>Message:</strong></p>
-         <p>${message}</p>
-       `
-     });
-
-     return Response.json({ success: true });
-   }
-   ```
-
-2. Update Contact.tsx to fetch from `/api/contact`
-
-### Option 3: GetForm (Alternative)
-
-Similar to Formspree:
-- [getform.io](https://getform.io/)
-- Free tier: 50 submissions/month
-
-## Current Status
-
-- ✅ Form validation
-- ✅ Loading states
-- ⏳ Email integration (requires Formspree ID)
-- ⏳ Production backend (optional)
-
-## Next Steps
-
-1. **Set up Formspree** (5 minutes) - Get your free ID
-2. **Test the form** - Verify submissions work
-3. **Add spam protection** - Formspree offers honeypot, reCAPTCHA
-4. **Monitor analytics** - Formspree has basic analytics
+- **Error toast on submit locally:** Check `.env` exists with all three values, and restart `npm run dev`
+- **412 / 401 errors from EmailJS:** Service not connected or Public Key wrong
+- **Emails not arriving:** Check the EmailJS dashboard → Email Templates → Test button, and your Gmail spam folder

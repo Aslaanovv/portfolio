@@ -1,11 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Link } from "wouter";
+import emailjs from "@emailjs/browser";
 import { Seo } from "@/components/ui/Seo";
-import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check, ChevronDown } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
@@ -21,11 +24,8 @@ const formSchema = z.object({
   budget: z.string().optional(),
   timeline: z.string().optional(),
   message: z.string()
-    .min(20, "Message must be at least 20 characters")
     .max(2000, "Message is too long (max 2000 characters)")
-    .refine((val) => val.trim().split(/\s+/).length >= 5, {
-      message: "Please provide more details (at least 5 words)"
-    })
+    .optional()
 });
 
 const SUBJECT_OPTIONS = [
@@ -60,10 +60,14 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [shakeCount, setShakeCount] = useState(0);
+  const [honeypot, setHoneypot] = useState("");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    mode: "onBlur",
+    // Only validate on submit — no premature errors from tabbing through fields.
+    // After a failed submit, fields re-validate live as the user fixes them.
+    mode: "onSubmit",
+    reValidateMode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -84,27 +88,39 @@ export default function Contact() {
   const isAtLimit = messageLength >= 2000;
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
+    // Honeypot filled → almost certainly a bot. Fake success silently, drop the message.
+    if (honeypot) {
+      setIsSent(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Using Formspree for form handling
-      const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || "YOUR_FORMSPREE_ID";
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      if (response.ok) {
-        setIsSent(true);
-        form.reset();
-      } else {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || "Failed to send message");
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        throw new Error("EmailJS is not configured. Add your credentials to .env");
       }
+
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          budget: data.budget || "Not specified",
+          timeline: data.timeline || "Not specified",
+          message: data.message || "Not specified"
+        },
+        { publicKey: PUBLIC_KEY }
+      );
+
+      setIsSent(true);
+      form.reset();
     } catch (error) {
       console.error("Form submission error:", error);
       setShakeCount((count) => count + 1);
@@ -157,13 +173,12 @@ export default function Contact() {
               <div>
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">LOCATION</span>
                 <p className="text-foreground font-medium text-sm sm:text-base">Egypt</p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Remote Worldwide</p>
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-card p-6 md:p-10 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex flex-col items-center justify-center mt-2 relative overflow-hidden group">
               <img src="https://framerusercontent.com/images/YUVK5MuHxZmdnMGc0QiIuvnJ2j0.svg" alt="*" className="w-12 h-12 md:w-16 md:h-16 absolute top-0 -translate-y-1/2 group-hover:rotate-45 transition-transform duration-700" />
-              <h3 className="text-2xl md:text-3xl font-display font-bold mt-3 md:mt-4 mb-6 md:mb-8 text-center group-hover:text-primary transition-colors">Let's work together.</h3>
+              <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block text-center mt-3 md:mt-4 mb-6 md:mb-8">Find me on</span>
               <div className="flex justify-center gap-3 md:gap-4">
                 <a href="https://instagram.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Instagram size={18} className="md:w-5 md:h-5" /></a>
                 <a href="https://twitter.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Twitter size={18} className="md:w-5 md:h-5" /></a>
@@ -207,13 +222,21 @@ export default function Contact() {
                   <p className="text-muted-foreground text-sm sm:text-base max-w-md mb-8 md:mb-10">
                     Thanks for reaching out — I'll get back to you within 24–48 hours. Meanwhile, feel free to check out my latest work.
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => setIsSent(false)}
-                    className="bg-foreground text-background px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-                  >
-                    Send another message
-                  </button>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
+                    <Link
+                      href="/projects"
+                      className="bg-foreground text-background px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                    >
+                      Show projects
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setIsSent(false)}
+                      className="border border-border text-foreground px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300"
+                    >
+                      Send another message
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <motion.div key="form" exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.25 }}>
@@ -224,6 +247,20 @@ export default function Contact() {
                   >
                     <Form {...form}>
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+                        {/* Honeypot — invisible to humans, catches spam bots */}
+                        <div className="absolute -left-[9999px]" aria-hidden="true">
+                          <label htmlFor="company_website">Company website</label>
+                          <input
+                            id="company_website"
+                            type="text"
+                            name="company_website"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={honeypot}
+                            onChange={(e) => setHoneypot(e.target.value)}
+                          />
+                        </div>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                           <FormField
                             control={form.control}
@@ -270,28 +307,32 @@ export default function Contact() {
                             <FormItem>
                               <FormLabel className="sr-only">Subject</FormLabel>
                               <FormControl>
-                                <div className="relative">
-                                  <select
-                                    {...field}
-                                    onChange={(e) => {
-                                      field.onChange(e);
-                                      if (!PROJECT_SUBJECTS.includes(e.target.value)) {
-                                        form.setValue("budget", "");
-                                        form.setValue("timeline", "");
-                                      }
-                                    }}
-                                    className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
-                                  >
-                                    <option value="">What is this about? *</option>
-                                    {SUBJECT_OPTIONS.map((option) => (
-                                      <option key={option} value={option}>
+                                <div role="radiogroup" aria-label="What is this about?" className="flex flex-wrap gap-2 md:gap-2.5">
+                                  {SUBJECT_OPTIONS.map((option) => {
+                                    const selected = field.value === option;
+                                    return (
+                                      <button
+                                        key={option}
+                                        type="button"
+                                        role="radio"
+                                        aria-checked={selected}
+                                        onClick={() => {
+                                          field.onChange(option);
+                                          if (!PROJECT_SUBJECTS.includes(option)) {
+                                            form.setValue("budget", "");
+                                            form.setValue("timeline", "");
+                                          }
+                                        }}
+                                        className={`cursor-pointer rounded-full border px-4 md:px-5 py-2 md:py-2.5 text-sm sm:text-base transition-colors duration-200 ${
+                                          selected
+                                            ? "border-transparent bg-foreground text-background font-semibold"
+                                            : "border-border bg-background text-muted-foreground hover:text-foreground hover:border-foreground/40"
+                                        }`}
+                                      >
                                         {option}
-                                      </option>
-                                    ))}
-                                  </select>
-                                  <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
-                                    <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                                  </div>
+                                      </button>
+                                    );
+                                  })}
                                 </div>
                               </FormControl>
                               <FormMessage />
@@ -316,24 +357,20 @@ export default function Contact() {
                                   render={({ field }) => (
                                     <FormItem>
                                       <FormLabel className="sr-only">Budget range</FormLabel>
-                                      <FormControl>
-                                        <div className="relative">
-                                          <select
-                                            {...field}
-                                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
-                                          >
-                                            <option value="">Budget range</option>
-                                            {BUDGET_OPTIONS.map((option) => (
-                                              <option key={option} value={option}>
-                                                {option}
-                                              </option>
-                                            ))}
-                                          </select>
-                                          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                                          </div>
-                                        </div>
-                                      </FormControl>
+                                      <Select value={field.value || undefined} onValueChange={field.onChange}>
+                                        <FormControl>
+                                          <SelectTrigger className="h-auto w-full rounded-lg md:rounded-xl border-border bg-background px-4 md:px-6 py-3 md:py-4 text-sm sm:text-base focus:ring-2 focus:ring-primary focus:ring-offset-0">
+                                            <SelectValue placeholder="Budget range" />
+                                          </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                          {BUDGET_OPTIONS.map((option) => (
+                                            <SelectItem key={option} value={option} className="rounded-lg text-sm sm:text-base">
+                                              {option}
+                                            </SelectItem>
+                                          ))}
+                                        </SelectContent>
+                                      </Select>
                                     </FormItem>
                                   )}
                                 />
@@ -344,24 +381,20 @@ export default function Contact() {
                                   render={({ field }) => (
                                     <FormItem>
                                       <FormLabel className="sr-only">Timeline</FormLabel>
-                                      <FormControl>
-                                        <div className="relative">
-                                          <select
-                                            {...field}
-                                            className="w-full bg-background border border-border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer text-sm sm:text-base"
-                                          >
-                                            <option value="">Timeline</option>
-                                            {TIMELINE_OPTIONS.map((option) => (
-                                              <option key={option} value={option}>
-                                                {option}
-                                              </option>
-                                            ))}
-                                          </select>
-                                          <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                                          </div>
-                                        </div>
-                                      </FormControl>
+                                      <Select value={field.value || undefined} onValueChange={field.onChange}>
+                                        <FormControl>
+                                          <SelectTrigger className="h-auto w-full rounded-lg md:rounded-xl border-border bg-background px-4 md:px-6 py-3 md:py-4 text-sm sm:text-base focus:ring-2 focus:ring-primary focus:ring-offset-0">
+                                            <SelectValue placeholder="Timeline" />
+                                          </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                          {TIMELINE_OPTIONS.map((option) => (
+                                            <SelectItem key={option} value={option} className="rounded-lg text-sm sm:text-base">
+                                              {option}
+                                            </SelectItem>
+                                          ))}
+                                        </SelectContent>
+                                      </Select>
                                     </FormItem>
                                   )}
                                 />
@@ -380,7 +413,7 @@ export default function Contact() {
                                 <div className="relative">
                                   <textarea
                                     {...field}
-                                    placeholder="Tell me about your project, timeline, budget, or any questions you have... *"
+                                    placeholder="Tell me about your project, timeline, budget, or any questions you have..."
                                     rows={6}
                                     className={`w-full bg-background border rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-all resize-none text-sm sm:text-base ${
                                       form.formState.errors.message
