@@ -245,6 +245,20 @@ transition={{ duration: 0.6 }}
 - [x] Create sitemap.xml (corrected to /projects routes)
 - [x] Add robots.txt
 
+### Session Log — 2026-10-01 → 2026-10-03
+
+- **Contact form migrated to EmailJS** with spam protection, conditional
+  fields, inline success state, and trust signals (commits 03754d4, 821511a)
+- **Credentials page renamed** to "Who's Aslaan?" across Navbar, Footer,
+  Home, and Service pages (commit b180fd4)
+- **Vercel env vars configured**: VITE_EMAILJS_SERVICE_ID, TEMPLATE_ID,
+  PUBLIC_KEY added to Development/Preview/Production
+- **Production redeployed** so env vars are baked into the bundle;
+  verified no `undefined` refs in deployed Contact chunk
+- **.gitignore**: added `.env*.local` (commit e7da5d6)
+- **TODO**: `vercel env pull` to sync local .env with Vercel values
+  (they differ); test live contact form on production
+
 ### Session Log — 2026-09-29/30
 
 - **Zero Guilt Protein Bars** project added: works grid (#1), premium
@@ -534,6 +548,6 @@ transition={{ duration: 0.6 }}
 
 ---
 
-*Last Updated: 2025-01-12*
+*Last Updated: 2026-10-03*
 *Project Version: 0.0.0*
 *Status: Active Development*
