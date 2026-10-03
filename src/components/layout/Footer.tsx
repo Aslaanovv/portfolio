@@ -16,12 +16,18 @@ export function Footer() {
           </div>
 
           <nav className="flex items-center gap-4 md:gap-6 flex-wrap justify-center">
-            {["Home", "About", "Service", "Projects", "Credentials", "Contact"].map((label) => (
+            {[
+              { label: "Home", href: "/" },
+              { label: "Who's Aslaan?", href: "/credentials" },
+              { label: "Service", href: "/service" },
+              { label: "Projects", href: "/projects" },
+              { label: "Contact", href: "/contact" },
+            ].map(({ label, href }) => (
               <Link
                 key={label}
-                href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
+                href={href}
                 className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-foreground hover:text-primary transition-colors"
-                data-testid={`footer-link-${label.toLowerCase()}`}
+                data-testid={`footer-link-${href.replace("/", "")}`}
               >
                 {label}
               </Link>
