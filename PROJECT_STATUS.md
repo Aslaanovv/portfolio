@@ -241,11 +241,12 @@ transition={{ duration: 0.6 }}
 - [ ] Enhance mobile menu animations
 - [ ] Add skeleton loading states
 - [ ] Implement error boundaries
-- [ ] Add form validation on contact page
+- [x] Add form validation on contact page
 - [x] Create sitemap.xml (corrected to /projects routes)
 - [x] Add robots.txt
+- [x] Contact form backend (EmailJS, verified end-to-end 2026-10-04)
 
-### Session Log — 2026-10-01 → 2026-10-03
+### Session Log — 2026-10-01 → 2026-10-04
 
 - **Contact form migrated to EmailJS** with spam protection, conditional
   fields, inline success state, and trust signals (commits 03754d4, 821511a)
@@ -255,9 +256,18 @@ transition={{ duration: 0.6 }}
   PUBLIC_KEY added to Development/Preview/Production
 - **Production redeployed** so env vars are baked into the bundle;
   verified no `undefined` refs in deployed Contact chunk
-- **.gitignore**: added `.env*.local` (commit e7da5d6)
-- **TODO**: `vercel env pull` to sync local .env with Vercel values
-  (they differ); test live contact form on production
+- **.gitignore**: added `.env*.local`, then `.env*` (commits e7da5d6, 477de90)
+- **Env sync complete**: `vercel env pull` wrote Vercel values to
+  `.env.local`; stale `.env` deleted after merging its GA measurement ID
+  into `.env.local`. Local values verified to match production bundle
+- **Production form verified (static)**: /contact returns 200; Contact
+  chunk contains correct service/template/public key; form wiring intact
+- **API-level send blocked by design**: EmailJS account security setting
+  blocks non-browser requests (403) — good anti-bot posture; final
+  end-to-end check is a manual browser submission
+- **End-to-end confirmed**: live form submitted in browser on production;
+  email delivered to mohamedaslaangit@gmail.com. Contact form pipeline
+  fully working
 
 ### Session Log — 2026-09-29/30
 
@@ -537,7 +547,7 @@ transition={{ duration: 0.6 }}
 - [x] Routing implemented
 - [x] Styling system (Tailwind)
 - [x] Animation system (Framer)
-- [ ] Form backend (planned)
+- [x] Form backend (EmailJS)
 - [ ] Analytics (planned)
 
 ### Quality
