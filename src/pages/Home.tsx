@@ -141,6 +141,19 @@ export default function Home() {
           </Link>
         </motion.div>
 
+        {/* Latest theme showcase */}
+        <section className="w-full max-w-7xl mb-20" aria-labelledby="latest-project-title">
+          <Link href="/projects/yuchiie" className="group grid md:grid-cols-2 items-center gap-8 bg-card border border-border rounded-[2rem] overflow-hidden hover:border-primary transition-colors">
+            <img src="/projects/yuchiie/thumbnail.webp" alt="Yuchiie desktop and mobile theme presentation" width={1600} height={1000} loading="lazy" className="w-full" />
+            <div className="px-8 pb-8 md:py-8 md:pr-12 md:pl-0">
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Latest showcase / Shopify</p>
+              <h2 id="latest-project-title" className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4">Yuchiie</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">Editorial fashion commerce. An original Shopify theme with campaign-scale imagery, cinematic motion, and a complete shopping journey.</p>
+              <span className="text-sm font-semibold group-hover:text-primary">Explore the case study →</span>
+            </div>
+          </Link>
+        </section>
+
         {/* 3 FEATURE CARDS */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
 

@@ -50,3 +50,6 @@ lerna-debug.log*
 .vercel
 .env*.local
 .env*
+
+# Local research and browser-test artifacts
+.arena/

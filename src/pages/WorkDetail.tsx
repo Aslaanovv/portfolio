@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
 import { EhtwaaCaseStudy } from "@/pages/case-studies/EhtwaaCaseStudy";
 import { ZeroGuiltCaseStudy } from "@/pages/case-studies/ZeroGuiltCaseStudy";
+import { YuchiieCaseStudy } from "@/pages/case-studies/YuchiieCaseStudy";
 import { ExternalLink } from "lucide-react";
 
 export default function WorkDetail() {
@@ -51,7 +52,9 @@ export default function WorkDetail() {
     <>
       <Seo title={`${work.title} | Projects`} description={work.description1} />
 
-      {isMalmoum ? (
+      {currentSlug === "yuchiie" ? (
+        <YuchiieCaseStudy work={work} nextWork={nextWork} />
+      ) : isMalmoum ? (
         <MalmoumV1CaseStudy work={work} nextWork={nextWork} gallery={gallery} />
       ) : isLaCamille ? (
         <LaCamilleCaseStudy work={work} nextWork={nextWork} gallery={gallery} dividerIcon={dividerIcon} lineIcon={lineIcon} />
