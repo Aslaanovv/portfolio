@@ -4,8 +4,11 @@ import { Seo } from "@/components/ui/Seo";
 import { Marquee } from "@/components/ui/Marquee";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { StatCounter } from "@/components/ui/StatCounter";
+import { ArrowUpRight } from "lucide-react";
+import { works } from "@/data/works";
 
 export default function Home() {
+  const latestWork = works[0];
 
   return (
     <>
@@ -65,91 +68,32 @@ export default function Home() {
           <Marquee />
         </div>
 
-        {/* FEATURED PROJECT - Full Width Video */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="w-full -mx-4 md:-mx-8 mb-20"
-        >
-          <Link href="/projects/zero-guilt" className="block group">
-            <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-border hover:border-primary transition-all duration-500">
-              {/* Featured Background */}
-              <div className="relative aspect-[21/9] md:aspect-[16/7] overflow-hidden">
-                <img
-                  src="/projects/zero-guilt/goalkeeper.webp"
-                  alt="Zero Guilt Protein Bars"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-
-                {/* Gradient Overlay - Darker for better readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30" />
-
-                {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 sm:px-8 md:px-16 text-center max-w-4xl mx-auto">
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-widest text-white mb-4 backdrop-blur-md bg-black/50 px-3 sm:px-4 py-2 rounded-full"
-                  >
-                    Featured Project
-                  </motion.span>
-
-                  <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white mb-4 drop-shadow-2xl px-2"
-                  >
-                    Zero Guilt Protein Bars
-                  </motion.h2>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-xl mx-auto drop-shadow-lg font-medium px-2"
-                  >
-                    E-Commerce • Full Store Launch • Shopify
-                  </motion.p>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                    className="flex items-center gap-3 sm:gap-4 text-white group-hover:gap-5 sm:group-hover:gap-6 transition-all duration-300"
-                  >
-                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider drop-shadow-md">View Case Study</span>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300 backdrop-blur-sm bg-black/30 shrink-0">
-                      <img
-                        src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
-                        alt="View"
-                        className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
-                      />
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
+        {/* One featured slot, driven by the latest case study in works. */}
+        <section className="w-full max-w-7xl mx-auto mb-16 md:mb-20" aria-labelledby="featured-project-title">
+          <Link
+            href={`/projects/${latestWork.slug}`}
+            className="group block rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-card border border-border hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background transition-colors duration-300"
+          >
+            <div className="relative bg-[#e8e3dc] overflow-hidden">
+              <img
+                src={latestWork.image}
+                alt={`${latestWork.title} desktop and mobile project presentation`}
+                width={1600}
+                height={1000}
+                loading="lazy"
+                className="w-full h-auto motion-safe:group-hover:scale-[1.02] motion-safe:transition-transform motion-safe:duration-700"
+              />
             </div>
-          </Link>
-        </motion.div>
-
-        {/* Latest theme showcase */}
-        <section className="w-full max-w-7xl mb-20" aria-labelledby="latest-project-title">
-          <Link href="/projects/yuchiie" className="group grid md:grid-cols-2 items-center gap-8 bg-card border border-border rounded-[2rem] overflow-hidden hover:border-primary transition-colors">
-            <img src="/projects/yuchiie/thumbnail.webp" alt="Yuchiie desktop and mobile theme presentation" width={1600} height={1000} loading="lazy" className="w-full" />
-            <div className="px-8 pb-8 md:py-8 md:pr-12 md:pl-0">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Latest showcase / Shopify</p>
-              <h2 id="latest-project-title" className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4">Yuchiie</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">Editorial fashion commerce. An original Shopify theme with campaign-scale imagery, cinematic motion, and a complete shopping journey.</p>
-              <span className="text-sm font-semibold group-hover:text-primary">Explore the case study →</span>
+            <div className="flex items-end justify-between gap-5 p-6 sm:p-8 md:p-10 lg:p-12">
+              <div className="min-w-0 max-w-2xl">
+                <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-3">Latest case study <span aria-hidden="true" className="mx-2">/</span> {latestWork.year}</p>
+                <h2 id="featured-project-title" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-2 md:mb-4">{latestWork.title}</h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{latestWork.category.split(' • ').join(' · ')}</p>
+                <span className="inline-block text-sm font-semibold mt-5 md:mt-6 group-hover:text-primary transition-colors">View case study</span>
+              </div>
+              <span className="shrink-0 flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full border border-border group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-colors" aria-hidden="true">
+                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+              </span>
             </div>
           </Link>
         </section>
