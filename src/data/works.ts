@@ -1,5 +1,20 @@
 export const works = [
   {
+    slug: "yuchiie",
+    category: "E-COMMERCE • SHOPIFY • WEB DESIGN & DEVELOPMENT",
+    title: "Yuchiie",
+    image: "/projects/yuchiie/thumbnail.webp",
+    client: "Yuchiie",
+    year: "2026",
+    services: "ART DIRECTION • THEME DESIGN • LIQUID • FRONTEND DEVELOPMENT",
+    description1: "An original, editorial Shopify theme for Yuchiie, pairing campaign-scale imagery and cinematic motion with a complete, responsive shopping journey.",
+    description2: "A configurable Online Store 2.0 theme with collection filters, variant selection, an AJAX cart, a browser-local wishlist, and editable brand storytelling.",
+    about: "Yuchiie explores an image-led approach to fashion commerce: a quiet interface, expressive campaigns, and native Shopify functionality underneath.",
+    paragraph1: "The theme brings together custom Liquid templates, reusable sections, and dependency-free CSS and JavaScript for an editorial storefront that merchants can maintain in Shopify.",
+    paragraph2: "A cinematic signature intro, responsive campaign crops, and subtle motion establish the brand atmosphere. The store is currently password-protected; the showcase uses theme demo assets rather than claiming live-store outcomes.",
+    liveUrl: "https://yuchiie.myshopify.com/"
+  },
+  {
     slug: "zero-guilt",
     category: "E-COMMERCE • SHOPIFY • FULL STORE LAUNCH",
     title: "Zero Guilt Protein Bars",
