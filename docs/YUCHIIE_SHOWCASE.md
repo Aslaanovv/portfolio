@@ -10,13 +10,15 @@ Case-study text describes the implemented theme, not verified commercial results
 
 ## Visuals
 
-`public/projects/yuchiie/` includes selected theme assets and four locally composed WebP mockups. These are labeled as presentation/layout studies, not screenshots. Rebuild them with:
+`public/projects/yuchiie/` includes selected theme assets, three client-supplied actual screenshots (desktop, mobile, intro), and a screenshot-based device composition. The homepage, project grid, and case-study hero use `screenshot-mockup.webp`. Screenshots are resized proportionally, without invented navigation or cropping. The collection study remains illustrative and is labeled separately. Rebuild the composition and collection study with:
 
 ```sh
 node scripts/create-yuchiie-mockups.mjs
 ```
 
 The composition script uses the existing Sharp dev dependency. No image-generation API or new production dependency is required.
+
+Source screenshots: `3127c288-d36f-476d-a905-2718b0fd14a8.jpeg` (desktop), `IMG_5297.jpeg` (mobile), `IMG_5298.jpeg` (intro). WebP sources are persisted in the project assets; rebuilding does not require the original upload directory.
 
 ## Checks
 

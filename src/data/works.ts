@@ -3,7 +3,7 @@ export const works = [
     slug: "yuchiie",
     category: "E-COMMERCE • SHOPIFY • WEB DESIGN & DEVELOPMENT",
     title: "Yuchiie",
-    image: "/projects/yuchiie/thumbnail.webp",
+    image: "/projects/yuchiie/screenshot-mockup.webp",
     client: "Yuchiie",
     year: "2026",
     services: "ART DIRECTION • THEME DESIGN • LIQUID • FRONTEND DEVELOPMENT",
@@ -11,7 +11,7 @@ export const works = [
     description2: "A configurable Online Store 2.0 theme with collection filters, variant selection, an AJAX cart, a browser-local wishlist, and editable brand storytelling.",
     about: "Yuchiie explores an image-led approach to fashion commerce: a quiet interface, expressive campaigns, and native Shopify functionality underneath.",
     paragraph1: "The theme brings together custom Liquid templates, reusable sections, and dependency-free CSS and JavaScript for an editorial storefront that merchants can maintain in Shopify.",
-    paragraph2: "A cinematic signature intro, responsive campaign crops, and subtle motion establish the brand atmosphere. The store is currently password-protected; the showcase uses theme demo assets rather than claiming live-store outcomes.",
+    paragraph2: "A cinematic signature intro, responsive campaign crops, and subtle motion establish the brand atmosphere. The store is currently password-protected; the showcase pairs client-supplied storefront screenshots with clearly labeled theme layout studies, without claiming commercial outcomes.",
     liveUrl: "https://yuchiie.myshopify.com/"
   },
   {

@@ -28,12 +28,12 @@ export function YuchiieCaseStudy({ work, nextWork }: { work: Work; nextWork: Wor
           <a href={work.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-foreground text-background rounded-full px-6 py-3 text-sm font-semibold">Visit store <ArrowUpRight size={17} /></a>
           <a href="https://github.com/Aslaanovv/YUCHIIE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-border rounded-full px-6 py-3 text-sm font-semibold hover:bg-muted">Explore theme <ArrowUpRight size={17} /></a>
         </div>
-        <p className="text-xs text-muted-foreground mt-4">Store currently password-protected. Visuals below are presentation mockups using the theme’s demo assets, not live-store screenshots.</p>
+        <p className="text-xs text-muted-foreground mt-4">Store currently password-protected. Desktop, mobile, and intro screenshots supplied by the client are shown below. The collection layout study and standalone campaign imagery use the theme’s demo assets.</p>
       </header>
 
       <figure className="mb-16 md:mb-24">
-        <img src={asset('thumbnail')} alt="Yuchiie desktop and mobile presentation mockups on a warm neutral background" width={1600} height={1000} fetchPriority="high" className="w-full rounded-[2rem] border border-border" />
-        <figcaption className="text-xs text-muted-foreground mt-4">01 / Responsive theme presentation · Original theme assets</figcaption>
+        <img src={asset('screenshot-mockup')} alt="Actual Yuchiie desktop and mobile screenshots presented in device frames" width={1600} height={1000} fetchPriority="high" className="w-full rounded-[2rem] border border-border" />
+        <figcaption className="text-xs text-muted-foreground mt-4">01 / Actual storefront screenshots · Desktop and mobile</figcaption>
       </figure>
 
       <dl className="grid grid-cols-2 lg:grid-cols-4 gap-8 border-y border-border py-8 mb-20 md:mb-32">
@@ -71,12 +71,12 @@ export function YuchiieCaseStudy({ work, nextWork }: { work: Work; nextWork: Wor
 
       <section className="mb-20 md:mb-32">
         <SectionHeading number="03 / The storefront" title="From campaign to collection."><p>The homepage pairs full-screen campaigns with a featured-product rail. Collection pages shift into a denser shopping layout with category navigation, native Shopify filters, sorting, pagination, and optional size labels.</p></SectionHeading>
-        <figure className="p-3 md:p-8 bg-[#e8e3dc] rounded-3xl"><img src={asset('desktop-mockup')} alt="Desktop homepage mockup with centered Yuchiie logo, campaign photography, and an All products call to action" width={1200} height={800} loading="lazy" className="w-full rounded-xl" /></figure>
+        <figure className="p-3 md:p-8 bg-[#e8e3dc] rounded-3xl"><img src={asset('desktop-screenshot')} alt="Actual desktop homepage screenshot with transparent navigation over the campaign" width={1279} height={591} loading="lazy" className="w-full rounded-xl" /></figure>
         <figure className="mt-6"><img src={asset('collection-mockup')} alt="Collection layout presentation with demo fashion imagery, filter and sort controls, and size labels" width={1200} height={600} loading="lazy" className="w-full rounded-3xl border border-border" /><figcaption className="text-xs text-muted-foreground mt-4">Layout studies / Illustrative interface with the theme’s generated demo photography. Product labels are placeholders.</figcaption></figure>
       </section>
 
       <section className="grid md:grid-cols-2 gap-10 md:gap-20 items-center mb-20 md:mb-32">
-        <div className="bg-[#e8e3dc] rounded-3xl p-8 md:p-12 flex justify-center"><img src={asset('mobile-mockup')} alt="Mobile homepage mockup showing compact navigation and a portrait campaign crop" width={390} height={780} loading="lazy" className="w-full max-w-[300px] rounded-[2rem] border-[7px] border-[#242321] shadow-xl" /></div>
+        <div className="bg-[#e8e3dc] rounded-3xl p-8 md:p-12 flex justify-center"><img src={asset('mobile-screenshot')} alt="Actual mobile homepage screenshot with overlay navigation and the All products link" width={1179} height={1872} loading="lazy" className="w-full max-w-[300px] rounded-[2rem] border-[7px] border-[#242321] shadow-xl" /></div>
         <div><p className={`${label} mb-5`}>04 / Interaction & motion</p><h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">A cinematic entrance.<br />A practical experience.</h2><p className="text-muted-foreground text-lg leading-relaxed mb-8">A signature reveal opens into a two-panel curtain transition. Beyond the intro, subtle scroll reveals and campaign parallax add movement without external animation libraries.</p>
           <ul className="space-y-5">{[
             ['Control stays with the visitor', 'The intro can be skipped by button or Escape. Reduced-motion preferences receive a still, fading alternative.'],
@@ -85,6 +85,11 @@ export function YuchiieCaseStudy({ work, nextWork }: { work: Work; nextWork: Wor
           ].map(([title, body]) => <li key={title} className="border-t border-border pt-5"><h3 className="font-semibold mb-2">{title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{body}</p></li>)}</ul>
         </div>
       </section>
+
+      <figure className="mb-20 md:mb-32 rounded-3xl bg-[#111] p-6 md:p-10">
+        <img src={asset('intro-screenshot')} alt="Actual Yuchiie cinematic intro screen with signature emblem, A world in motion tagline, and Skip intro control" width={1179} height={1860} loading="lazy" className="w-full max-w-sm mx-auto rounded-xl" />
+        <figcaption className="text-xs text-white/60 text-center mt-6">Cinematic intro / Client-supplied screenshot</figcaption>
+      </figure>
 
       <section className="mb-20 md:mb-32">
         <SectionHeading number="05 / Engineering" title="Custom on the surface. Native at the core."><p>Liquid templates and reusable sections work with Shopify’s product and collection data. Vanilla JavaScript handles storefront interactions; Shopify remains responsible for checkout, inventory, payments, and customer accounts.</p></SectionHeading>
