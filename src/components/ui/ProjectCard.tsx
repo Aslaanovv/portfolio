@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   slug: string;
@@ -49,11 +50,7 @@ export function ProjectCard({ slug, category, title, image, index = 0 }: Project
               </h3>
             </div>
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-border flex items-center justify-center text-foreground group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300 transform group-hover:rotate-45 shrink-0">
-              <img
-                src="https://framerusercontent.com/images/RNA8Jba4vAtFxrA1ensbbd4eT8.svg"
-                alt="Go"
-                className="w-4 h-4 sm:w-5 sm:h-5 brightness-0 invert group-hover:brightness-0 group-hover:invert transition-all"
-              />
+              <ArrowUpRight aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
           </div>
         </div>

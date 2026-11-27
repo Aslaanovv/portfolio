@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { Home, ArrowLeft, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { site } from "@/data/site";
 
 /**
  * Premium 404 Page - Matches portfolio design language
@@ -83,9 +84,12 @@ export default function NotFound() {
             transition={{ delay: 1, duration: 0.6 }}
             className="mt-16 text-sm text-muted-foreground max-w-md mx-auto"
           >
-            <p className="mb-2">If you believe this is an error, feel free to reach out.</p>
+            <p className="mb-2">
+              If you believe this is an error, feel free to reach out at{" "}
+              <a href={`mailto:${site.email}`} className="text-primary hover:underline">{site.email}</a>.
+            </p>
             <a
-              href="https://github.com/aslaan"
+              href={site.githubIssues}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"

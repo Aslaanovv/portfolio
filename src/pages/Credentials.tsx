@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Seo } from "@/components/ui/Seo";
-import { Instagram, Twitter, Linkedin, Github } from "lucide-react";
+import { Download, ArrowUpRight } from "lucide-react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { site } from "@/data/site";
 
 export default function Credentials() {
   return (
@@ -30,16 +32,31 @@ export default function Credentials() {
               <p className="text-xs sm:text-sm font-medium text-foreground mb-1">Product Designer & Frontend Engineer</p>
               <p className="text-xs text-muted-foreground mb-6 md:mb-8 max-w-[200px] mx-auto">Building digital products from strategy to shipped code.</p>
 
-              <div className="flex justify-center gap-3 mb-6 md:mb-8">
-                <a href="https://instagram.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Instagram size={16} /></a>
-                <a href="https://twitter.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Twitter size={16} /></a>
-                <a href="https://linkedin.com/in/aslaan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Linkedin size={16} /></a>
-                <a href="https://github.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Github size={16} /></a>
-              </div>
+              <SocialLinks size="sm" className="justify-center mb-6 md:mb-8" />
 
               <Link href="/contact" className="block w-full py-3 md:py-4 rounded-full bg-foreground text-background font-semibold hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
                 Let's Talk
               </Link>
+
+              <a
+                href={site.cvUrl}
+                download={`Muhammad-Aslaan-CV.pdf`}
+                className="mt-3 flex items-center justify-center gap-2 w-full py-3 md:py-4 rounded-full border border-border text-foreground font-semibold hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300"
+                data-testid="download-cv"
+              >
+                <Download size={16} aria-hidden="true" />
+                Download CV
+              </a>
+
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 flex items-center justify-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                View LinkedIn profile
+                <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
             </div>
           </motion.div>
 

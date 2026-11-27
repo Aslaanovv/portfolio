@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="16" viewBox="0 0 320 16" fill="none" role="presentation">
+  <line x1="8" y1="8" x2="146" y2="8" stroke="#3f3f3f" stroke-width="1" stroke-linecap="round" />
+  <line x1="174" y1="8" x2="312" y2="8" stroke="#3f3f3f" stroke-width="1" stroke-linecap="round" />
+  <path d="M160 2.5 165.5 8 160 13.5 154.5 8 160 2.5Z" fill="#FF8000" />
+</svg>

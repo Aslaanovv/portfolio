@@ -246,6 +246,52 @@ transition={{ duration: 0.6 }}
 - [x] Add robots.txt
 - [x] Contact form backend (EmailJS, verified end-to-end 2026-10-04)
 
+### Session Log — 2026-11-27
+
+- **Contact & social links centralized** in `src/data/site.ts` (name, email,
+  location, availability, LinkedIn, GitHub, WhatsApp, CV path). Every link
+  in the footer, contact page, credentials page, error screens and JSON-LD
+  now reads from this one file
+- **Placeholder profiles replaced**: the old `instagram.com/aslaan`,
+  `twitter.com/aslaan`, `linkedin.com/in/aslaan` and `dribbble.com/aslaan`
+  URLs did not resolve. Social buttons now point to the real
+  `linkedin.com/in/muhammad-aslaan-a00015333`, `github.com/Aslaanovv`
+  and a `mailto:` link, rendered by the shared `SocialLinks` component
+- **CV download added**: `scripts/generate-cv.js` (`npm run generate:cv`)
+  builds a one-page A4 CV at `public/muhammad-aslaan-cv.pdf` from the
+  portfolio's own content; linked from "Who's Aslaan?" with a download
+  button. Regenerate after career/skill changes
+- **WhatsApp quick-contact** card on /contact plus a footer icon, gated on
+  `VITE_WHATSAPP_NUMBER` (digits only, international format). Hidden until
+  the number is configured
+- **SEO hardening**: `Seo` now syncs canonical, `og:url`, `og:description`
+  and Twitter equivalents per route; `index.html` gained `og:site_name`,
+  `og:locale`, a canonical link and corrected JSON-LD (`sameAs`, `email`,
+  `address`, `knowsAbout`)
+- **404 + error boundary** now link to the GitHub issue tracker and the
+  contact email instead of a dead GitHub profile
+- **Home hero CTAs**: the hero card was an all-in-one link; it now exposes
+  explicit "View projects" and "Let's talk" buttons, with the corner arrow
+  kept as the "who's Aslaan?" link on larger screens
+- **WhatsApp enabled** with +20 111 666 5513 (`VITE_WHATSAPP_NUMBER`, default
+  in `src/data/site.ts`); the contact card, footer icon and `tel:` in the
+  Person JSON-LD are live
+- **No more third-party asset hosting**: every `framerusercontent.com`
+  reference was removed. Decorative art became `lucide-react` icons (arrow,
+  sparkle, clock, location) or local SVGs in `public/icons/`, and the home
+  cards now use the site's own imagery (`profile.webp`, zero-guilt laptop
+  mockup, Rabtek services screenshot)
+- **CV unified with the portfolio**: the PDF is now generated from the same
+  story the site tells — identical title ("Product Designer & Frontend
+  Engineer"), tagline, case studies (Yuchiie, Zero Guilt, Ehtwaa, Malmoum,
+  La Camille, Rabtek) with their live URLs, the Credentials tool stack and
+  education. Phone number added; email, LinkedIn and GitHub match
+  `src/data/site.ts`
+- **Identity unified across the site**: the `<title>`, meta/OG/Twitter
+  titles and descriptions no longer say "Web Developer" — everything reads
+  "Product Designer & Frontend Engineer" — ready to copy into the LinkedIn
+  headline
+
 ### Session Log — 2026-10-01 → 2026-10-04
 
 - **Contact form migrated to EmailJS** with spam protection, conditional
@@ -469,11 +515,19 @@ transition={{ duration: 0.6 }}
 1. **Title** — "Product Designer & Frontend Engineer"
 2. **Badge** — "Product Thinking × Design × Code"
 3. **Name Display** — "Muhammad Aslaan." (with period)
-4. **Social Links** — Instagram, Twitter, LinkedIn, Dribbble
+4. **Social Links** — ✅ done (LinkedIn, GitHub, email; add Instagram/X/Dribbble handles in `src/data/site.ts` when available)
 
 ---
 
 ## Changelog
+
+### 2026-11-27
+- **Centralized contact data** — `src/data/site.ts` is now the single source for email, location, LinkedIn, GitHub, WhatsApp and CV
+- **Real social links** — replaced unresolved placeholder profiles; new `SocialLinks` component used in footer, contact and credentials
+- **CV PDF + download button** — `npm run generate:cv` builds `public/muhammad-aslaan-cv.pdf` from portfolio content
+- **WhatsApp quick contact** — contact card and footer entry, enabled by `VITE_WHATSAPP_NUMBER`
+- **SEO** — per-route canonical/OG/Twitter tags, corrected JSON-LD `sameAs`, `og:site_name`
+- **Hero CTAs** — "View projects" and "Let's talk" added to the home hero
 
 ### 2026-07-13
 - **Created RabtekCaseStudy component** — Premium editorial case study following Linear/Stripe design patterns
@@ -558,6 +612,6 @@ transition={{ duration: 0.6 }}
 
 ---
 
-*Last Updated: 2026-10-03*
+*Last Updated: 2026-11-27*
 *Project Version: 0.0.0*
 *Status: Active Development*
