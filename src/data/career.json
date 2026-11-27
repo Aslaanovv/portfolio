@@ -1,0 +1,103 @@
+{
+  "headline": "Product Designer & Frontend Engineer",
+  "yearsExperience": 10,
+  "startYear": 2016,
+  "profile": "Product designer and frontend engineer with 10+ years across business development and product work, and founder of Adhere Studio. I take products from strategy and UX research through high-fidelity design to production React and TypeScript — across e-commerce, bilingual Arabic/English platforms, branding and Odoo ERP.",
+  "chapters": [
+    {
+      "id": "business",
+      "title": "Chapter 01 — Business & Leadership Foundation",
+      "intro": "These years shaped how I think about people, decisions, and value.",
+      "roles": [
+        {
+          "company": "EL Tayeb Real Estate",
+          "title": "Senior Sales",
+          "period": "2016 – 2019",
+          "summary": "Where it started: how customers make decisions and what actually influences their choices."
+        },
+        {
+          "company": "Que Real Estate",
+          "title": "Sales Team Lead",
+          "period": "2019 – 2021",
+          "summary": "Led a sales team, negotiated and closed deals, and planned social campaigns around new inventory."
+        },
+        {
+          "company": "4 Gates Real Estate",
+          "title": "Team Lead",
+          "period": "2021 – 2022",
+          "summary": "Led deals end to end and ran social campaigns — this is also where the company website came to life."
+        }
+      ]
+    },
+    {
+      "id": "product",
+      "title": "Chapter 02 — Design, Product & Studio",
+      "intro": "Every role moved closer to building digital products end to end.",
+      "roles": [
+        {
+          "company": "Property Hills",
+          "title": "Property Consultant",
+          "period": "Oct 2026 – Present",
+          "current": true,
+          "summary": "Real estate consulting for buyers and investors, backed by a decade of sales and negotiation."
+        },
+        {
+          "company": "United Egyptian Company for Agricultural Development",
+          "title": "Senior Consultant",
+          "period": "Dec 2024 – Oct 2026",
+          "summary": "Consulting on agricultural development projects — client relationships, proposals and sales."
+        },
+        {
+          "company": "Al Waha / Shourbagy Oasis",
+          "title": "Senior Sales",
+          "period": "Late 2024 – 2026",
+          "summary": "Sales alongside website improvements, marketing strategy, content, branding and digital communication."
+        },
+        {
+          "company": "Adhere Studio",
+          "title": "Founder",
+          "period": "Apr 2024 – Jun 2026",
+          "highlight": true,
+          "summary": "Founded a digital studio delivering branding, UI/UX, websites and social content for growing businesses."
+        },
+        {
+          "company": "CarProGini",
+          "title": "Senior Sales Representative",
+          "period": "Jun 2025 – Nov 2025",
+          "summary": "Co-led the launch of Marineprogini, a new division for premium protective film on yachts and marine vessels."
+        },
+        {
+          "company": "Abdo ELAmir",
+          "title": "Senior Sales Consultant",
+          "period": "Nov 2024 – Jun 2025",
+          "summary": "Sales consulting paired with graphic design and campaign visuals tied to business goals."
+        },
+        {
+          "company": "Freelance",
+          "title": "Senior UX/UI Designer",
+          "period": "Jul 2022 – Jun 2025",
+          "summary": "Research, wireframes, UI and prototypes for client and product work, alongside full-time roles."
+        },
+        {
+          "company": "Rabtek Integrated Solutions",
+          "title": "Senior Technical Sales Representative",
+          "period": "Oct 2022 – Jul 2023",
+          "summary": "Odoo web design and implementation — built the Rabtek website on Odoo Website Builder — plus technical pre-sales."
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor of Media Science — Multimedia & Internet",
+      "school": "International Academy for Engineering & Media Science (IAEMS)",
+      "period": "2019 – 2024"
+    },
+    {
+      "title": "High School Diploma",
+      "school": "Nile Garden Language School",
+      "period": ""
+    }
+  ],
+  "languages": "Arabic — native · English — professional"
+}

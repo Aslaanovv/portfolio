@@ -291,6 +291,17 @@ transition={{ duration: 0.6 }}
   titles and descriptions no longer say "Web Developer" — everything reads
   "Product Designer & Frontend Engineer" — ready to copy into the LinkedIn
   headline
+- **Career data unified with LinkedIn** (`src/data/career.json`): the single
+  source for the Credentials page, the home stat and the CV. Rebuilt from
+  the LinkedIn profile — EL Tayeb 2016–2019, Que 2019–2021, 4 Gates
+  2021–2022, Rabtek Oct 2022–Jul 2023, freelance UX/UI 2022–2025, Adhere
+  Studio founder Apr 2024–Jun 2026, Abdo ELAmir Nov 2024–Jun 2025,
+  CarProGini Jun–Nov 2025, United Egyptian Dec 2024–Oct 2026, Property
+  Hills Oct 2026–present. Al Waha / Shourbagy Oasis kept per request
+- **Experience figures** now derive from the same file: "10+ years since
+  2016" replaces "7+ years" in the hero stat, meta tags and CV; education
+  matches LinkedIn (Bachelor of Media Science — Multimedia & Internet,
+  IAEMS 2019–2024); the GPA line was removed
 
 ### Session Log — 2026-10-01 → 2026-10-04
 

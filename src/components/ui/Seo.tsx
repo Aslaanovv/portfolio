@@ -10,8 +10,7 @@ interface SeoProps {
   path?: string;
 }
 
-const DEFAULT_DESCRIPTION =
-  "Product Designer & Frontend Engineer with 7+ years of experience crafting digital experiences.";
+const DEFAULT_DESCRIPTION = `${site.role} with ${site.yearsExperience}+ years of experience crafting digital experiences.`;
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   let tag = document.querySelector(`meta[${attr}="${key}"]`);

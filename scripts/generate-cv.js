@@ -8,8 +8,13 @@
  * website and the LinkedIn profile tell the same story in the same order.
  */
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
+import { readFileSync } from 'node:fs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+
+// Shared with the website: src/data/career.json feeds both the Credentials
+// page and this CV, so the two (and LinkedIn) stay identical.
+const career = JSON.parse(readFileSync(new URL('../src/data/career.json', import.meta.url), 'utf8'));
 
 const PAGE = { width: 595.28, height: 841.89 };
 const MARGIN = 50;
@@ -26,7 +31,7 @@ const COLOR = {
 
 const CV = {
   name: 'Muhammad Aslaan',
-  role: 'Product Designer & Frontend Engineer',
+  role: career.headline,
   tagline: 'Turning complex ideas into products people use.',
   contact: [
     'Giza, Egypt',
@@ -36,8 +41,7 @@ const CV = {
     'github.com/Aslaanovv',
   ],
   website: 'aslaansportfolio.vercel.app',
-  profile:
-    'Product designer and frontend engineer with 7+ years of experience, starting in business development and moving into product work. I take products from strategy and UX research through high-fidelity design to production React and TypeScript — across e-commerce, bilingual Arabic/English platforms, branding and Odoo ERP.',
+  profile: career.profile,
   services: [
     {
       name: 'Product Design',
@@ -56,50 +60,14 @@ const CV = {
       text: 'Needs assessment, module configuration and staff training.',
     },
   ],
-  experience: [
-    {
-      company: 'Al Waha / Shourbagy Oasis',
-      dates: 'Nov 2024 – Present',
-      title: 'Senior Sales',
-      summary: 'Sales role extended into website improvements, marketing strategy, content and digital communication.',
-    },
-    {
-      company: 'Abdo El Amir Auto Protection',
-      dates: 'Apr 2024 – Nov 2024',
-      title: 'Senior Sales & Graphic Designer',
-      summary: 'Combined sales with graphic design, connecting business objectives to visual communication.',
-    },
-    {
-      company: 'Carprogini Auto Protection',
-      dates: 'Early 2024',
-      title: 'Senior Direct Sales',
-      summary: 'Customer-facing sales while contributing to marketing, branding and digital initiatives.',
-    },
-    {
-      company: 'Rabtek Integrated Solutions',
-      dates: '2022 – Mar 2024',
-      title: 'Technical Sales, Web Developer & Odoo Implementor',
-      summary: 'Delivered corporate websites, Odoo ERP implementations and digital transformation projects.',
-    },
-    {
-      company: '4 Gates Real Estate',
-      dates: '2021 – 2022',
-      title: 'Senior Sales',
-      summary: 'Designed and developed the company website alongside client-facing sales.',
-    },
-    {
-      company: 'QUE Real Estate',
-      dates: '2019 – 2021',
-      title: 'Team Leader',
-      summary: 'Led a sales team and aligned it around shared targets and negotiation outcomes.',
-    },
-    {
-      company: 'El Tayeb Real Estate',
-      dates: '2018 – 2019',
-      title: 'Sales Executive',
-      summary: 'The business foundation: how customers evaluate value and make decisions.',
-    },
-  ],
+  experience: career.chapters
+    .flatMap((chapter) => chapter.roles)
+    .map((role) => ({
+      company: role.company,
+      dates: role.period,
+      title: role.title,
+      summary: role.summary,
+    })),
   work: [
     {
       name: 'Yuchiie',
@@ -150,14 +118,8 @@ const CV = {
     { label: 'Commerce', text: 'Shopify (Liquid), Odoo ERP, SEO, Analytics' },
     { label: 'Workflow', text: 'Git, Notion, Claude, GitHub Copilot' },
   ],
-  education: [
-    {
-      title: 'Multi-media Programming & Graphic Design',
-      school: 'International Academy for Engineering & Media Science (IAEMS)',
-    },
-    { title: 'High School', school: 'Nile Garden Language School' },
-  ],
-  languages: 'Arabic — native   ·   English — professional',
+  education: career.education.map((item) => ({ title: item.title, school: item.school })),
+  languages: career.languages,
 };
 
 const doc = await PDFDocument.create();
@@ -239,7 +201,7 @@ function paragraph(text, { size = 9.5, font = regular, color = COLOR.body, x = M
 
 function section(title) {
   ensureSpace(60);
-  state.y -= 10;
+  state.y -= 8;
   state.page.drawText(title.toUpperCase(), {
     x: MARGIN,
     y: state.y,
@@ -253,7 +215,7 @@ function section(title) {
     thickness: 0.7,
     color: COLOR.rule,
   });
-  state.y -= 12;
+  state.y -= 11;
 }
 
 /** Bold label followed by wrapped body text on the same baseline. */
@@ -281,11 +243,11 @@ function labelled(label, text, { labelSize = 9, textSize = 9, gap = 2.5, x = MAR
 
 // ---------------------------------------------------------------- header
 addPage();
-state.y = PAGE.height - MARGIN - 18;
-line(CV.name, { size: 27, font: bold, color: COLOR.ink, gap: 2 });
-line(CV.role.toUpperCase(), { size: 9.5, font: bold, color: COLOR.accent, gap: 3 });
+state.y = PAGE.height - MARGIN - 14;
+line(CV.name, { size: 26, font: bold, color: COLOR.ink, gap: 1 });
+line(CV.role.toUpperCase(), { size: 9.5, font: bold, color: COLOR.accent, gap: 2.5 });
 line(CV.tagline, { size: 9.5, font: regular, color: COLOR.muted, gap: 7 });
-paragraph(CV.contact.join('   ·   '), { size: 8.5, color: COLOR.muted, gap: 6 });
+paragraph(CV.contact.join('   ·   '), { size: 8.5, color: COLOR.muted, gap: 5 });
 
 state.page.drawLine({
   start: { x: MARGIN, y: state.y + 2 },
@@ -326,9 +288,9 @@ for (const job of CV.experience) {
   }
 
   draw(job.dates, { x: MARGIN + CONTENT_WIDTH - datesWidth, size: 8.5, color: COLOR.muted });
-  state.y -= 11.6;
+  state.y -= 11.2;
   paragraph(job.summary, { size: 8.8, color: COLOR.body, gap: 0 });
-  state.y -= 2.5;
+  state.y -= 1.5;
 }
 
 // ---------------------------------------------------------------- work
@@ -346,24 +308,24 @@ for (const project of CV.work) {
     font: regular,
     color: COLOR.body,
   });
-  state.y -= 12.4;
+  state.y -= 12.2;
   for (const extra of lines.slice(1)) {
     draw(extra, { x: MARGIN + indent, size: 9, color: COLOR.body });
     state.y -= 12;
   }
-  state.y -= 2;
+  state.y -= 1;
 }
 
 // ---------------------------------------------------------------- toolkit
 section('Tool Stack');
 for (const group of CV.toolkit) {
-  labelled(group.label, group.text, { labelSize: 9, textSize: 9, gap: 1.5 });
+  labelled(group.label, group.text, { labelSize: 9, textSize: 9, gap: 1 });
 }
 
 // ---------------------------------------------------------------- education
 section('Education');
 for (const item of CV.education) {
-  ensureSpace(24);
+  ensureSpace(22);
   const titleWidth = bold.widthOfTextAtSize(item.title, 9.5);
   draw(item.title, { size: 9.5, font: bold, color: COLOR.ink });
   state.page.drawText(item.school, {
@@ -373,12 +335,9 @@ for (const item of CV.education) {
     font: regular,
     color: COLOR.body,
   });
-  state.y -= 14;
+  state.y -= 12;
 }
-
-// ---------------------------------------------------------------- languages
-section('Languages');
-paragraph(CV.languages, { size: 9, color: COLOR.body });
+labelled('Languages', CV.languages, { labelSize: 9, textSize: 9, gap: 0 });
 
 // ---------------------------------------------------------------- footers
 const pages = doc.getPages();

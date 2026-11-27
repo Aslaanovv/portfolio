@@ -4,6 +4,7 @@ import { Seo } from "@/components/ui/Seo";
 import { Download, ArrowUpRight } from "lucide-react";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { site } from "@/data/site";
+import { career } from "@/data/career";
 
 export default function Credentials() {
   return (
@@ -106,56 +107,31 @@ export default function Credentials() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="text-2xl md:text-3xl font-display font-bold uppercase mb-4 md:mb-6 text-primary">Career Journey</h2>
 
-              {/* Chapter 01 */}
-              <div className="mb-8 md:mb-12">
-                <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4 md:mb-6">Chapter 01 — Business & Leadership Foundation</h3>
-                <p className="text-sm text-muted-foreground mb-6 max-w-2xl">These years shaped how I think about people, decisions, and value.</p>
-                <div className="space-y-4 md:space-y-6">
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">El Tayeb Real Estate — 2018 to 2019</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Sales Executive</p>
-                    <p className="text-sm text-muted-foreground">Learned how customers make decisions and what actually influences their choices. Every conversation revealed patterns in how people evaluate value.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">QUE Real Estate — 2019 to 2021</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Team Leader</p>
-                    <p className="text-sm text-muted-foreground">Led a sales team while learning how to align people around shared goals. Negotiation taught me that every interaction involves multiple perspectives.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">4 Gates Real Estate — 2021 to 2022</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Sales</p>
-                    <p className="text-sm text-muted-foreground">Designed and developed the company website between client meetings. This was when I realized that digital products could multiply the impact of business relationships.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Chapter 02 */}
-              <div>
-                <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4 md:mb-6">Chapter 02 — Digital Transformation & Product</h3>
-                <p className="text-sm text-muted-foreground mb-6 max-w-2xl">Every role moved closer to building digital products end-to-end.</p>
-                <div className="space-y-4 md:space-y-6">
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Rabtek Integrated Solutions — 2022 to March 2024</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Technical Sales, Web Developer & Odoo Implementor</p>
-                    <p className="text-sm text-muted-foreground">This role shifted how I approach problems. Instead of just selling solutions, I was helping build them. Managing web development, Odoo ERP implementations, and digital transformation projects taught me how business requirements become technical solutions.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Carprogini Auto Protection — Early 2024</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Direct Sales</p>
-                    <p className="text-sm text-muted-foreground">Working closely with customers while contributing to marketing, branding, and digital initiatives strengthened my understanding of customer behavior, communication, and how product positioning affects business outcomes.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Abdo El Amir Auto Protection — April to November 2024</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Sales & Graphic Designer</p>
-                    <p className="text-sm text-muted-foreground">Combining sales with graphic design improved my ability to connect business objectives with visual communication. I learned that design is most effective when it serves clear business goals.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-primary mb-1">Al Waha / Shourbagy Oasis — Late 2024 to Present</h4>
-                    <p className="text-xs text-foreground uppercase tracking-wider mb-2">Senior Sales</p>
-                    <p className="text-sm text-muted-foreground">Beyond sales responsibilities, I contribute to website improvements, marketing strategy, content, branding, and digital communication. Each role continues the journey toward product thinking — understanding what users need and how businesses can deliver it.</p>
+              {career.chapters.map((chapter) => (
+                <div key={chapter.id} className="mb-8 md:mb-12 last:mb-0">
+                  <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-3 md:mb-4">{chapter.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-6 max-w-2xl">{chapter.intro}</p>
+                  <div className="space-y-5 md:space-y-7">
+                    {chapter.roles.map((role) => (
+                      <div key={`${role.company}-${role.period}`}>
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+                          <h4 className="text-sm sm:text-base font-bold text-primary">
+                            {role.company}
+                            {role.current && (
+                              <span className="ml-2 inline-flex items-center rounded-full border border-primary/40 bg-primary/15 px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wider text-primary">
+                                Current
+                              </span>
+                            )}
+                          </h4>
+                          <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-muted-foreground">{role.period}</span>
+                        </div>
+                        <p className="text-xs text-foreground uppercase tracking-wider mb-2">{role.title}</p>
+                        <p className="text-sm text-muted-foreground">{role.summary}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              ))}
 
               {/* Testimonials */}
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
@@ -242,21 +218,13 @@ export default function Credentials() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-2xl md:text-3xl font-display font-bold uppercase mb-4 md:mb-6 text-primary">Education</h2>
               <div className="space-y-6 md:space-y-8">
-                <div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1">Multi-media Programming & Graphic Design</h3>
-                  <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">International Academy for Engineering & Media Science (IAEMS)</p>
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-2">
-                    Developed foundational technical skills that made it possible to move from concept to implementation.
-                  </p>
-                  <p className="text-xs text-muted-foreground">GPA: 2.85</p>
-                </div>
-                <div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1">Nile Garden Language School</h3>
-                  <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">High School</p>
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                    Completed secondary education with a focus on languages and academic foundations.
-                  </p>
-                </div>
+                {career.education.map((item) => (
+                  <div key={item.title}>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1">{item.title}</h3>
+                    <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 md:mb-3">{item.school}</p>
+                    {item.period && <p className="text-xs text-muted-foreground uppercase tracking-wider">{item.period}</p>}
+                  </div>
+                ))}
               </div>
             </motion.div>
 
