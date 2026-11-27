@@ -281,6 +281,16 @@ transition={{ duration: 0.6 }}
   sparkle, clock, location) or local SVGs in `public/icons/`, and the home
   cards now use the site's own imagery (`profile.webp`, zero-guilt laptop
   mockup, Rabtek services screenshot)
+- **CV unified with the portfolio**: the PDF is now generated from the same
+  story the site tells — identical title ("Product Designer & Frontend
+  Engineer"), tagline, case studies (Yuchiie, Zero Guilt, Ehtwaa, Malmoum,
+  La Camille, Rabtek) with their live URLs, the Credentials tool stack and
+  education. Phone number added; email, LinkedIn and GitHub match
+  `src/data/site.ts`
+- **Identity unified across the site**: the `<title>`, meta/OG/Twitter
+  titles and descriptions no longer say "Web Developer" — everything reads
+  "Product Designer & Frontend Engineer" — ready to copy into the LinkedIn
+  headline
 
 ### Session Log — 2026-10-01 → 2026-10-04
 
