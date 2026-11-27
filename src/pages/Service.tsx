@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Seo } from "@/components/ui/Seo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Rocket, ArrowRight } from "lucide-react";
+import { PenTool, Code, Sparkles, Building2, Figma, FileCode2, Wind, MousePointer2, Bot, Zap, Move3D, Atom, MessageSquare, Rocket, ArrowRight, ArrowUpRight, Sparkle } from "lucide-react";
 import { works } from "@/data/works";
 
 // Slug-based lookup keeps the service→project mapping stable
@@ -292,7 +292,7 @@ export default function Service() {
              <Link href="/contact" className="block group h-full">
               <div className="bg-card p-5 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between text-center items-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-muted rounded-full flex items-center justify-center mb-4 md:mb-6">
-                   <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-5 h-5 md:w-6 md:h-6 rotate-180 opacity-50 group-hover:rotate-0 transition-transform duration-500" />
+                   <ArrowUpRight aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6 rotate-180 opacity-50 group-hover:rotate-0 transition-transform duration-500" />
                 </div>
                 <div className="mt-auto">
                   <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary mb-1.5 md:mb-2 block">Stay with me</span>
@@ -305,7 +305,7 @@ export default function Service() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="md:col-span-2">
             <Link href="/contact" className="block group h-full">
               <div className="bg-card p-5 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-center items-center relative overflow-hidden">
-                <img src="https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg" alt="*" className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 group-hover:text-primary transition-colors group-hover:scale-110 duration-500" />
+                <Sparkle aria-hidden="true" className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4 group-hover:text-primary transition-colors group-hover:scale-110 duration-500" />
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold group-hover:text-primary transition-colors text-center">Let's work together.</h3>
               </div>
             </Link>
@@ -315,7 +315,7 @@ export default function Service() {
              <Link href="/credentials" className="block group h-full">
               <div className="bg-card p-5 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col justify-between text-center items-center">
                 <div className="w-full aspect-[4/3] bg-muted rounded-xl md:rounded-2xl overflow-hidden mb-4 md:mb-6">
-                   <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                   <img src="/profile.webp" alt="Muhammad Aslaan" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="mt-auto">
                   <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary mb-1.5 md:mb-2 block">More About Me</span>

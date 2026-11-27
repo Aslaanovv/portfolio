@@ -631,7 +631,8 @@ Before implementing anything new, ask:
 ### External Assets
 
 - **Profile Image:** `public/profile.webp` (served at `/profile.webp`)
-- **Icons:** Primarily from `framerusercontent.com`
+- **Icons:** `lucide-react` + `react-icons`; decorative SVGs in `public/icons/`
+- **Images:** all local in `public/` (no third-party asset hosting)
 - **Fonts:** Google Fonts (Plus Jakarta Sans, Syne)
 
 ### Key Services

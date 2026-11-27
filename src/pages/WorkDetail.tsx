@@ -9,7 +9,7 @@ import { RabtekCaseStudy } from "@/pages/works/RabtekCaseStudy";
 import { EhtwaaCaseStudy } from "@/pages/case-studies/EhtwaaCaseStudy";
 import { ZeroGuiltCaseStudy } from "@/pages/case-studies/ZeroGuiltCaseStudy";
 import { YuchiieCaseStudy } from "@/pages/case-studies/YuchiieCaseStudy";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 export default function WorkDetail() {
   const [, params] = useRoute("/projects/:slug");
@@ -32,8 +32,8 @@ export default function WorkDetail() {
   }
 
   const nextWork = works[(currentIndex + 1) % works.length];
-  const dividerIcon = "https://framerusercontent.com/images/3YMJH9B5UJQjqCnjwcyMUADtIRU.svg";
-  const lineIcon = "https://framerusercontent.com/images/SW5iChPwMKIDPmMbrOLp1fyww.svg";
+  const dividerIcon = "/icons/divider.svg";
+  const lineIcon = "/icons/line.svg";
 
   // Special case studies
   const isMalmoum = currentSlug === "malmoum-v1";
@@ -1385,10 +1385,9 @@ function NextProjectLink({ nextWork }: any) {
             >
               <span className="text-sm font-semibold uppercase tracking-wider">View Project</span>
               <div className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300">
-                <img
-                  src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
-                  alt="View"
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1 filter brightness-0 invert"
+                <ArrowUpRight
+                  aria-hidden="true"
+                  className="w-5 h-5 text-white group-hover:text-black transition-all group-hover:translate-x-1"
                 />
               </div>
             </motion.div>

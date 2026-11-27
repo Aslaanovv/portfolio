@@ -273,6 +273,14 @@ transition={{ duration: 0.6 }}
 - **Home hero CTAs**: the hero card was an all-in-one link; it now exposes
   explicit "View projects" and "Let's talk" buttons, with the corner arrow
   kept as the "who's Aslaan?" link on larger screens
+- **WhatsApp enabled** with +20 111 666 5513 (`VITE_WHATSAPP_NUMBER`, default
+  in `src/data/site.ts`); the contact card, footer icon and `tel:` in the
+  Person JSON-LD are live
+- **No more third-party asset hosting**: every `framerusercontent.com`
+  reference was removed. Decorative art became `lucide-react` icons (arrow,
+  sparkle, clock, location) or local SVGs in `public/icons/`, and the home
+  cards now use the site's own imagery (`profile.webp`, zero-guilt laptop
+  mockup, Rabtek services screenshot)
 
 ### Session Log — 2026-10-01 → 2026-10-04
 

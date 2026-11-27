@@ -74,12 +74,7 @@ export default function Home() {
                 aria-label="More about Aslaan"
                 className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-border items-center justify-center bg-background group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300"
               >
-                <img
-                  src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:rotate-45 brightness-0 saturate-100"
-                />
+                <ArrowUpRight aria-hidden="true" className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:rotate-45" />
               </Link>
             </div>
           </div>
@@ -127,7 +122,7 @@ export default function Home() {
             <Link href="/credentials" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/ZqqIwsfFcCxP6L8U27dQgW3XwVc.png" alt="Muhammad Aslaan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="/profile.webp" alt="Muhammad Aslaan" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width={800} height={600} />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
@@ -135,7 +130,7 @@ export default function Home() {
                     <h3 className="text-2xl font-display font-bold">Who's Aslaan?</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                     <ArrowUpRight aria-hidden="true" className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all" />
                   </div>
                 </div>
               </div>
@@ -146,7 +141,7 @@ export default function Home() {
             <Link href="/projects" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/DarH9E4Ou5gzGBivriCWY2Oc8.png" alt="Works Portfolio" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="/projects/zero-guilt/card-mockup.webp" alt="Selected project work" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={1456} height={1080} />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
@@ -154,7 +149,7 @@ export default function Home() {
                     <h3 className="text-2xl font-display font-bold">Projects</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                     <ArrowUpRight aria-hidden="true" className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all" />
                   </div>
                 </div>
               </div>
@@ -165,7 +160,7 @@ export default function Home() {
             <Link href="/service" className="block group h-full">
               <div className="bg-card p-6 md:p-8 rounded-3xl border border-border hover:shadow-xl hover:border-primary transition-all duration-300 h-full flex flex-col">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-6 relative">
-                  <img src="https://framerusercontent.com/images/F6zvHN84xgsMwNeNdcRXZmhxOU.png" alt="Services Offered" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="/projects/rabtek/services.webp" alt="Services offered" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width={1600} height={1200} />
                 </div>
                 <div className="mt-auto flex items-end justify-between">
                   <div>
@@ -173,7 +168,7 @@ export default function Home() {
                     <h3 className="text-2xl font-display font-bold">Services</h3>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                     <img src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg" alt="" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all" />
+                     <ArrowUpRight aria-hidden="true" className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all" />
                   </div>
                 </div>
               </div>

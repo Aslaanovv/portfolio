@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import emailjs from "@emailjs/browser";
 import { Seo } from "@/components/ui/Seo";
-import { Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check } from "lucide-react";
+import { Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check, MapPin, Sparkle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { site, whatsappUrl } from "@/data/site";
@@ -182,7 +182,7 @@ export default function Contact() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-card p-5 md:p-8 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex items-start gap-4 md:gap-6">
               <div className="w-12 h-12 md:w-14 md:h-14 bg-muted rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 border border-border">
-                <img src="https://framerusercontent.com/images/9ZjCoYcH3ts7daLKd9fzU7RVMc.svg" alt="" className="w-5 h-5 md:w-6 md:h-6" />
+                <Clock aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">AVAILABILITY</span>
@@ -193,7 +193,7 @@ export default function Contact() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-card p-5 md:p-8 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex items-start gap-4 md:gap-6">
               <div className="w-12 h-12 md:w-14 md:h-14 bg-muted rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 border border-border">
-                <img src="https://framerusercontent.com/images/coRpTYVFeOA1mIZHD0xCPWVMOo.png" alt="" className="w-5 h-5 md:w-6 md:h-6 opacity-50" />
+                <MapPin aria-hidden="true" className="w-5 h-5 md:w-6 md:h-6 opacity-50" />
               </div>
               <div>
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">LOCATION</span>
@@ -202,7 +202,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-card p-6 md:p-10 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex flex-col items-center justify-center mt-2 relative overflow-hidden group">
-              <img src="https://framerusercontent.com/images/YUVK5MuHxZmdnMGc0QiIuvnJ2j0.svg" alt="" aria-hidden="true" className="w-12 h-12 md:w-16 md:h-16 absolute top-0 -translate-y-1/2 group-hover:rotate-45 transition-transform duration-700" />
+              <Sparkle aria-hidden="true" className="w-12 h-12 md:w-16 md:h-16 absolute top-0 -translate-y-1/2 group-hover:rotate-45 transition-transform duration-700 text-primary" />
               <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block text-center mt-3 md:mt-4 mb-6 md:mb-8">Find me on</span>
               <SocialLinks size="md" className="justify-center" />
             </motion.div>
@@ -213,7 +213,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}
             className="lg:col-span-2 bg-card p-5 md:p-8 lg:p-12 rounded-xl md:rounded-[2rem] border border-border shadow-sm relative overflow-hidden"
           >
-            <img src="https://framerusercontent.com/images/LWhMQrXMaimdeTept19k0hVARY.svg" alt="*" className="absolute top-8 md:top-12 right-8 md:right-12 w-10 h-10 md:w-12 md:h-12 opacity-20" />
+            <Sparkle aria-hidden="true" className="absolute top-8 md:top-12 right-8 md:right-12 w-10 h-10 md:w-12 md:h-12 opacity-20 text-primary" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 md:mb-10 text-balance">
               Let's work <span className="text-primary">together.</span>
             </h2>

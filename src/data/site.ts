@@ -7,11 +7,11 @@
 /**
  * WhatsApp number in international format, digits only (e.g. "201234567890").
  *
- * Set it here, or provide VITE_WHATSAPP_NUMBER in .env / Vercel env vars.
- * Leave it empty ("") to hide the WhatsApp buttons everywhere.
+ * Defaults to the number below; VITE_WHATSAPP_NUMBER in .env / Vercel env
+ * vars overrides it. Set either to "" to hide the WhatsApp buttons everywhere.
  */
 const WHATSAPP_NUMBER = (
-  import.meta.env.VITE_WHATSAPP_NUMBER || ""
+  import.meta.env.VITE_WHATSAPP_NUMBER || "201116665513"
 ).replace(/\D/g, "");
 
 export const DEFAULT_WHATSAPP_MESSAGE =
