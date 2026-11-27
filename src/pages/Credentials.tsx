@@ -117,11 +117,13 @@ export default function Credentials() {
                         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
                           <h4 className="text-sm sm:text-base font-bold text-primary">
                             {role.company}
-                            {role.current && (
-                              <span className="ml-2 inline-flex items-center rounded-full border border-primary/40 bg-primary/15 px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wider text-primary">
-                                Current
+                            {role.current && (<>
+                              {" "}
+                              
+                              <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/15 px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wider text-primary">
+                                Current role
                               </span>
-                            )}
+                            </>)}
                           </h4>
                           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-muted-foreground">{role.period}</span>
                         </div>
