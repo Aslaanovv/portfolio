@@ -640,6 +640,11 @@ Before implementing anything new, ask:
 All contact details and profile links live in **`src/data/site.ts`** — edit
 that file, not the pages. The `SocialLinks` component renders them everywhere.
 
+Career history, education, headline and years of experience live in
+**`src/data/career.json`** — the canonical record that mirrors the LinkedIn
+profile. The Credentials page, the home stat and `npm run generate:cv` all
+read it, so the portfolio, the CV and LinkedIn stay identical.
+
 - **LinkedIn:** https://www.linkedin.com/in/muhammad-aslaan-a00015333
 - **GitHub:** https://github.com/Aslaanovv
 - **Email:** mohamedaslaangit@gmail.com

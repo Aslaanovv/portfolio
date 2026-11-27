@@ -1,3 +1,5 @@
+import { career } from "@/data/career";
+
 /**
  * Single source of truth for contact details, social profiles and site-wide links.
  * Update a value here once and it propagates to the footer, contact page,
@@ -20,7 +22,8 @@ export const DEFAULT_WHATSAPP_MESSAGE =
 export const site = {
   name: "Muhammad Aslaan",
   shortName: "Aslaan",
-  role: "Product Designer & Frontend Engineer",
+  role: career.headline,
+  yearsExperience: career.yearsExperience,
   tagline: "Turning complex ideas into products people use.",
   email: "mohamedaslaangit@gmail.com",
   location: "Giza, Egypt",

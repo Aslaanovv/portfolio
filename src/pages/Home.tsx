@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/ui/CtaBanner";
 import { StatCounter } from "@/components/ui/StatCounter";
 import { ArrowUpRight } from "lucide-react";
 import { works } from "@/data/works";
+import { site } from "@/data/site";
 
 export default function Home() {
   const latestWork = works[0];
@@ -179,7 +180,7 @@ export default function Home() {
 
         {/* STATS */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-3 gap-4 md:gap-6">
-          <StatCounter value={7} prefix="+" label="Years Experience" />
+          <StatCounter value={site.yearsExperience} prefix="+" label="Years Experience" />
           <StatCounter value={25} prefix="+" label="Projects Completed" />
           <StatCounter value={98} suffix="%" label="Happy Clients" />
         </div>
