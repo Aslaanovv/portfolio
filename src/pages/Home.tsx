@@ -23,7 +23,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="w-full max-w-5xl mx-auto mb-20"
         >
-          <Link href="/credentials" className="block group">
+          <div className="group">
             <div className="bg-card rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 border border-border shadow-sm flex flex-col-reverse sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 hover:shadow-xl hover:border-primary transition-all duration-500 relative overflow-hidden">
               <div className="flex-1 text-center sm:text-left relative z-10 order-2 sm:order-1 min-w-0">
                 <span className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-3 sm:mb-4 block">
@@ -38,6 +38,23 @@ export default function Home() {
                 <p className="text-muted-foreground text-xs sm:text-sm md:text-base max-w-md mx-auto sm:mx-0">
                   Product Designer & Frontend Engineer crafting products from strategy to shipped code.
                 </p>
+
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-6 sm:mt-8">
+                  <Link
+                    href="/projects"
+                    className="bg-foreground text-background px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                    data-testid="hero-view-projects"
+                  >
+                    View projects
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="border border-border text-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold hover:border-primary hover:text-primary transition-colors duration-300"
+                    data-testid="hero-lets-talk"
+                  >
+                    Let's talk
+                  </Link>
+                </div>
               </div>
 
               <div className="relative shrink-0 order-1 sm:order-2 flex items-center justify-center sm:justify-end ml-0 sm:ml-4">
@@ -52,15 +69,20 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-border flex items-center justify-center bg-background group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300">
+              <Link
+                href="/credentials"
+                aria-label="More about Aslaan"
+                className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-border items-center justify-center bg-background group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300"
+              >
                 <img
                   src="https://framerusercontent.com/images/RgFXT0TeujqnaEgLpH61bQqgovM.svg"
-                  alt="Arrow"
+                  alt=""
+                  aria-hidden="true"
                   className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:rotate-45 brightness-0 saturate-100"
                 />
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </motion.div>
 
         {/* MARQUEE */}

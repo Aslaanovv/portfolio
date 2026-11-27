@@ -3,7 +3,10 @@ import { useState } from "react";
 import { Link } from "wouter";
 import emailjs from "@emailjs/browser";
 import { Seo } from "@/components/ui/Seo";
-import { Instagram, Twitter, Linkedin, Dribbble, Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check } from "lucide-react";
+import { Mail, Loader2, AlertCircle, Clock, ShieldCheck, Check } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { site, whatsappUrl } from "@/data/site";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -151,9 +154,31 @@ export default function Contact() {
               </div>
               <div className="flex-1 min-w-0">
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">EMAIL ME</span>
-                <a href="mailto:mohamedaslaangit@gmail.com" className="block text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base truncate">mohamedaslaangit@gmail.com</a>
+                <a href={`mailto:${site.email}`} className="block text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base truncate">{site.email}</a>
               </div>
             </motion.div>
+
+            {whatsappUrl() && (
+              <motion.a
+                href={whatsappUrl() as string}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="group bg-card p-5 md:p-8 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex items-start gap-4 md:gap-6 hover:border-primary transition-colors"
+                data-testid="contact-whatsapp"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-muted rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 border border-border group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">WHATSAPP</span>
+                  <span className="block text-foreground group-hover:text-primary transition-colors font-medium text-sm sm:text-base">Chat with me directly</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground mt-1 block">Usually replies within a few hours</span>
+                </div>
+              </motion.a>
+            )}
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-card p-5 md:p-8 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex items-start gap-4 md:gap-6">
               <div className="w-12 h-12 md:w-14 md:h-14 bg-muted rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 border border-border">
@@ -161,8 +186,8 @@ export default function Contact() {
               </div>
               <div>
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">AVAILABILITY</span>
-                <p className="text-foreground font-medium text-sm sm:text-base">Available for freelance work</p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Remote & Worldwide</p>
+                <p className="text-foreground font-medium text-sm sm:text-base">{site.availability}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">{site.availabilityNote}</p>
               </div>
             </motion.div>
 
@@ -172,19 +197,14 @@ export default function Contact() {
               </div>
               <div>
                 <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block mb-1.5 md:mb-2">LOCATION</span>
-                <p className="text-foreground font-medium text-sm sm:text-base">Egypt</p>
+                <p className="text-foreground font-medium text-sm sm:text-base">{site.location}</p>
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-card p-6 md:p-10 rounded-xl md:rounded-[2rem] border border-border shadow-sm flex flex-col items-center justify-center mt-2 relative overflow-hidden group">
-              <img src="https://framerusercontent.com/images/YUVK5MuHxZmdnMGc0QiIuvnJ2j0.svg" alt="*" className="w-12 h-12 md:w-16 md:h-16 absolute top-0 -translate-y-1/2 group-hover:rotate-45 transition-transform duration-700" />
+              <img src="https://framerusercontent.com/images/YUVK5MuHxZmdnMGc0QiIuvnJ2j0.svg" alt="" aria-hidden="true" className="w-12 h-12 md:w-16 md:h-16 absolute top-0 -translate-y-1/2 group-hover:rotate-45 transition-transform duration-700" />
               <span className="text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase block text-center mt-3 md:mt-4 mb-6 md:mb-8">Find me on</span>
-              <div className="flex justify-center gap-3 md:gap-4">
-                <a href="https://instagram.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Instagram size={18} className="md:w-5 md:h-5" /></a>
-                <a href="https://twitter.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Twitter size={18} className="md:w-5 md:h-5" /></a>
-                <a href="https://linkedin.com/in/aslaan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Linkedin size={18} className="md:w-5 md:h-5" /></a>
-                <a href="https://dribbble.com/aslaan" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"><Dribbble size={18} className="md:w-5 md:h-5" /></a>
-              </div>
+              <SocialLinks size="md" className="justify-center" />
             </motion.div>
           </div>
 

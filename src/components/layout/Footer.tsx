@@ -1,5 +1,14 @@
 import { Link } from "wouter";
-import { Instagram, Twitter, Linkedin, Dribbble } from "lucide-react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { site } from "@/data/site";
+
+const footerLinks = [
+  { label: "Home", href: "/" },
+  { label: "Who's Aslaan?", href: "/credentials" },
+  { label: "Service", href: "/service" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
+];
 
 export function Footer() {
   return (
@@ -8,21 +17,22 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <div className="text-center md:text-left">
             <span className="text-sm font-medium text-foreground font-display tracking-wide uppercase">
-              Muhammad Aslaan.
+              {site.shortName}.
             </span>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1">
               Made with care &copy; {new Date().getFullYear()}
             </p>
+            <a
+              href={`mailto:${site.email}`}
+              className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              data-testid="footer-email"
+            >
+              {site.email}
+            </a>
           </div>
 
           <nav className="flex items-center gap-4 md:gap-6 flex-wrap justify-center">
-            {[
-              { label: "Home", href: "/" },
-              { label: "Who's Aslaan?", href: "/credentials" },
-              { label: "Service", href: "/service" },
-              { label: "Projects", href: "/projects" },
-              { label: "Contact", href: "/contact" },
-            ].map(({ label, href }) => (
+            {footerLinks.map(({ label, href }) => (
               <Link
                 key={label}
                 href={href}
@@ -34,20 +44,7 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 md:gap-4">
-            <a href="https://instagram.com/aslaan" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" aria-label="Instagram">
-              <Instagram size={14} className="md:w-[18px]" />
-            </a>
-            <a href="https://twitter.com/aslaan" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" aria-label="Twitter">
-              <Twitter size={14} className="md:w-[18px]" />
-            </a>
-            <a href="https://linkedin.com/in/aslaan" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" aria-label="LinkedIn">
-              <Linkedin size={14} className="md:w-[18px]" />
-            </a>
-            <a href="https://dribbble.com/aslaan" target="_blank" rel="noopener noreferrer" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" aria-label="Dribbble">
-              <Dribbble size={14} className="md:w-[18px]" />
-            </a>
-          </div>
+          <SocialLinks size="sm" className="justify-center md:justify-end" />
         </div>
       </div>
     </footer>

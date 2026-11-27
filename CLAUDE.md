@@ -630,16 +630,23 @@ Before implementing anything new, ask:
 
 ### External Assets
 
-- **Profile Image:** `https://aslaansportfolio.vercel.app/assets/profile-cDg9_8PP.jpg`
+- **Profile Image:** `public/profile.webp` (served at `/profile.webp`)
 - **Icons:** Primarily from `framerusercontent.com`
 - **Fonts:** Google Fonts (Plus Jakarta Sans, Syne)
 
 ### Key Services
 
-- **Instagram:** https://instagram.com/aslaan
-- **Twitter:** https://twitter.com/aslaan
-- **LinkedIn:** https://linkedin.com/in/aslaan
-- **Dribbble:** https://dribbble.com/aslaan
+All contact details and profile links live in **`src/data/site.ts`** — edit
+that file, not the pages. The `SocialLinks` component renders them everywhere.
+
+- **LinkedIn:** https://www.linkedin.com/in/muhammad-aslaan-a00015333
+- **GitHub:** https://github.com/Aslaanovv
+- **Email:** mohamedaslaangit@gmail.com
+- **WhatsApp:** set `VITE_WHATSAPP_NUMBER` (digits only, e.g. `201234567890`)
+- **CV:** `public/muhammad-aslaan-cv.pdf`, generated with `npm run generate:cv`
+
+> Instagram, X/Twitter and Dribbble handles are not configured yet. Add them
+> to `socialLinks` in `src/data/site.ts` once the accounts are confirmed.
 
 ### Deployment
 

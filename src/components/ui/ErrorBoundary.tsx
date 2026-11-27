@@ -1,5 +1,6 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 import { RefreshCw, AlertTriangle } from 'lucide-react';
+import { site } from "@/data/site";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -109,7 +110,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               <p className="text-sm text-muted-foreground mt-6">
                 If this keeps happening, feel free to{' '}
                 <a
-                  href="https://github.com/aslaan"
+                  href={site.githubIssues}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
